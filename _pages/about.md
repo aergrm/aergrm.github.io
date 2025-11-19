@@ -2,33 +2,33 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: <b>PhD Candidate in Political Science</b> at <a href='https://uwm.edu/political-science/'>University of Wisconsin-Milwaukee</a>.
 
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: false # false = square photo (like Sowon), true = circle
+  image_border: false
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>University of Wisconsin-Milwaukee</p>
+    <p>Department of Political Science</p>
+    <p>Milwaukee, WI 53201</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
-
-announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
-
-latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+news: false  # Hides the News section
+latest_posts: false  # Hides the Blog section
+selected_papers: false # Hides the "Selected Papers" section
+social: true  # Shows your Email and Google Scholar icons
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I employ computational and experimental methods to investigate how **polarization** and **emerging technologies** are influencing **international security** and **foreign policy**.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+My research examines strategic decision-making in 21st-century international security. I focus on two key drivers:
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+1.  **Domestic Politics:** I analyze how public opinion and audience costs shape foreign policy. My dissertation focuses on this intersection using survey experiments supported by the *Institute of Humane Studies at George Mason University*.
+2.  **Emerging Technologies:** I explore the geopolitical impact of technologies such as AI and semiconductors.
+
+Methodologically, I employ a computational toolkit, especially text analysis and network analysis, alongside quantitative and experimental methods. I am an alumnus of the [ICPSR Summer Program in Quantitative Methods](https://www.icpsr.umich.edu/) (University of Michigan) and the [SICSS - Istanbul](https://sicss.io/2023/istanbul/people).
+
+My work has been published or is forthcoming in *International Political Science Review*, *International Relations*, and edited volumes from *Routledge* and *Wiley*. I have also contributed policy analysis on regional energy security and conflict dynamics for think tanks.
+
+I hold M.A. and B.A. degrees in International Relations from **Bilkent University** in Turkey.
