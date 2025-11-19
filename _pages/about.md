@@ -6,7 +6,7 @@ subtitle: <b>PhD Candidate in Political Science</b> at <a href='https://uwm.edu/
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: prof_pic.jpeg
   image_circular: false # false = square photo (like Sowon), true = circle
   image_border: false
   more_info: >
