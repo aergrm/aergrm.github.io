@@ -51,3 +51,62 @@ body.sticky-bottom-footer {
 *****************************************************************************/
 
 // TODO: redefine projects layout.
+
+/* ------------------------------------------------------- */
+/* SOWON PARK DESIGN OVERRIDES                             */
+/* ------------------------------------------------------- */
+
+/* 1. Hide the Sidebar (Year/Abbr) */
+.col-sm-2.abbr {
+    display: none !important;
+}
+
+/* 2. Force Text to be Full Width */
+.col-sm-8 {
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+}
+
+/* 3. Clean Blue Titles */
+.title {
+    color: #3366cc !important;
+    font-weight: normal !important;
+    font-size: 1.1rem !important;
+}
+
+/* 4. Turn Buttons into Text Links */
+.links a.btn {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #444 !important;
+    padding: 0 5px 0 0 !important;
+    margin: 0 !important;
+    font-weight: normal !important;
+}
+
+.links a.btn:hover {
+    text-decoration: underline !important;
+    color: #3366cc !important;
+}
+
+/* 5. Vertical Line Abstracts */
+.abstract {
+    background-color: transparent !important;
+    border: none !important;
+    border-left: 3px solid #333 !important;
+    border-radius: 0 !important;
+    padding-left: 15px !important;
+    margin-top: 10px !important;
+    margin-bottom: 20px !important;
+}
+
+.abstract p {
+    font-size: 0.95rem !important;
+    color: #333 !important;
+    line-height: 1.6 !important;
+    text-align: justify;
+}
+
+/* 6. Hide Unwanted Buttons */
+a.btn:contains("Bib") { display: none !important; }
