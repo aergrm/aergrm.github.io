@@ -1,13 +1,15 @@
 ---
 layout: about
-title: about
+title: Home
+nav: true
+nav_order: 1
 permalink: /
 subtitle: <b>PhD Candidate in Political Science</b> at <a href='https://uwm.edu/political-science/'>University of Wisconsin-Milwaukee</a>.
 
 profile:
   align: right
   image: prof_pic.jpeg
-  image_circular: false # false = square photo (like Sowon), true = circle
+  image_circular: false
   image_border: false
   more_info: >
     <p>University of Wisconsin-Milwaukee</p>

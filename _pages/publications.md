@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Publications
+title: Research
+nav: true
+nav_order: 2
 permalink: /publications/
 ---
 
