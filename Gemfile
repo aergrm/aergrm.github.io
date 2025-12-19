@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'jekyll'
-gem 'jekyll-sass-converter', '~> 2.0'
+gem 'sass-embedded', '~> 1.63'
+gem 'google-protobuf', '~> 3.25'
 
 # Core plugins that directly affect site building
 group :jekyll_plugins do
