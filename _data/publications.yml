@@ -1,0 +1,85 @@
+# _data/publications.yml
+
+- id: hawkish-leaders-2025
+  type: article
+  year: 2025
+  title: "Hawkish leaders and foreign policy: A political psychological approach"
+  authors: "Ahmet Erğurum"
+  venue: "International Political Science Review"
+  doi: "10.1177/01925121251332965"
+  url: "https://doi.org/10.1177/01925121251332965"
+  abstract: |
+    Leadership attributes such as hawk are commonly used in academia and media. However, very few studies empirically examine the concept of ‘hawk’ and show nuances about this leadership attribute in international relations (IR), which inform our theories. This study aims to advance conceptual clarity in IR and address this problem by bringing cases from Middle East and North Africa leaders.
+
+    By utilizing operational code analysis, I empirically test whether pundits’ assumptions about leaders’ hawkishness are reflected in their political and strategic beliefs. I analyze eight leaders from Syria, Iran, Iraq, and Israel. I statistically compare their results with a norming group of world leaders and within themselves. I use novel data comprising 1307 statements with nearly 2 million words. The results show that leadership attributes such as ‘hawk’ are more nuanced than assumed.
+
+    The findings challenge the assumption that hawkish leaders are homogenous in their political beliefs.
+
+- id: transition-computational-fpa-2025
+  type: article
+  year: 2025
+  title: "The Transition from Quantitative to Computational Methods in Foreign Policy Analysis"
+  authors: "Ahmet Erğurum"
+  venue: "Uluslararası İlişkiler / International Relations, Vol. 22, No. 87, pp. 165–183"
+  doi: "10.33458/uidergisi.1718972"
+  url: "https://www.ir-journal.com/issues/volume-22-number-87-2025/the-transition-from-quantitative-to-computational-methods-in-foreign-policy-analysis"
+  pdf: "https://www.ir-journal.com/storage/media/6296/01K5EB3FQDHBPAPXSMGXD6RV6K.pdf"
+  abstract: |
+    Computational methods have been increasingly used in Foreign Policy Analysis (FPA). Text analysis, geospatial analysis, and network analysis are among the most used computational methods. This article examines the FPA literature that utilizes computational methods and discusses their theoretical and empirical implications for future research.
+
+- id: blockchain-cybersecurity-2021
+  type: article
+  year: 2021
+  title: "New Search for Cybersecurity in the Light of Blockchain’s Literature Expansion"
+  authors: "Mürsel Doğrul; Ahmet Erğurum"
+  venue: "Journal of Security Sciences (Güvenlik Bilimleri Dergisi), 2. Uluslararası Güvenlik Kongresi Özel Sayısı, pp. 175–194"
+  doi: "10.28956/gbd.1016087"
+  url: "https://dergipark.org.tr/tr/pub/gbd/article/1016087"
+  abstract: |
+    This study examines the nexus between blockchain technology and states' security policies in light of the bibliometric analysis of Web of Science data and official documents. The data reveals that China pioneers publications on blockchain technology, which amounts to 30% of the works. The U.S.A. follows China with 19%. The rising attention to blockchain technology is reflected in the states' policies.
+
+    Great powers regarded blockchain technology as a factor that can give the upper hand in the power competition. Thus, this study focuses on the American, Chinese and Russian policies on the utility of blockchain. Based on the political discourses, official documents, academic reports, and articles, it is aimed to be analyzed the new security dimensions appearing with the rise of blockchain.
+
+    The U.S. policy on the blockchain is mainly shaped by the use of terror groups for fundraising, decreasing military logistics costs, and reinforcing its place in the international system. China's policies aim to improve the digital central banking system, surveillance, and innovate its military. Concerns over cyber security mold Russian researches and policies regarding blockchain.
+
+- id: tech-intelligence-crypto-2024
+  type: chapter
+  year: 2024
+  title: "Technology Intelligence: Cryptocurrencies and Emerging Technologies"
+  authors: "Ahmet Erğurum; Mürsel Doğrul; Haydar Yalçın; Tuğrul U. Daim"
+  venue: "In: Future‐Oriented Technology Assessment (pp. 129–149)"
+  doi: "10.1002/9781119909880.ch6"
+  url: "https://doi.org/10.1002/9781119909880.ch6"
+  abstract: |
+    A Technology Intelligence and Monitoring System (TIMS) can prove to be enormously useful to an organization by identifying, in timely manner, developments in emerging technologies that could lead to new opportunities or pose threat. However, the effectiveness of such a system is dependent on deciding on what technologies to track, how to track them, and how to implement it to derive high value for the organization.
+
+- id: semiconductors-middle-powers-2024
+  type: chapter
+  year: 2024
+  title: "The Landscape Analyses of Semiconductor Research Trends of Middle Powers: Mapping the Collaboration Networks of Japan, South Korea, Türkiye, and Malaysia"
+  authors: "Ahmet Erğurum; Mürsel Doğrul; Haydar Yalçın"
+  venue: "In: TUBA (Türkiye Bilimler Akademisi) — Chapter 11"
+  doi: "10.53478/TUBA.978-625-6110-04-5.ch11"
+  url: "https://www.tuba.gov.tr/files/yayinlar/bilim-ve-dusun/TUBA-978-625-6110-04-5_ch11.pdf"
+  pdf: "https://www.tuba.gov.tr/files/yayinlar/bilim-ve-dusun/TUBA-978-625-6110-04-5_ch11.pdf"
+  abstract: |
+    The semiconductor industry is at the heart of core case studies related to the understanding of broader dynamics of technological developments and international competition in the 21st century. Much has been written about the superpower rivalry between the United States (US) and China, but this chapter highlights significant and growing contributions from middle powers in research, development, and production of semiconductors. This chapter compares the changing role of middle powers in the global semiconductor industry, drawing examples from Japan, South Korea, Türkiye, and Malaysia. The book chapter makes a comparative analysis of research output, patent data, policy initiatives, and industry development in the countries under study and their respective positions. Also, the chapter makes a deeper analysis of Türkiye’s semiconductor research and development efforts.
+
+    The results suggest diversified strategies and capacities of the established middle powers, Japan and South Korea, compared to the emerging middle powers, Türkiye and Malaysia. In this research, network analysis is used to map patterns of international collaboration and to identify nodes of influence within global semiconductor research and innovation networks. Our results reveal significant differences between well-established middle powers, such as Japan and South Korea, and emerging ones like Türkiye and Malaysia. Japan and South Korea have strong research output and are leaders in patent applications in semiconductor production. While their research impact is relatively much lower, Türkiye and Malaysia are building emerging strengths. Much of the work in Türkiye aims toward defense and strategic applications. In Malaysia, an existing position in semiconductor assembly provides the opportunity for moving up the value chain. In terms of publications, the output of both countries increased linearly since the beginning of the 2000s. In terms of patent applications, Japanese and South Korean companies dominate the patent application network, particularly in semiconductor production and intermediate products.
+
+    The study helps to further our understanding of how middle powers can pursue various roadmaps in an era of technological innovation and economic competitiveness in the semiconductor industry.
+
+- id: turkey-middle-power-2025
+  type: chapter
+  year: 2025
+  title: "Turkey as a Middle Power in an Emerging Multipolar World Order"
+  authors: "Ahmet Erğurum"
+  venue: "In: Non-Western Middle Powers in the Multipolar Order (pp. 41–67)"
+  doi: "10.4324/9781003631842-3"
+  url: "https://doi.org/10.4324/9781003631842-3"
+  abstract: |
+    Turkey is an emerging middle power with its size of the economy, growing military capabilities, and active participation in multilateral organizations. Turkey has achieved significant economic growth over the years and has taken part in international organizations such as the G20 that gather established and emerging middle powers. Turkey has engaged in proactive diplomacy and coalition-building, indicating its willingness to pursue an assertive foreign policy.
+
+    As an emerging middle power, Turkey’s alignments can have implications for the evolving multipolar world order. The rise of China and Russia challenges the US-led international order established in the post-Cold War period. The position of the middle powers in this emerging multipolar world order has become an interesting and important case.
+
+    This chapter will analyze Turkey's international relations and its ties with superpowers, the US and China, and neighboring great power, Russia, by focusing on economic and military/security dimensions.
