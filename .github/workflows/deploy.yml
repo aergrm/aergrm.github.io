@@ -18,8 +18,8 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.7' # AcademicPages legacy support
-          bundler-cache: true
+          ruby-version: '3.1'
+          bundler-cache: false # Disable cache to prevent corruption
 
       - name: Install Dependencies
         run: bundle install
