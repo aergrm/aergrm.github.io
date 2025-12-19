@@ -18,7 +18,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1' # AcademicPages usually works with 2.7 or 3.x, 3.1 is safe
+          ruby-version: '2.7' # AcademicPages legacy support
           bundler-cache: true
 
       - name: Install Dependencies
