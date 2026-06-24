@@ -8,8 +8,5 @@ otherwise noted:
 - Wiley: `Wiley logo.svg`
 - Turkish Academy of Sciences: `TÜBA logo.svg`
 
-The Routledge and Oxford Research Encyclopedias images were supplied by Ahmet
-Ergurum.
-
-The JSGA tile is a locally created text identifier for the publisher of the
-*Journal of Security Sciences*, not an official institutional logo.
+The Routledge, Oxford Research Encyclopedias, and *Journal of Security
+Sciences* images were supplied by Ahmet Ergurum.
