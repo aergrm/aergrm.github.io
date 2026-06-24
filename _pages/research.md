@@ -62,4 +62,3 @@ This paper connects leader-level belief systems to broader theories of strategic
 - “Semi-Supervised Machine Learning Analysis of Congressional Nuclear Rhetoric, 2021–2025.”
 - “Leader Hawkishness and Military Spending: A Panel Data Analysis.”
 - “Globalization and Networked Nuclear Proliferation.” With Eliza Gheorghe, Mürsel Doğrul, and Haydar Yalçın.
-- *Middle Powers and the Geopolitics of AI*. Edited volume project under review.
