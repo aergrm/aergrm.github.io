@@ -8,5 +8,5 @@ otherwise noted:
 - Wiley: `Wiley logo.svg`
 - Turkish Academy of Sciences: `TÜBA logo.svg`
 
-The Routledge, Oxford Research Encyclopedias, *International Relations*, and
-*Journal of Security Sciences* images were supplied by Ahmet Ergurum.
+The Routledge, Oxford Research Encyclopedias, JSTOR, and *Journal of Security
+Sciences* images were supplied by Ahmet Ergurum.
