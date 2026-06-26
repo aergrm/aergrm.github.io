@@ -2,6 +2,7 @@
 layout: page
 permalink: /book-project/
 title: Book Project
+heading_title: Book Project - Forthcoming
 description:
 nav: true
 nav_order: 3
