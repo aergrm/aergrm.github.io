@@ -179,11 +179,12 @@
     {% endif %}
     {% assign entrytype_text = entrytype | strip_html | strip %}
     {% capture periodical %}{{ entrytype }}{% if entrytype_text != "" and entryyear != "" %}, {% endif %}{% if entrymonth != "" %}{{ entrymonth }} {% endif %}{{ entryyear }}{% endcapture %}
+    {% if entry.note %}
+      {% capture entrynote %}{{ entry.note | markdownify | remove: '<p>' | remove: '</p>' | strip_newlines | strip }}{% endcapture %}
+      {% capture periodical %}{{ periodical }}, {{ entrynote }}{% endcapture %}
+    {% endif %}
     <div class="periodical">
       {{ periodical | strip | replace: ' ,', ',' | replace: ',  ', ', ' }}
-    </div>
-    <div class="periodical">
-      {{ entry.note | strip }}
     </div>
 
     <!-- Links/Buttons -->
