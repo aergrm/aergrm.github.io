@@ -9,6 +9,16 @@ nav_order: 2
 
 <div class="publications">
 
-{% bibliography %}
+<h2>Journal Articles</h2>
+
+{% bibliography --query @article --group_by none %}
+
+<h2>Book Chapters</h2>
+
+{% bibliography --query @incollection --group_by none %}
+
+<h2>Encyclopedia Entries</h2>
+
+{% bibliography --query @inreference --group_by none %}
 
 </div>
