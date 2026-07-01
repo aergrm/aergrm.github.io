@@ -22,7 +22,7 @@ nav: false
 
 <h2>Plain-language summary</h2>
 
-This article asks whether leaders commonly described as “hawkish” actually share the political and strategic beliefs that the label implies. The article examines eight leaders from Syria, Iran, Iraq, and Israel using operational code analysis, a foreign policy analysis approach that studies leaders’ beliefs through their public statements.
+This article asks whether leaders commonly described as “hawkish” actually share the political and strategic beliefs that the label implies. The article examines eight leaders from four MENA countries using operational code analysis, a foreign policy analysis approach that studies leaders’ beliefs through their public statements.
 
 The central finding is that hawkish leaders are not as homogeneous as the label suggests. Leaders in the sample tend to see political opponents in conflictual terms, but their self-images and strategic beliefs vary. The article therefore cautions against treating “hawkishness” as a simple or uniform category in international relations.
 
