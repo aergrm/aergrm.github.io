@@ -69,7 +69,7 @@ The chapter distinguishes between established middle powers, such as Japan and S
 <h2>Collaboration logic</h2>
 
 <div class="portfolio-visual" aria-label="Stylized collaboration network">
-<svg viewBox="0 0 900 360" role="img">
+<svg viewBox="0 0 900 410" role="img">
   <title>Stylized semiconductor collaboration network</title>
   <defs>
     <marker id="arrow-chip" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
@@ -94,7 +94,8 @@ The chapter distinguishes between established middle powers, such as Japan and S
   <line x1="252" y1="258" x2="400" y2="205" stroke="#767676" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrow-chip)"/>
   <line x1="660" y1="258" x2="500" y2="205" stroke="#767676" stroke-width="3" marker-end="url(#arrow-chip)"/>
 
-  <text x="450" y="325" text-anchor="middle" font-size="13">Solid lines indicate stronger integration discussed in the chapter; dashed line marks opportunity for expanded collaboration.</text>
+  <text x="450" y="345" text-anchor="middle" font-size="13">Solid lines indicate stronger integration discussed in the chapter.</text>
+  <text x="450" y="368" text-anchor="middle" font-size="13">The dashed line marks opportunity for expanded collaboration.</text>
 </svg>
 </div>
 
