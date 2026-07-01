@@ -55,23 +55,25 @@ This page presents selected published research in a more accessible format: shor
 <div class="portfolio-visual" aria-label="Visual map of research themes">
 <svg viewBox="0 0 900 360" role="img">
   <title>Research theme map</title>
+  <line x1="450" y1="155" x2="145" y2="85" stroke="#767676" stroke-width="2"/>
+  <line x1="450" y1="155" x2="450" y2="85" stroke="#767676" stroke-width="2"/>
+  <line x1="450" y1="155" x2="755" y2="85" stroke="#767676" stroke-width="2"/>
+
+  <rect x="335" y="125" width="230" height="70" rx="18" fill="#ffffff" stroke="#767676" stroke-width="2"/>
+  <text x="450" y="154" text-anchor="middle" font-size="18" font-weight="700">Research Agenda</text>
+  <text x="450" y="178" text-anchor="middle" font-size="13">international security · methods · technology</text>
+
   <rect x="20" y="30" width="250" height="90" rx="16" fill="#f8f2fb" stroke="#b509ac" stroke-width="2"/>
-  <text x="145" y="64" text-anchor="middle" font-size="18" font-weight="700">Strategic Decision-Making</text>
-  <text x="145" y="94" text-anchor="middle" font-size="13">leaders · public opinion · coercion</text>
+  <text x="145" y="62" text-anchor="middle" font-size="17" font-weight="700">Strategic Decision-Making</text>
+  <text x="145" y="91" text-anchor="middle" font-size="13">leaders · public opinion · coercion</text>
 
   <rect x="325" y="30" width="250" height="90" rx="16" fill="#eef7fb" stroke="#2698ba" stroke-width="2"/>
-  <text x="450" y="64" text-anchor="middle" font-size="18" font-weight="700">Computational Methods</text>
-  <text x="450" y="94" text-anchor="middle" font-size="13">text · networks · quantitative tools</text>
+  <text x="450" y="62" text-anchor="middle" font-size="17" font-weight="700">Computational Methods</text>
+  <text x="450" y="91" text-anchor="middle" font-size="13">text · networks · quantitative tools</text>
 
   <rect x="630" y="30" width="250" height="90" rx="16" fill="#fff8e5" stroke="#9a6b00" stroke-width="2"/>
-  <text x="755" y="64" text-anchor="middle" font-size="18" font-weight="700">Technology Geopolitics</text>
-  <text x="755" y="94" text-anchor="middle" font-size="13">AI · semiconductors · dependence</text>
-
-  <line x1="270" y1="75" x2="325" y2="75" stroke="#767676" stroke-width="2" marker-end="url(#arrow)"/>
-  <line x1="575" y1="75" x2="630" y2="75" stroke="#767676" stroke-width="2" marker-end="url(#arrow)"/>
-  <line x1="145" y1="120" x2="145" y2="188" stroke="#767676" stroke-width="2" marker-end="url(#arrow)"/>
-  <line x1="450" y1="120" x2="450" y2="188" stroke="#767676" stroke-width="2" marker-end="url(#arrow)"/>
-  <line x1="755" y1="120" x2="755" y2="188" stroke="#767676" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="755" y="62" text-anchor="middle" font-size="17" font-weight="700">Technology Geopolitics</text>
+  <text x="755" y="91" text-anchor="middle" font-size="13">AI · semiconductors · dependence</text>
 
   <rect x="60" y="200" width="170" height="70" rx="14" fill="#ffffff" stroke="#b509ac"/>
   <text x="145" y="230" text-anchor="middle" font-size="14" font-weight="700">Hawkish Leaders</text>
@@ -84,12 +86,6 @@ This page presents selected published research in a more accessible format: shor
   <rect x="670" y="200" width="170" height="70" rx="14" fill="#ffffff" stroke="#9a6b00"/>
   <text x="755" y="230" text-anchor="middle" font-size="14" font-weight="700">Middle Powers</text>
   <text x="755" y="252" text-anchor="middle" font-size="12">strategic technology</text>
-
-  <defs>
-    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L0,6 L6,3 z" fill="#767676"/>
-    </marker>
-  </defs>
 </svg>
 </div>
 
