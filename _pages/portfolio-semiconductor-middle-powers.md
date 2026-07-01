@@ -28,9 +28,9 @@ The chapter distinguishes between established middle powers, such as Japan and S
 
 <div class="portfolio-stats">
   <div class="portfolio-stat"><strong>4</strong>middle powers compared</div>
-  <div class="portfolio-stat"><strong>2</strong>data domains: publications and patents</div>
-  <div class="portfolio-stat"><strong>1</strong>Türkiye-focused deep dive</div>
-  <div class="portfolio-stat"><strong>1</strong>strategic technology sector</div>
+  <div class="portfolio-stat"><strong>127,648</strong>publications analyzed</div>
+  <div class="portfolio-stat"><strong>4,027,718</strong>citations mapped</div>
+  <div class="portfolio-stat"><strong>2012–2024</strong>Lens.org patent applications</div>
 </div>
 
 <h2>Comparative strategy map</h2>
