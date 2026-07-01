@@ -4,7 +4,7 @@ permalink: /policy/
 title: Policy
 description:
 nav: true
-nav_order: 6
+nav_order: 7
 ---
 
 My policy work focuses on international security, emerging technology, energy, and conflict. It draws on experience with research organizations, a government ministry, and policy-oriented research centers in the United States and Turkey.

@@ -4,7 +4,7 @@ permalink: /teaching/
 title: Teaching
 description:
 nav: true
-nav_order: 5
+nav_order: 6
 ---
 
 I teach courses in comparative politics and have supported instruction across international relations, comparative politics, global studies, and American politics at the University of Wisconsin–Milwaukee. My teaching emphasizes analytical clarity, evidence-based argument, and the connection between political science theories and contemporary policy problems.
