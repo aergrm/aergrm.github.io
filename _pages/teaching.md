@@ -57,7 +57,7 @@ Teaching Assistant, Bilkent University, Turkey.
 
 Research Assistant, Bilkent University, Turkey.
 
-- Archival research on great-power decision-making in the nineteenth century for Prof. Tudor Onea
+- Archival research on great-power decision-making in the nineteenth century for Prof. [Tudor Onea](https://ir.bilkent.edu.tr/?page_id=3090)
 - Collection of archival documents concerning the Crimean dynasty for Prof. Hakan Kırımlı
 
 ---
