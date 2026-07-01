@@ -24,6 +24,19 @@ University of Wisconsin–Milwaukee. This course introduces students to the comp
 
 ---
 
+### Student Evaluations
+
+Selected comments from students in **POL SCI 335: Comparative Political Systems**, taught as Instructor of Record:
+
+- “Engaging class activities and clear expectations, very helpful supplemental materials for studying.”
+- “Ahmet is a great teacher and I really enjoyed him. He is very positive and supports his students very well.”
+- “I liked the activities we did, like forming the coalitions.”
+- “I liked how the course was very chill. I was not scared to ask questions or comment on something.”
+- “Lots of in-class activities and discussions really helped cement the course material.”
+- “Ahmet is obviously very passionate about this subject and knows a lot. He creates some really nice conversations around these hard-to-grasp concepts.”
+
+---
+
 ### <span><strong style="color:darkblue">Teaching Assistant</strong></span>
 
 ---
@@ -65,19 +78,6 @@ Research Assistant, Bilkent University, Turkey.
 ### Invited Talks and Workshops
 
 - **Introduction to R for Data Analysis**, two-day workshop, Middle East Foundation, Turkey
-
----
-
-### Student Evaluations
-
-Selected comments from students in **POL SCI 335: Comparative Political Systems**, taught as Instructor of Record:
-
-- “Engaging class activities and clear expectations, very helpful supplemental materials for studying.”
-- “Ahmet is a great teacher and I really enjoyed him. He is very positive and supports his students very well.”
-- “I liked the activities we did, like forming the coalitions.”
-- “I liked how the course was very chill. I was not scared to ask questions or comment on something.”
-- “Lots of in-class activities and discussions really helped cement the course material.”
-- “Ahmet is obviously very passionate about this subject and knows a lot. He creates some really nice conversations around these hard-to-grasp concepts.”
 
 ---
 
