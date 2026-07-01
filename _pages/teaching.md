@@ -77,6 +77,7 @@ Research Assistant, Bilkent University, Turkey.
 
 ### Invited Talks and Workshops
 
+- **Guest lecture, “International Politics,” POL SCI 103: Introduction to Political Science**, University of Wisconsin–Milwaukee
 - **Introduction to R for Data Analysis**, two-day workshop, Middle East Foundation, Turkey
 
 ---
