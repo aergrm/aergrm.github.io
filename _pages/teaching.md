@@ -26,7 +26,7 @@ University of Wisconsin–Milwaukee. This course introduces students to the comp
 
 ### Student Evaluations
 
-Selected comments from students in **POL SCI 335: Comparative Political Systems**, taught as Instructor of Record:
+Student comments from **POL SCI 335: Comparative Political Systems**, taught as Instructor of Record:
 
 - “Engaging class activities and clear expectations, very helpful supplemental materials for studying.”
 - “Ahmet is a great teacher and I really enjoyed him. He is very positive and supports his students very well.”
