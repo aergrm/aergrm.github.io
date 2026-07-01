@@ -99,7 +99,7 @@ This page presents selected published research in a more accessible format: shor
   <h3>POL SCI 335: Comparative Political Systems</h3>
   <div class="portfolio-meta">Course website · digital pedagogy · student-facing resource design</div>
   <p>
-    I designed and built a public course website for POL SCI 335 to organize course materials, clarify expectations, and make the course easier for students to navigate. It also demonstrates my broader interest in using digital tools to support teaching and learning.
+    I designed and built a public course website for POL SCI 335 to organize course materials, clarify expectations, and make the course easier for students to navigate. The site includes games, simulations, quizzes, and interactive graphs, and demonstrates my broader interest in using digital tools to support teaching and learning.
   </p>
   <div class="portfolio-actions">
     <a class="portfolio-button" href="https://polsci335.vercel.app/">Visit course website</a>

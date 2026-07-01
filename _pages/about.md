@@ -41,4 +41,4 @@ I have served as a reviewer for *Political Research Quarterly*, *Global Studies 
 
 I am a Ph.D. candidate at the University of Wisconsin–Milwaukee and a recipient of the UWM Chancellor's Award and Wilder Crane Memorial Scholarship. I hold M.A. and B.A. degrees in International Relations from [Bilkent University](https://w3.bilkent.edu.tr/bilkent/) in Turkey.
 
-I also designed and built the public course website for [POL SCI 335: Comparative Political Systems](https://polsci335.vercel.app/), which showcases my approach to digital pedagogy, accessible course organization, and student-facing learning materials.
+I also designed and built the public course website for [POL SCI 335: Comparative Political Systems](https://polsci335.vercel.app/), which showcases my approach to digital pedagogy through games, simulations, quizzes, interactive graphs, accessible course organization, and student-facing learning materials.
