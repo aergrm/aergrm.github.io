@@ -59,7 +59,7 @@ This page presents selected published research in a more accessible format: shor
   <line x1="450" y1="140" x2="450" y2="95" stroke="#767676" stroke-width="2"/>
   <line x1="450" y1="140" x2="755" y2="95" stroke="#767676" stroke-width="2"/>
 
-  <rect x="325" y="140" width="250" height="70" rx="18" fill="#ffffff" stroke="#767676" stroke-width="2"/>
+  <rect x="285" y="140" width="330" height="70" rx="18" fill="#ffffff" stroke="#767676" stroke-width="2"/>
   <text x="450" y="169" text-anchor="middle" font-size="18" font-weight="700">Research Agenda</text>
   <text x="450" y="193" text-anchor="middle" font-size="13">international security · methods · technology</text>
 
