@@ -13,6 +13,7 @@ profile:
     <p>University of Wisconsin–Milwaukee</p>
     <p>Political Science</p>
     <p><a href="mailto:aergurum@uwm.edu">aergurum@uwm.edu</a></p>
+    <p><a href="https://polsci335.vercel.app/">POL SCI 335 course website</a></p>
 
 selected_papers: false
 social: true
@@ -39,3 +40,5 @@ My work has been published or is forthcoming in [International Political Science
 I have served as a reviewer for *Political Research Quarterly*, *Global Studies Quarterly*, *International Politics*, *International Political Science Review*, and *Southeast European and Black Sea Studies*.
 
 I am a Ph.D. candidate at the University of Wisconsin–Milwaukee and a recipient of the UWM Chancellor's Award and Wilder Crane Memorial Scholarship. I hold M.A. and B.A. degrees in International Relations from [Bilkent University](https://w3.bilkent.edu.tr/bilkent/) in Turkey.
+
+I also designed and built the public course website for [POL SCI 335: Comparative Political Systems](https://polsci335.vercel.app/), which showcases my approach to digital pedagogy, accessible course organization, and student-facing learning materials.

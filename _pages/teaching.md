@@ -4,7 +4,7 @@ permalink: /teaching/
 title: Teaching
 description:
 nav: true
-nav_order: 4
+nav_order: 5
 ---
 
 I teach courses in comparative politics and have supported instruction across international relations, comparative politics, global studies, and American politics at the University of Wisconsin–Milwaukee. My teaching emphasizes analytical clarity, evidence-based argument, and the connection between political science theories and contemporary policy problems.
@@ -17,6 +17,9 @@ I teach courses in comparative politics and have supported instruction across in
 <summary><strong>Comparative Political Systems</strong> <i>(Spring 2026)</i></summary>
 <br>
 University of Wisconsin–Milwaukee. This course introduces students to the comparative study of political systems, institutions, regime types, and political behavior across countries.
+
+<br><br>
+<strong>Course website developed:</strong> <a href="https://polsci335.vercel.app/">POL SCI 335: Comparative Political Systems</a>.
 </details>
 
 ---
