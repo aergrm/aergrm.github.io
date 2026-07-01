@@ -5,13 +5,13 @@ title: Talks
 heading_title: Conference Presentations
 description:
 nav: true
-nav_order: 4
+nav_order: 5
 ---
 
 ### 2026
 
 - “How Middle Powers Navigate Great Power Rivalry? The Case of the UAE’s AI and 5G Policy.” With Lawrence Rubin and Dana Abu-Haltam. International Studies Association Annual Convention, Columbus.
-- “The Impact of U.S. Administrative Shifts on Middle Eastern Foreign Policy Amid U.S.–China Competition.” International Studies Association Annual Convention, Columbus.
+- “The Impact of U.S. Administrative Shifts on Middle Eastern Foreign Policy Amid U.S.–China Competition.” With Dana Abu-Haltam. International Studies Association Annual Convention, Columbus.
 - “Networked Proliferation: Globalization, International Institutions, and the Spread of Nuclear Weapons.” With Eliza Gheorghe, Mürsel Doğrul, and Haydar Yalçın. International Studies Association Annual Convention, Columbus.
 - “From Smart Power to Spatial Transformation: Rethinking Regionalism in the Trump Era.” Roundtable participant. International Studies Association Annual Convention, Columbus.
 

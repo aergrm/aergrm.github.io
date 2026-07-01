@@ -20,7 +20,7 @@ nav: false
   </div>
 </div>
 
-<h2>Plain-language summary</h2>
+<h2>Summary</h2>
 
 This article asks whether leaders commonly described as “hawkish” actually share the political and strategic beliefs that the label implies. The article examines eight leaders from four MENA countries using operational code analysis, a foreign policy analysis approach that studies leaders’ beliefs through their public statements.
 

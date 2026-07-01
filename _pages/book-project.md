@@ -5,7 +5,7 @@ title: Book Project
 heading_title: Book Project - Forthcoming
 description:
 nav: true
-nav_order: 5
+nav_order: 6
 ---
 
 ### *Middle Power Strategy in the Age of Artificial Intelligence*

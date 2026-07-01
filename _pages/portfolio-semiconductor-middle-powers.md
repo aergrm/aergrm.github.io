@@ -20,7 +20,7 @@ nav: false
   </div>
 </div>
 
-<h2>Plain-language summary</h2>
+<h2>Summary</h2>
 
 This chapter studies how middle powers participate in the global semiconductor sector, a strategic technology domain at the center of contemporary geopolitical competition. Rather than focusing only on the United States and China, it compares Japan, South Korea, Türkiye, and Malaysia across research output, patenting, policy initiatives, industry development, and collaboration networks.
 

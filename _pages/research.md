@@ -4,7 +4,7 @@ permalink: /research/
 title: Research
 description:
 nav: true
-nav_order: 1
+nav_order: 2
 ---
 
 My research sits at the intersection of international security, foreign policy analysis, and technology policy. Across these areas, I study how political actors perceive threats, communicate resolve, and adapt to changes in the distribution and instruments of power.

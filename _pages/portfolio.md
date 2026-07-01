@@ -5,7 +5,7 @@ title: Portfolio
 heading_title: Research Portfolio
 description: Selected article and book chapter summaries with visual research maps.
 nav: true
-nav_order: 2
+nav_order: 3
 ---
 
 <p class="portfolio-intro">
