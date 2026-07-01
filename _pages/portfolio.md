@@ -57,7 +57,7 @@ This page presents selected published research in a more accessible format: shor
   <title>Research theme map</title>
   <rect x="20" y="30" width="250" height="90" rx="16" fill="#f8f2fb" stroke="#b509ac" stroke-width="2"/>
   <text x="145" y="64" text-anchor="middle" font-size="18" font-weight="700">Strategic Decision-Making</text>
-  <text x="145" y="94" text-anchor="middle" font-size="13">leaders · beliefs · coercion</text>
+  <text x="145" y="94" text-anchor="middle" font-size="13">leaders · public opinion · coercion</text>
 
   <rect x="325" y="30" width="250" height="90" rx="16" fill="#eef7fb" stroke="#2698ba" stroke-width="2"/>
   <text x="450" y="64" text-anchor="middle" font-size="18" font-weight="700">Computational Methods</text>
