@@ -12,7 +12,7 @@ nav: false
 <div class="portfolio-detail-box">
   <h3>Published book chapter</h3>
   <p>
-    Mürsel Doğrul, Ahmet Ergurum, and Haydar Yalçın. “The Landscape Analyses of Semiconductor Research Trends of Middle Powers: Mapping the Collaboration Networks of Japan, South Korea, Türkiye, and Malaysia.” In <em>Global Transformations and Türkiye</em>, Turkish Academy of Sciences, 2024.
+     Ahmet Ergurum and Haydar Yalçın. “The Landscape Analyses of Semiconductor Research Trends of Middle Powers: Mapping the Collaboration Networks of Japan, South Korea, Türkiye, and Malaysia.” In <em>Global Transformations and Türkiye</em>, Turkish Academy of Sciences, 2024.
   </p>
   <div class="portfolio-actions">
     <a class="portfolio-button" href="https://www.tuba.gov.tr/files/yayinlar/bilim-ve-dusun/TUBA-978-625-6110-04-5_ch11.pdf">Publication PDF</a>
