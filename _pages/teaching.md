@@ -20,9 +20,37 @@ University of Wisconsin–Milwaukee. This course introduces students to the comp
 
 <br><br>
 <div class="portfolio-actions">
-  <a class="portfolio-button" href="/teaching/comparative-political-systems-syllabus/">Syllabus</a>
-  <a class="portfolio-button" href="https://polsci335.vercel.app/">Course Website</a>
+  <a class="portfolio-button" href="https://polsci335.vercel.app/" target="_blank" rel="noopener">Course Website</a>
+  <a class="portfolio-button" id="polsci335-syllabus-pdf" href="#" target="_blank" rel="noopener">Syllabus (PDF)</a>
 </div>
+
+<script>
+(async function () {
+  const button = document.getElementById('polsci335-syllabus-pdf');
+  if (!button) return;
+
+  try {
+    const response = await fetch('{{ "/assets/pdf/polsci335_chunks/part01.txt" | relative_url }}');
+    if (!response.ok) throw new Error('Unable to load syllabus');
+
+    const encoded = (await response.text()).replace(/\s+/g, '');
+    const binary = atob(encoded);
+    const bytes = new Uint8Array(binary.length);
+
+    for (let i = 0; i < binary.length; i++) {
+      bytes[i] = binary.charCodeAt(i);
+    }
+
+    button.href = URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' }));
+  } catch (error) {
+    button.removeAttribute('target');
+    button.addEventListener('click', function (event) {
+      event.preventDefault();
+      alert('The syllabus PDF is temporarily unavailable.');
+    });
+  }
+})();
+</script>
 </details>
 
 ---
