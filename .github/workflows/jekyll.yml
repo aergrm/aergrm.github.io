@@ -19,6 +19,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Restore exact POL SCI 335 syllabus PDF
+        shell: bash
+        run: |
+          cat assets/pdf/polsci335_pdf/part01.txt \
+              assets/pdf/polsci335_pdf/part02.txt \
+              assets/pdf/polsci335_pdf/part03.txt \
+              assets/pdf/polsci335_pdf/part04.txt \
+            | tr -d '\r\n ' \
+            | base64 --decode \
+            > assets/pdf/polsci_335_2026_spring.pdf
+          echo "7d8bca72b3b2b25cc7c11770faf750b387666896108ede817d30ff432020c6ec  assets/pdf/polsci_335_2026_spring.pdf" | sha256sum --check
+          test "$(stat -c%s assets/pdf/polsci_335_2026_spring.pdf)" -eq 133176
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
