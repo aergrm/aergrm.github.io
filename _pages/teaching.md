@@ -19,7 +19,9 @@ I teach courses in comparative politics and have supported instruction across in
 University of Wisconsin–Milwaukee. This course introduces students to the comparative study of political systems, institutions, regime types, and political behavior across countries.
 
 <br><br>
-<strong>Course website developed:</strong> <a href="https://polsci335.vercel.app/">POL SCI 335: Comparative Political Systems</a>, featuring games, simulations, quizzes, and interactive graphs.
+<strong>Course materials:</strong>
+<a href="/teaching/comparative-political-systems-syllabus/">POL SCI 335 syllabus</a> ·
+<a href="https://polsci335.vercel.app/">Interactive course website</a>
 </details>
 
 ---
@@ -85,8 +87,6 @@ Research Assistant, Bilkent University, Turkey.
 ### Courses Prepared to Teach
 
 Introduction to International Relations; International Security; Foreign Policy; Comparative Politics; Authoritarian Politics; Technology and World Politics.
-
-**Featured sample syllabus:** [POL SCI 102: Introduction to International Relations (Spring 2027)](/teaching/introduction-to-international-relations-syllabus/)
 
 ### Methodological Training
 
