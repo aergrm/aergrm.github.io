@@ -86,6 +86,8 @@ Research Assistant, Bilkent University, Turkey.
 
 Introduction to International Relations; International Security; Foreign Policy; Comparative Politics; Authoritarian Politics; Technology and World Politics.
 
+**Featured sample syllabus:** [POL SCI 102: Introduction to International Relations (Spring 2027)](/teaching/introduction-to-international-relations-syllabus/)
+
 ### Methodological Training
 
 - Emerging Methodologists Workshop, Syracuse University, 2026
