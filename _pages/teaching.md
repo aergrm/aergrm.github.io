@@ -19,9 +19,10 @@ I teach courses in comparative politics and have supported instruction across in
 University of Wisconsin–Milwaukee. This course introduces students to the comparative study of political systems, institutions, regime types, and political behavior across countries.
 
 <br><br>
-<strong>Course materials:</strong>
-<a href="/teaching/comparative-political-systems-syllabus/">POL SCI 335 syllabus</a> ·
-<a href="https://polsci335.vercel.app/">Interactive course website</a>
+<div class="portfolio-actions">
+  <a class="portfolio-button" href="/teaching/comparative-political-systems-syllabus/">Syllabus</a>
+  <a class="portfolio-button" href="https://polsci335.vercel.app/">Course Website</a>
+</div>
 </details>
 
 ---
