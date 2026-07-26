@@ -9,6 +9,16 @@ nav_order: 7
 
 I teach courses in comparative politics and have supported instruction across international relations, comparative politics, global studies, and American politics at the University of Wisconsin–Milwaukee. My teaching emphasizes analytical clarity, evidence-based argument, and the connection between political science theories and contemporary policy problems.
 
+### Teaching Philosophy
+
+I approach teaching as the process of helping students move from recognizing political concepts to using them to explain real outcomes. My courses therefore emphasize analytical clarity, comparative reasoning, and evidence-based argument rather than memorization alone. I organize class sessions around a combination of short lectures, structured discussion, simulations, collaborative exercises, and applied examples that allow students to test theories against contemporary political problems.
+
+I also aim to create a classroom in which students feel comfortable asking questions, making tentative arguments, and revising their views. Clear expectations, transparent grading criteria, study guides, and accessible course materials are central to this approach. Because students enter political science courses with different levels of preparation, I use multiple forms of participation and assessment so that they can demonstrate learning in different ways while still being held to common academic standards.
+
+My broader goal is for students to leave a course able to compare political systems, identify causal mechanisms, evaluate competing explanations, and communicate a defensible argument. Digital resources, interactive visualizations, and carefully designed activities support these goals, but technology remains a tool for deeper engagement rather than an end in itself.
+
+---
+
 ### <span><strong style="color:darkred">Instructor of Record</strong></span>
 
 ---
