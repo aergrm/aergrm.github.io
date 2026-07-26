@@ -21,46 +21,8 @@ University of Wisconsin–Milwaukee. This course introduces students to the comp
 <br><br>
 <div class="portfolio-actions">
   <a class="portfolio-button" href="https://polsci335.vercel.app/" target="_blank" rel="noopener">Course Website</a>
-  <a class="portfolio-button" id="polsci335-syllabus-pdf" href="#" target="_blank" rel="noopener">Syllabus (PDF)</a>
+  <a class="portfolio-button" href="{{ '/assets/pdf/polsci_335_2026_spring.pdf' | relative_url }}" target="_blank" rel="noopener">Syllabus (PDF)</a>
 </div>
-
-<script>
-(async function () {
-  const button = document.getElementById('polsci335-syllabus-pdf');
-  if (!button) return;
-
-  try {
-    const paths = [
-      '{{ "/assets/pdf/polsci335_pdf/part01.txt" | relative_url }}',
-      '{{ "/assets/pdf/polsci335_pdf/part02.txt" | relative_url }}',
-      '{{ "/assets/pdf/polsci335_pdf/part03.txt" | relative_url }}',
-      '{{ "/assets/pdf/polsci335_pdf/part04.txt" | relative_url }}'
-    ];
-
-    const responses = await Promise.all(paths.map(path => fetch(path)));
-    if (responses.some(response => !response.ok)) {
-      throw new Error('Unable to load syllabus');
-    }
-
-    const parts = await Promise.all(responses.map(response => response.text()));
-    const encoded = parts.join('').replace(/\s+/g, '');
-    const binary = atob(encoded);
-    const bytes = new Uint8Array(binary.length);
-
-    for (let i = 0; i < binary.length; i++) {
-      bytes[i] = binary.charCodeAt(i);
-    }
-
-    button.href = URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' }));
-  } catch (error) {
-    button.removeAttribute('target');
-    button.addEventListener('click', function (event) {
-      event.preventDefault();
-      alert('The syllabus PDF is temporarily unavailable.');
-    });
-  }
-})();
-</script>
 </details>
 
 ---
