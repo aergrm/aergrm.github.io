@@ -30,10 +30,20 @@ University of Wisconsin–Milwaukee. This course introduces students to the comp
   if (!button) return;
 
   try {
-    const response = await fetch('{{ "/assets/pdf/polsci335_chunks/part01.txt" | relative_url }}');
-    if (!response.ok) throw new Error('Unable to load syllabus');
+    const paths = [
+      '{{ "/assets/pdf/polsci335_pdf/part01.txt" | relative_url }}',
+      '{{ "/assets/pdf/polsci335_pdf/part02.txt" | relative_url }}',
+      '{{ "/assets/pdf/polsci335_pdf/part03.txt" | relative_url }}',
+      '{{ "/assets/pdf/polsci335_pdf/part04.txt" | relative_url }}'
+    ];
 
-    const encoded = (await response.text()).replace(/\s+/g, '');
+    const responses = await Promise.all(paths.map(path => fetch(path)));
+    if (responses.some(response => !response.ok)) {
+      throw new Error('Unable to load syllabus');
+    }
+
+    const parts = await Promise.all(responses.map(response => response.text()));
+    const encoded = parts.join('').replace(/\s+/g, '');
     const binary = atob(encoded);
     const bytes = new Uint8Array(binary.length);
 
