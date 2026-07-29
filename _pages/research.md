@@ -51,9 +51,9 @@ This paper connects leader-level belief systems to broader theories of strategic
 
 &nbsp;
 
-### Under Review
+### Revise and Resubmit
 
-**“Japan’s Semiconductor Strategy.”** With Eliza Gheorghe and Mürsel Doğrul.
+**“Japan’s Semiconductor Strategy.”** With Eliza Gheorghe and Mürsel Doğrul. *Revise and resubmit at Contemporary Security Policy.*
 
 &nbsp;
 
