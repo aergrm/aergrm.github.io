@@ -4,7 +4,7 @@ permalink: /portfolio/
 title: Portfolio
 heading_title: Research Portfolio
 description: Selected article and book chapter summaries with visual research maps.
-nav: true
+nav: false
 nav_order: 3
 ---
 
