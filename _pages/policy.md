@@ -27,7 +27,7 @@ With Ahmet Fidan and Bengisu Açıkgöz. The report analyzes Turkmenistan's natu
 
 ### policy and applied research
 
-- **Center for AI & Digital Policy (CAIDP), AI Policy Clinic** — Research Group Member, 2026. Contributed to the Argentina country report for the *AI and Democracy Values Index*.
+- **Center for AI and Digital Policy (CAIDP), AI Policy Clinic** — Contributed to the Argentina country report for the forthcoming *CAIDP AI and Democratic Values Index 2027*.
 - **Middle East Foundation** — Research Fellow, 2024. Conducted interviews and authored a policy report on armed groups in Sudan.
 - **Bilkent Energy Policy Research Center** — Research Intern, 2019. Analyzed energy infrastructure and regional foreign policy.
 - **Ministry of Energy and Natural Resources, Turkey** — Intern, 2018. Translated energy news from Africa and authored a research report on Gazprom.
