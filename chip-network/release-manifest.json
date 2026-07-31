@@ -1,0 +1,55 @@
+{
+  "release": "4.1",
+  "date": "2026-07-31",
+  "cutoff": "2026-07-31",
+  "files": {
+    "CITATION.cff": {
+      "sha256": "6549877174c8c6194d78d56a5c93a43436ddc22a2dfba88915cb65ae4c68cd48",
+      "bytes": 622
+    },
+    "COUNTRY_PROFILE_AUDIT.md": {
+      "sha256": "65a6402066389d8edf2881b709c6f30df5e4536957f45fd31e943c46cccea0d0",
+      "bytes": 2276
+    },
+    "DATA_DICTIONARY.md": {
+      "sha256": "52151d8abaa61285ba62e03bea62123cd2168e9e349d588676e72fd1f0c4299e",
+      "bytes": 7034
+    },
+    "DESCRIPTIVE_MEMO.md": {
+      "sha256": "da0b99c71b0531bcacc1a97dd16abda9557575c56eb3fc4b871fd63fa3787436",
+      "bytes": 9548
+    },
+    "LITERATURE_MEASUREMENT_NOTES.md": {
+      "sha256": "bece858d7f919e6f651039a9286d71aae6e5d786edeef6ea0b7920280e7c1f33",
+      "bytes": 3100
+    },
+    "RELEASE_4_1.md": {
+      "sha256": "babd7108b2de2df4142974e8ed66c478d518d6a4fbdce24b62cbe271edf2c303",
+      "bytes": 2311
+    },
+    "TESTING_CHECKLIST.md": {
+      "sha256": "3f1cc9198adf48d073d821529c2b83ebcc3ad5102c025ba2525f4eb5424714f5",
+      "bytes": 1597
+    },
+    "build_cooperation_data.py": {
+      "sha256": "f69c726ebae0cd6b251592523b33b5ae7b879f108d398e055ce90ea1d596a3b0",
+      "bytes": 1314
+    },
+    "cooperation-data.js": {
+      "sha256": "7166517f5947dbe95333e8c3aedae5db0f0523b56753b40a3e1cc7f428e2ded7",
+      "bytes": 17504
+    },
+    "cooperation-source-audit.csv": {
+      "sha256": "f64b90c6d93221a833672b6c9afdbc53574f0494303a06f15f25668bced0bf93",
+      "bytes": 4944
+    },
+    "semiconductor-cooperation.csv": {
+      "sha256": "d9a8f9659abb44a0044c9972fcb1976ab6e65b7db9767c53dd1520040bc19df2",
+      "bytes": 17688
+    },
+    "validate_data.py": {
+      "sha256": "a22746c6770b7088a84a302ecdfe9be773c7df193e06b947d676dc842d65bc3e",
+      "bytes": 4696
+    }
+  }
+}

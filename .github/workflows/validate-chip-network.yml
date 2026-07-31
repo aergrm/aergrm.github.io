@@ -1,0 +1,33 @@
+name: Validate chip network data
+
+on:
+  pull_request:
+    paths:
+      - 'chip-network/**'
+      - '.github/workflows/validate-chip-network.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'chip-network/**'
+      - '.github/workflows/validate-chip-network.yml'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Rebuild cooperation JavaScript
+        run: python chip-network/build_cooperation_data.py
+      - name: Require generated file to be current
+        run: git diff --exit-code -- chip-network/cooperation-data.js
+      - name: Validate datasets
+        run: python chip-network/validate_data.py
+      - name: Check JavaScript syntax
+        run: node --check chip-network/app-v4.js && node --check chip-network/cooperation-data.js && node --check chip-network/trade-data.js
