@@ -6,9 +6,9 @@ Data cutoff: 2026-07-31
 
 ## Files
 
-- `semiconductor-cooperation.csv`: audited official cooperation records through July 2026.
+- `semiconductor-cooperation.csv`: official cooperation records through July 2026.
 - `cooperation-data.js`: website representation generated from the cooperation CSV.
-- `cooperation-source-audit.csv`: record-level audit decisions and corrections.
+- `cooperation-source-audit.csv`: record-level source notes and corrections.
 - `trade-country-indicators.csv`: country-level 2024 BACI indicators.
 - `trade-bilateral-links.csv`: directed 2024 bilateral trade links among mapped entities.
 - `trade-data.js`: website representation of the processed trade dataset.
@@ -41,11 +41,11 @@ Data cutoff: 2026-07-31
 | `funding` | string | Officially stated funding or `Not specified`. |
 | `detail` | string | Concise description of the cooperation. |
 | `source_url` | URL | Official source for the underlying event. |
-| `last_verified` | ISO date | Date of the record-level audit. |
+| `last_verified` | ISO date | Date the record was last reviewed. |
 | `date_precision` | categorical | `day`, `month`, or `year`; records the precision supported by the source. |
 | `event_basis` | categorical string | What the date represents, such as signing, adoption, entry into force, or call opening. |
 | `implementation_url` | URL or blank | Later official source supporting a status stronger than `signed`, when available. |
-| `audit_note` | string | Correction, qualification, or reason for retaining the coding. |
+| `audit_note` | string | Correction, qualification, or reason for retaining the coding. The field name is retained for file compatibility. |
 
 ### Cooperation types
 
@@ -63,7 +63,7 @@ Data cutoff: 2026-07-31
 ### Cooperation status
 
 - `announced`: publicly announced but not yet signed or implemented.
-- `signed`: formally concluded, without stronger implementation evidence in the audited sources.
+- `signed`: formally concluded, without stronger implementation evidence in the reviewed sources.
 - `open_call`: applications are open; this is not an award or completed transfer of funds.
 - `funded`: a specific award or funded program is documented.
 - `implementation`: a working group, assessment, project, call, delegation, or comparable follow-on activity is documented.
@@ -102,11 +102,11 @@ The status codes describe documented institutional activity. They do not measure
 
 ## Country classifications
 
-- `focal_middle_power`: focal case with an identifiable semiconductor role, policy agenda, or cooperation portfolio.
-- `major_hub`: systemically important semiconductor hub treated separately from the focal cases.
-- `external_anchor`: major market, policy, or production anchor used to interpret dependence and cooperation.
+- **Selected middle powers:** countries chosen as the project’s principal middle-power cases because they have an identifiable semiconductor role, policy agenda, or cooperation portfolio.
+- **Major semiconductor hubs:** systemically important hubs treated separately from the selected middle-power cases.
+- **External anchors:** major markets, policy actors, or production centers used to interpret dependence and cooperation.
 
-These are project categories, not official classifications or quantitative rankings.
+These are project categories, not official classifications or quantitative rankings. “Selected” describes the study sample; it is not presented as a separate theoretical type of middle power.
 
 ## Measurement limits
 
