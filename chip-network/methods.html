@@ -3,28 +3,99 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Methods, data sources, coding rules, and limitations for the Middle Powers in the Global Semiconductor Network project.">
   <title>Methods · Middle Powers in the Global Semiconductor Network</title>
-  <link rel="stylesheet" href="styles.css?v=3.0">
+  <link rel="stylesheet" href="v4.css?v=4.0">
   <style>
-    main{max-width:920px;margin:0 auto;padding:28px 22px 60px}.method-section{background:#fff;border:1px solid #dfe4ec;border-radius:13px;padding:18px 20px;margin:12px 0;box-shadow:0 8px 25px rgba(28,42,66,.06)}h1{line-height:1.1}h2{font-size:18px;margin-top:0}p,li{color:#4e5a6e;line-height:1.65;font-size:14px}.date-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.date-grid div{border:1px solid #dfe4ec;border-radius:10px;padding:12px}.date-grid strong{display:block;font-size:20px;color:#245f91}.back{display:inline-block;margin-bottom:14px;font-weight:800;text-decoration:none}.downloads{display:flex;gap:8px;flex-wrap:wrap}.downloads a{border:1px solid #dfe4ec;border-radius:8px;padding:8px 10px;text-decoration:none;font-weight:800;font-size:12px}@media(max-width:700px){.date-grid{grid-template-columns:1fr}}
+    .methods-main{max-width:1000px;margin:0 auto;padding:30px 18px 60px}
+    .methods-main h1{font-size:clamp(31px,5vw,52px)}
+    .method-section{background:#fff;border:1px solid var(--line);border-radius:13px;padding:20px 22px;margin:13px 0;box-shadow:var(--shadow)}
+    .method-section h2{margin-top:0}
+    .method-section p,.method-section li{color:var(--muted);line-height:1.65}
+    .date-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .date-grid div{border:1px solid var(--line);border-radius:10px;padding:13px;background:#fff}
+    .date-grid strong{display:block;font-size:23px;color:var(--blue)}
+    code{background:#eef2f6;padding:2px 5px;border-radius:4px}
+    @media(max-width:700px){.date-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-<main>
-  <a class="back" href="index.html">← Back to map</a>
-  <h1>Methods and sources</h1>
-  <p>The website separates three types of evidence because they measure different relationships.</p>
-  <div class="date-grid"><div><strong>July 2026</strong>Cooperation records</div><div><strong>2025</strong>Firm-network findings</div><div><strong>2024</strong>Bilateral trade</div></div>
+  <main class="methods-main">
+    <a class="site-link" href="index.html">← Back to map</a>
+    <div class="kicker">Release 4.0 · July 2026</div>
+    <h1>Methods, sources, and limitations</h1>
+    <p class="subtitle">The project separates cooperation, customs trade, and firm-network evidence because they measure different relationships and have different observation dates.</p>
 
-  <section class="method-section"><h2>Cooperation</h2><p>The cooperation layer contains official bilateral agreements and selected multilateral frameworks. Each record includes participating countries, year, type, status, description, and a source link. An agreement documents a formal commitment; it does not by itself establish implementation, investment, or production.</p></section>
+    <div class="date-grid">
+      <div><strong>July 2026</strong>Semiconductor cooperation records</div>
+      <div><strong>2025</strong>Published firm-network findings</div>
+      <div><strong>2024</strong>Bilateral customs-trade baseline</div>
+    </div>
 
-  <section class="method-section"><h2>Firm-network findings</h2><p>The research-findings section summarizes Köse et al. (2026), which reconstructs supply, partnership, and ownership relationships from company webpages archived through 2025. The website reports only findings presented in the paper. It does not assign national scores or recreate the authors’ firm-level network because the full derived edge list is not publicly downloadable.</p><p>Source: <a href="https://arxiv.org/abs/2605.15842">Köse et al. (2026)</a>.</p></section>
+    <section class="method-section">
+      <h2>1. Research scope and country sample</h2>
+      <p>The page asks how selected middle powers use specialized capabilities and international cooperation to manage dependence in the semiconductor value chain. Countries are included because they possess a significant semiconductor capability, are pursuing an identifiable semiconductor industrial strategy, or participate in documented international semiconductor cooperation.</p>
+      <p>The interface distinguishes three analytical groups: <strong>focal middle powers</strong>, <strong>major semiconductor hubs</strong>, and <strong>external anchors</strong>. These are project categories rather than official classifications. Japan, South Korea, Taiwan, and the Netherlands are displayed as major hubs because their positions in fabrication, equipment, materials, or design are systemically important and not well represented by a single middle-power label.</p>
+    </section>
 
-  <section class="method-section"><h2>Trade</h2><p>The trade layer uses CEPII BACI HS22 version 202601 for 2024. It includes HS 8542 integrated circuits, HS 8486 semiconductor-manufacturing equipment, HS 381800 doped electronic-grade materials, and HS 8541 semiconductor devices excluding photovoltaic cells and modules under 854142 and 854143.</p><p>The country indicators report imports, exports, partner concentration, top-partner shares, and import shares from selected major sources. Customs data do not measure design licensing, software, services, ownership, contract terms, or export-control authorization.</p><p>Source: <a href="https://www.cepii.fr/DATA_DOWNLOAD/baci/doc/baci_webpage.html">CEPII BACI</a>.</p></section>
+    <section class="method-section">
+      <h2>2. Semiconductor cooperation through July 2026</h2>
+      <p>The cooperation dataset contains official bilateral agreements and selected multilateral frameworks from 2021 through July 2026. A record is included when an official source identifies semiconductors as a direct object of cooperation or as an explicit component of a broader technology, industrial, or supply-chain framework.</p>
+      <p>Each record includes the agreement date, participants, type, scope, value-chain stages, status, implementation evidence, funding information when stated, an official source, and the date last verified. The scope field distinguishes <strong>semiconductor-specific</strong> agreements from <strong>broader frameworks</strong> in which semiconductors are one explicit component.</p>
+      <p>Cooperation types are supply-chain resilience, research and technology, ecosystem and workforce, investment and manufacturing, and trusted-network coordination. Status categories are signed, funded, under implementation, operational, and announced. Status is coded conservatively from the official source; a signed statement is not treated as operational without evidence of continuing institutions, funded activity, or implementation.</p>
+      <p>Map lines represent documented relationships, not their effectiveness, economic value, or political importance. Multilateral agreements may generate several map lines for visualization, while the underlying dataset retains a single agreement record.</p>
+      <p><a href="semiconductor-cooperation.csv">Download the cooperation dataset</a> or read the <a href="DATA_DICTIONARY.md">data dictionary</a>.</p>
+    </section>
 
-  <section class="method-section"><h2>Country profiles</h2><p>Capabilities, dependencies, and value-chain roles are descriptive research codings. They are presented separately from measured trade indicators. The page does not provide policy recommendations to the countries.</p></section>
+    <section class="method-section">
+      <h2>3. Country capabilities, dependencies, and sources</h2>
+      <p>Country profiles summarize value-chain roles, capabilities, and dependencies. They are descriptive rather than prescriptive: the page does not recommend national strategies. Each profile links to official national, ministry, investment-agency, or public research sources used to document the country’s semiconductor position.</p>
+      <p>The bullets are concise syntheses of the listed profile sources. They are not independent quantitative measures and should not be interpreted as rankings. The legacy <code>strategy</code> field in the original prototype is not displayed in Release 4.0.</p>
+    </section>
 
-  <section class="method-section"><h2>Downloads</h2><div class="downloads"><a href="trade-country-indicators.csv">Country indicators</a><a href="trade-bilateral-links.csv">Bilateral trade</a><a href="build_trade_data.py">Processing script</a><a href="data.js">Cooperation data</a></div></section>
-</main>
+    <section class="method-section">
+      <h2>4. Bilateral semiconductor trade in 2024</h2>
+      <p>The trade layer uses CEPII BACI HS22 version 202601. BACI reconciles exporter and importer reports from UN Comtrade and provides globally comparable bilateral product-level flows. Values are converted from thousands of current U.S. dollars to current U.S. dollars.</p>
+      <p>The product basket contains HS 8542 integrated circuits, HS 8486 semiconductor manufacturing equipment, HS 381800 doped electronic-grade materials, and HS 8541 semiconductor devices excluding photovoltaic cells and modules classified under 854142 and 854143. The exclusions prevent solar-panel trade from being interpreted as semiconductor-network dependence.</p>
+      <p>The page reports imports, exports, balance, partner concentration using the Herfindahl–Hirschman Index, top-partner shares, effective partner counts, partner rankings, and product composition. The Taiwan node uses BACI/UN code 490, “Asia not elsewhere specified,” as a documented proxy. The European Union node aggregates EU-27 members while excluding the separately mapped Netherlands from the map node to avoid duplicate flows.</p>
+      <p>Product filters recalculate displayed link values and country product totals. Partner rankings and HHI remain based on the full four-product basket and are labeled accordingly. The trade layer does not observe design licensing, software, services, ownership, investment, export-control authorizations, or production technology.</p>
+      <p>Source: <a href="https://www.cepii.fr/DATA_DOWNLOAD/baci/doc/baci_webpage.html">CEPII BACI</a>. The processing script is <a href="build_trade_data.py">available here</a>.</p>
+    </section>
+
+    <section class="method-section">
+      <h2>5. Published firm-network findings through 2025</h2>
+      <p>The research section summarizes Köse et al. (2026), which reconstructs temporal supply/buy, partnership, and ownership relationships from company webpages archived through 2025. The study reports a network of more than 1,300 linked firms, model-validation results, regional collaboration trajectories, and selected firm and regional centrality measures.</p>
+      <p>Release 4.0 identifies the period, measure, finding, and figure or table location in the source paper. It uses Figure 1 and Table 1 for network construction and validation, Figure 3 for regional collaboration trajectories, Figure 4 for centrality results, and Supplementary Figure S3.2 for the country composition of newly observed links.</p>
+      <p>The complete derived firm-level edge list is not publicly downloadable. The site therefore does not reconstruct, estimate, or simulate a country-to-country firm network. Source: <a href="https://arxiv.org/abs/2605.15842">Köse et al. (2026)</a>.</p>
+    </section>
+
+    <section class="method-section">
+      <h2>6. Interactive calculations</h2>
+      <ul>
+        <li><strong>Trade threshold:</strong> removes displayed links below the selected U.S.-dollar value.</li>
+        <li><strong>Partner share:</strong> when a country is selected, a link is divided by the selected country’s imports, exports, or combined trade in the active product groups. Without a selected country, the share is calculated against the exporter’s active-product exports.</li>
+        <li><strong>Import HHI:</strong> the sum of squared import-partner shares in the full four-product basket.</li>
+        <li><strong>Effective partners:</strong> the reciprocal of HHI.</li>
+        <li><strong>Country comparison:</strong> reports cooperation counts through the selected year and 2024 trade measures; it does not create a composite score.</li>
+      </ul>
+    </section>
+
+    <section class="method-section">
+      <h2>7. Main limitations</h2>
+      <ul>
+        <li>The cooperation dataset is a documented release, not a claim that every relevant agreement worldwide has been captured.</li>
+        <li>Official agreements identify commitments and institutions, not necessarily realized investment, implementation quality, or production output.</li>
+        <li>Country-profile capabilities and dependencies are qualitative syntheses of official sources.</li>
+        <li>Customs trade is lagged and cannot measure intellectual property, services, ownership, technical sophistication, or supply-chain substitutability.</li>
+        <li>The web-reconstructed firm network may underrepresent smaller firms and relationships not disclosed on company webpages.</li>
+        <li>Map position and line width should not be read as causal evidence or an overall measure of national semiconductor power.</li>
+      </ul>
+    </section>
+
+    <section class="method-section">
+      <h2>8. Versioning and citation</h2>
+      <p>Release 4.0 is a fixed, versioned website release. The data files, methods, and citation metadata are stored with the source code. The current release can be cited using <a href="CITATION.cff">CITATION.cff</a>. A future archived release may add a permanent DOI through Zenodo or OSF.</p>
+    </section>
+  </main>
 </body>
 </html>
