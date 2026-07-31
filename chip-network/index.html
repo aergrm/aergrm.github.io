@@ -3,74 +3,252 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Interactive map of semiconductor cooperation, trade, and published firm-network findings for selected middle powers.">
+  <meta name="description" content="Interactive research resource on semiconductor cooperation, trade, and published firm-network findings for selected middle powers and major semiconductor hubs.">
   <title>Middle Powers in the Global Semiconductor Network</title>
-  <link rel="stylesheet" href="styles.css?v=3.0">
-  <link rel="stylesheet" href="v3.css?v=3.0">
+  <link rel="stylesheet" href="v4.css?v=4.0">
 </head>
 <body>
   <header class="topbar">
     <div class="title-wrap">
-      <div class="kicker">Interactive research map · Release 3.0 · July 2026</div>
+      <div class="kicker">Interactive research resource · Release 4.0 · July 2026</div>
       <h1>Middle Powers in the Global Semiconductor Network</h1>
-      <p class="subtitle">This project maps official semiconductor cooperation through July 2026, bilateral semiconductor trade in 2024, and published firm-network findings through 2025.</p>
+      <p class="subtitle">Official semiconductor cooperation through July 2026, bilateral semiconductor trade in 2024, and published firm-network findings through 2025.</p>
     </div>
     <a class="site-link" href="/research/">← Research page</a>
   </header>
 
-  <nav class="evidence-strip" aria-label="Select data layer">
-    <button class="evidence-card active" data-mode="cooperation">
-      <span class="date">Jul 2026</span><strong>Cooperation</strong><small>Official agreements and institutions</small>
+  <section class="scope-card" aria-labelledby="scopeTitle">
+    <div>
+      <div class="scope-label">Research question</div>
+      <h2 id="scopeTitle">How do selected middle powers use specialized capabilities and international cooperation to manage dependence in the semiconductor value chain?</h2>
+    </div>
+    <div class="scope-columns">
+      <div><strong>The page shows</strong><span>Official cooperation records, bilateral customs trade, country profiles, and published firm-network findings.</span></div>
+      <div><strong>The page does not show</strong><span>A complete firm census, technological sophistication, production capacity, or implementation beyond documented evidence.</span></div>
+    </div>
+  </section>
+
+  <nav class="evidence-strip" aria-label="Select evidence layer">
+    <button class="evidence-card active" type="button" data-mode="cooperation">
+      <span class="date">Jul 2026</span>
+      <strong>Semiconductor cooperation</strong>
+      <small>Agreements and broader frameworks with a direct semiconductor component</small>
     </button>
-    <button class="evidence-card" data-mode="trade">
-      <span class="date">2024</span><strong>Trade</strong><small>BACI bilateral customs flows</small>
+    <button class="evidence-card" type="button" data-mode="trade">
+      <span class="date">2024</span>
+      <strong>Trade</strong>
+      <small>BACI bilateral customs flows in four product groups</small>
     </button>
-    <button class="evidence-card" data-mode="research">
-      <span class="date">2025</span><strong>Research findings</strong><small>Published firm-network results</small>
+    <button class="evidence-card" type="button" data-mode="research">
+      <span class="date">2025</span>
+      <strong>Research findings</strong>
+      <small>Published firm-network results; no reconstructed edge list</small>
     </button>
   </nav>
 
-  <section class="controls" aria-label="Map controls">
+  <section class="controls primary-controls" aria-label="Primary controls">
     <div class="control-card">
       <label for="countrySelect">Country</label>
-      <select id="countrySelect" aria-label="Select country"></select>
+      <select id="countrySelect"></select>
+    </div>
+    <div class="control-card">
+      <label for="compareSelect">Compare with</label>
+      <select id="compareSelect"></select>
     </div>
     <div class="control-card" id="yearControl">
       <label for="yearSelect">Cooperation through</label>
-      <select id="yearSelect" aria-label="Select cooperation end year">
+      <select id="yearSelect">
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
         <option value="2023">2023</option>
         <option value="2024">2024</option>
         <option value="2025">2025</option>
         <option value="2026" selected>July 2026</option>
       </select>
     </div>
-    <button type="button" class="clear-button" id="clearSelection">Clear country</button>
+    <button type="button" class="secondary-button" id="clearSelection">Clear countries</button>
+  </section>
+
+  <section class="controls layer-controls" id="cooperationControls" aria-label="Semiconductor cooperation filters">
+    <div class="control-card">
+      <label for="coopType">Type</label>
+      <select id="coopType">
+        <option value="all">All types</option>
+        <option value="resilience">Supply-chain resilience</option>
+        <option value="research">Research and technology</option>
+        <option value="ecosystem">Ecosystem and workforce</option>
+        <option value="investment">Investment and manufacturing</option>
+        <option value="trusted_network">Trusted-network coordination</option>
+      </select>
+    </div>
+    <div class="control-card">
+      <label for="coopScope">Scope</label>
+      <select id="coopScope">
+        <option value="all">All scopes</option>
+        <option value="semiconductor-specific">Semiconductor-specific</option>
+        <option value="broader-framework">Broader framework</option>
+      </select>
+    </div>
+    <div class="control-card">
+      <label for="coopStatus">Status</label>
+      <select id="coopStatus">
+        <option value="all">All statuses</option>
+        <option value="signed">Signed</option>
+        <option value="funded">Funded</option>
+        <option value="implementation">Under implementation</option>
+        <option value="operational">Operational</option>
+      </select>
+    </div>
+    <div class="control-card">
+      <label for="coopStage">Value-chain stage</label>
+      <select id="coopStage">
+        <option value="all">All stages</option>
+        <option value="design">Design</option>
+        <option value="materials">Materials</option>
+        <option value="equipment">Equipment</option>
+        <option value="fabrication">Fabrication</option>
+        <option value="packaging">Packaging and testing</option>
+        <option value="research">Research</option>
+        <option value="workforce">Workforce</option>
+        <option value="supply_chain">Supply chain</option>
+        <option value="compute">Compute</option>
+        <option value="investment">Investment</option>
+      </select>
+    </div>
+  </section>
+
+  <section class="controls layer-controls" id="tradeControls" aria-label="Trade filters" hidden>
+    <fieldset class="product-fieldset">
+      <legend>Product groups</legend>
+      <label><input type="checkbox" name="tradeGroup" value="integrated_circuits" checked> Integrated circuits</label>
+      <label><input type="checkbox" name="tradeGroup" value="semiconductor_devices" checked> Semiconductor devices</label>
+      <label><input type="checkbox" name="tradeGroup" value="manufacturing_equipment" checked> Equipment</label>
+      <label><input type="checkbox" name="tradeGroup" value="wafers_materials" checked> Wafers and materials</label>
+    </fieldset>
+    <div class="control-card">
+      <label for="tradeDirection">Direction</label>
+      <select id="tradeDirection">
+        <option value="both">Imports and exports</option>
+        <option value="imports">Imports to selected country</option>
+        <option value="exports">Exports from selected country</option>
+      </select>
+    </div>
+    <div class="control-card">
+      <label for="tradeMinimum">Minimum link value</label>
+      <select id="tradeMinimum">
+        <option value="0">No minimum</option>
+        <option value="10">$10 million</option>
+        <option value="50">$50 million</option>
+        <option value="100" selected>$100 million</option>
+        <option value="500">$500 million</option>
+        <option value="1000">$1 billion</option>
+      </select>
+    </div>
+    <div class="control-card">
+      <label for="tradeLimit">Maximum links</label>
+      <select id="tradeLimit">
+        <option value="10">10</option>
+        <option value="25" selected>25</option>
+        <option value="50">50</option>
+        <option value="all">All</option>
+      </select>
+    </div>
+    <div class="control-card">
+      <label for="tradeMetric">Line scale</label>
+      <select id="tradeMetric">
+        <option value="value">Trade value</option>
+        <option value="share">Partner share</option>
+      </select>
+    </div>
+    <label class="toggle-control"><input type="checkbox" id="selectedOnly"> Selected country only</label>
   </section>
 
   <main class="layout">
     <section class="map-card">
       <div class="map-head">
-        <div><strong id="mapTitle">Cooperation through July 2026</strong></div>
-        <div class="note" id="mapNote">Dashed lines show coded bilateral agreements. Multilateral frameworks appear in country profiles.</div>
+        <div>
+          <strong id="mapTitle">Semiconductor cooperation through July 2026</strong>
+          <div class="note" id="mapNote">Colors show cooperation type. Line style shows implementation status.</div>
+        </div>
+        <div class="map-actions" aria-label="Map controls">
+          <button type="button" id="zoomOut" aria-label="Zoom out">−</button>
+          <button type="button" id="zoomIn" aria-label="Zoom in">+</button>
+          <button type="button" id="resetMap">Reset map</button>
+        </div>
       </div>
       <div class="legend" id="legend" aria-label="Map legend"></div>
-      <svg id="map" role="img" aria-label="World map of semiconductor cooperation and trade"></svg>
-      <section class="research-view" id="researchView" hidden aria-label="Published firm-network findings"></section>
+      <div class="map-frame" id="mapFrame">
+        <svg id="map" role="img" aria-label="World map of semiconductor cooperation and trade"></svg>
+        <section class="research-view" id="researchView" hidden aria-label="Published firm-network findings"></section>
+        <div class="tooltip" id="tooltip" role="status" hidden></div>
+      </div>
     </section>
 
     <aside class="panel" id="panel" aria-live="polite"></aside>
   </main>
 
+  <section class="comparison-section" id="comparisonSection" hidden aria-labelledby="comparisonTitle">
+    <div class="section-head">
+      <div>
+        <div class="scope-label">Country comparison</div>
+        <h2 id="comparisonTitle">Comparison</h2>
+      </div>
+    </div>
+    <div id="comparisonContent"></div>
+  </section>
+
+  <section class="data-section" id="cooperationDataSection" aria-labelledby="cooperationTableTitle">
+    <div class="section-head">
+      <div>
+        <div class="scope-label">Underlying records</div>
+        <h2 id="cooperationTableTitle">Semiconductor cooperation data</h2>
+        <p>Search and audit the records represented on the map. “Broader framework” means that semiconductors are one explicit component of a wider technology or supply-chain agreement.</p>
+      </div>
+      <a class="download-button" href="semiconductor-cooperation.csv" download>Download cooperation CSV</a>
+    </div>
+    <div class="table-toolbar">
+      <label for="cooperationSearch">Search records</label>
+      <input id="cooperationSearch" type="search" placeholder="Country, agreement, type, stage, or status">
+      <span id="cooperationCount"></span>
+    </div>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Participants</th>
+            <th>Agreement</th>
+            <th>Type</th>
+            <th>Scope</th>
+            <th>Stage</th>
+            <th>Status</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody id="cooperationTableBody"></tbody>
+      </table>
+    </div>
+  </section>
+
   <footer>
     <div class="foot-card">
-      <strong>Data:</strong> cooperation records through July 2026; firm-network findings through 2025; bilateral trade for 2024. See <a href="methods.html">methods and sources</a>, <a href="trade-country-indicators.csv">country indicators</a>, and <a href="trade-bilateral-links.csv">bilateral trade data</a>.
+      <strong>Data:</strong> semiconductor cooperation through July 2026; published firm-network findings through 2025; bilateral trade for 2024.
+      <span class="footer-links">
+        <a href="methods.html">Methods and sources</a>
+        <a href="DATA_DICTIONARY.md">Data dictionary</a>
+        <a href="CITATION.cff">Citation file</a>
+        <a href="trade-country-indicators.csv">Country trade indicators</a>
+        <a href="trade-bilateral-links.csv">Bilateral trade data</a>
+      </span>
     </div>
   </footer>
 
-  <script src="data.js?v=3.0"></script>
-  <script src="world-map.js?v=3.0"></script>
-  <script src="trade-data.js?v=3.0"></script>
-  <script src="evidence.js?v=3.0"></script>
-  <script src="app-v3.js?v=3.0"></script>
+  <script src="data.js?v=4.0"></script>
+  <script src="world-map.js?v=4.0"></script>
+  <script src="trade-data.js?v=4.0"></script>
+  <script src="evidence.js?v=4.0"></script>
+  <script src="cooperation-data.js?v=4.0"></script>
+  <script src="country-sources.js?v=4.0"></script>
+  <script src="app-v4.js?v=4.0"></script>
 </body>
 </html>
