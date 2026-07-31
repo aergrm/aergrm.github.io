@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Methods, data sources, coding rules, and limitations for the Middle Powers in the Global Semiconductor Network project.">
   <title>Methods · Middle Powers in the Global Semiconductor Network</title>
-  <link rel="stylesheet" href="v4.css?v=4.0">
+  <link rel="stylesheet" href="v4.css?v=4.1">
   <style>
     .methods-main{max-width:1000px;margin:0 auto;padding:30px 18px 60px}
     .methods-main h1{font-size:clamp(31px,5vw,52px)}
@@ -22,7 +22,7 @@
 <body>
   <main class="methods-main">
     <a class="site-link" href="index.html">← Back to map</a>
-    <div class="kicker">Release 4.0 · July 2026</div>
+    <div class="kicker">Release 4.1 · July 2026</div>
     <h1>Methods, sources, and limitations</h1>
     <p class="subtitle">The project separates cooperation, customs trade, and firm-network evidence because they measure different relationships and have different observation dates.</p>
 
@@ -42,7 +42,7 @@
       <h2>2. Semiconductor cooperation through July 2026</h2>
       <p>The cooperation dataset contains official bilateral agreements and selected multilateral frameworks from 2021 through July 2026. A record is included when an official source identifies semiconductors as a direct object of cooperation or as an explicit component of a broader technology, industrial, or supply-chain framework.</p>
       <p>Each record includes the agreement date, participants, type, scope, value-chain stages, status, implementation evidence, funding information when stated, an official source, and the date last verified. The scope field distinguishes <strong>semiconductor-specific</strong> agreements from <strong>broader frameworks</strong> in which semiconductors are one explicit component.</p>
-      <p>Cooperation types are supply-chain resilience, research and technology, ecosystem and workforce, investment and manufacturing, and trusted-network coordination. Status categories are signed, funded, under implementation, operational, and announced. Status is coded conservatively from the official source; a signed statement is not treated as operational without evidence of continuing institutions, funded activity, or implementation.</p>
+      <p>Cooperation types are supply-chain resilience, research and technology, ecosystem and workforce, investment and manufacturing, and trusted-network coordination. Status categories are signed, funded, open call, under implementation, operational, and announced. Status is coded conservatively from the official source; a signed statement is not treated as operational without evidence of continuing institutions, funded activity, or implementation.</p>
       <p>Map lines represent documented relationships, not their effectiveness, economic value, or political importance. Multilateral agreements may generate several map lines for visualization, while the underlying dataset retains a single agreement record.</p>
       <p><a href="semiconductor-cooperation.csv">Download the cooperation dataset</a> or read the <a href="DATA_DICTIONARY.md">data dictionary</a>.</p>
     </section>
@@ -50,7 +50,7 @@
     <section class="method-section">
       <h2>3. Country capabilities, dependencies, and sources</h2>
       <p>Country profiles summarize value-chain roles, capabilities, and dependencies. They are descriptive rather than prescriptive: the page does not recommend national strategies. Each profile links to official national, ministry, investment-agency, or public research sources used to document the country’s semiconductor position.</p>
-      <p>The bullets are concise syntheses of the listed profile sources. They are not independent quantitative measures and should not be interpreted as rankings. The legacy <code>strategy</code> field in the original prototype is not displayed in Release 4.0.</p>
+      <p>The bullets are concise syntheses of the listed profile sources. They are not independent quantitative measures and should not be interpreted as rankings. The legacy <code>strategy</code> field in the original prototype is not displayed. Release 4.1 also documents the remaining limits of the country profiles in <a href="COUNTRY_PROFILE_AUDIT.md">the country-profile audit</a>.</p>
     </section>
 
     <section class="method-section">
@@ -65,7 +65,7 @@
     <section class="method-section">
       <h2>5. Published firm-network findings through 2025</h2>
       <p>The research section summarizes Köse et al. (2026), which reconstructs temporal supply/buy, partnership, and ownership relationships from company webpages archived through 2025. The study reports a network of more than 1,300 linked firms, model-validation results, regional collaboration trajectories, and selected firm and regional centrality measures.</p>
-      <p>Release 4.0 identifies the period, measure, finding, and figure or table location in the source paper. It uses Figure 1 and Table 1 for network construction and validation, Figure 3 for regional collaboration trajectories, Figure 4 for centrality results, and Supplementary Figure S3.2 for the country composition of newly observed links.</p>
+      <p>Release 4.1 identifies the period, measure, finding, and figure or table location in the source paper. It uses Figure 1 and Table 1 for network construction and validation, Figure 3 for regional collaboration trajectories, Figure 4 for centrality results, and Supplementary Figure S3.2 for the country composition of newly observed links.</p>
       <p>The complete derived firm-level edge list is not publicly downloadable. The site therefore does not reconstruct, estimate, or simulate a country-to-country firm network. Source: <a href="https://arxiv.org/abs/2605.15842">Köse et al. (2026)</a>.</p>
     </section>
 
@@ -93,8 +93,15 @@
     </section>
 
     <section class="method-section">
-      <h2>8. Versioning and citation</h2>
-      <p>Release 4.0 is a fixed, versioned website release. The data files, methods, and citation metadata are stored with the source code. The current release can be cited using <a href="CITATION.cff">CITATION.cff</a>. A future archived release may add a permanent DOI through Zenodo or OSF.</p>
+      <h2>8. Release 4.1 validation</h2>
+      <p>The cooperation data were re-audited at the record level. Release 4.1 adds date precision, event-date basis, implementation sources, and audit notes. It also corrects the India–Netherlands date, the Israel–Chips JU status, the Canada–Germany date, and several implementation statuses.</p>
+      <p>The repository includes a deterministic CSV-to-JavaScript builder and automated checks for identifiers, dates, categories, map pairs, URL syntax, implementation evidence, record counts, generated-file consistency, and JavaScript syntax. See the <a href="cooperation-source-audit.csv">source audit</a>, <a href="TESTING_CHECKLIST.md">testing checklist</a>, and <a href="RELEASE_4_1.md">release notes</a>.</p>
+      <p>The 2024–2026 literature review reinforces the separation of trade, cooperation, and capability. Trade captures physical cross-border flows but omits design services, domestic absorption, ownership, licensing, and indirect upstream dependence. Cooperation documents an institutional channel, not completed technology transfer. See the <a href="LITERATURE_MEASUREMENT_NOTES.md">literature measurement notes</a> and the <a href="DESCRIPTIVE_MEMO.md">descriptive research memo</a>.</p>
+    </section>
+
+    <section class="method-section">
+      <h2>9. Versioning and citation</h2>
+      <p>Release 4.1 is a fixed, versioned website release. The exact Release 4.0 code state is preserved on the <code>archive-chip-network-v4-0</code> branch. The data files, methods, and citation metadata are stored with the source code. The current release can be cited using <a href="CITATION.cff">CITATION.cff</a>. No DOI has been assigned. An external deposit to Zenodo or OSF is still required for a permanent DOI.</p>
     </section>
   </main>
 </body>
