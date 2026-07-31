@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Interactive map of middle-power semiconductor cooperation, value-chain roles, and strategic dependence.">
   <title>Middle Powers in the Global Semiconductor Network</title>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -50,7 +49,6 @@
       </div>
       <div class="legend" id="legend" aria-label="Value chain role filters"></div>
       <svg id="map" role="img" aria-label="World map of semiconductor cooperation and dependence"></svg>
-      <div class="tooltip" id="tooltip"></div>
     </section>
 
     <aside class="panel" id="panel" aria-live="polite"></aside>
@@ -58,14 +56,13 @@
 
   <footer>
     <div class="foot-card">
-      <strong>Research prototype, compiled July 2026.</strong> Country roles and structural corridors are transparent analytical codings, not a claim that the complete semiconductor value chain can be inferred from customs data alone. Live trade cards query UN Comtrade for HS 8542 integrated circuits and may be rate-limited. See the <a href="methods.html">methods and sources</a> and <a href="data.js">coded data</a>.
+      <strong>Research prototype, compiled July 2026.</strong> Country roles and structural corridors are transparent analytical codings, not a claim that the complete semiconductor value chain can be inferred from customs data alone. UN Comtrade HS 8542 totals are cached by a scheduled GitHub Action so the static page does not make fragile browser-side API requests. See the <a href="methods.html">methods and sources</a> and <a href="data.js">coded data</a>.
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
   <script src="data.js"></script>
-  <script src="fallback.js"></script>
+  <script src="world-map.js"></script>
+  <script src="trade-cache.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
