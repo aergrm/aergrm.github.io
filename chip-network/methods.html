@@ -44,13 +44,13 @@
       <p>Each record includes the agreement date, participants, type, scope, value-chain stages, status, implementation evidence, funding information when stated, an official source, and the date last verified. The scope field distinguishes <strong>semiconductor-specific</strong> agreements from <strong>broader frameworks</strong> in which semiconductors are one explicit component.</p>
       <p>Cooperation types are supply-chain resilience, research and technology, ecosystem and workforce, investment and manufacturing, and trusted-network coordination. Status categories are signed, funded, open call, under implementation, operational, and announced. Status is coded conservatively from the official source; a signed statement is not treated as operational without evidence of continuing institutions, funded activity, or implementation.</p>
       <p>Map lines represent documented relationships, not their effectiveness, economic value, or political importance. Multilateral agreements may generate several map lines for visualization, while the underlying dataset retains a single agreement record.</p>
-      <p><a href="semiconductor-cooperation.csv">Download the cooperation dataset</a> or read the <a href="DATA_DICTIONARY.md">data dictionary</a>.</p>
+      <p>The compiled cooperation data and coding materials are not publicly downloadable while the related article is under review.</p>
     </section>
 
     <section class="method-section">
       <h2>3. Country capabilities, dependencies, and sources</h2>
       <p>Country profiles summarize value-chain roles, capabilities, and dependencies. They are descriptive rather than prescriptive: the page does not recommend national strategies. Each profile links to official national, ministry, investment-agency, or public research sources used to document the country’s semiconductor position.</p>
-      <p>The bullets are concise syntheses of the listed profile sources. They are not independent quantitative measures and should not be interpreted as rankings. The legacy <code>strategy</code> field in the original prototype is not displayed. Release 4.1 also documents the remaining limits of the country profiles in <a href="COUNTRY_PROFILE_AUDIT.md">the country-profile source notes</a>.</p>
+      <p>The bullets are concise syntheses of the listed profile sources. They are not independent quantitative measures and should not be interpreted as rankings. The legacy <code>strategy</code> field in the original prototype is not displayed.</p>
     </section>
 
     <section class="method-section">
@@ -59,13 +59,13 @@
       <p>The product basket contains HS 8542 integrated circuits, HS 8486 semiconductor manufacturing equipment, HS 381800 doped electronic-grade materials, and HS 8541 semiconductor devices excluding photovoltaic cells and modules classified under 854142 and 854143. The exclusions prevent solar-panel trade from being interpreted as semiconductor-network dependence.</p>
       <p>The page reports imports, exports, balance, partner concentration using the Herfindahl–Hirschman Index, top-partner shares, effective partner counts, partner rankings, and product composition. The Taiwan node uses BACI/UN code 490, “Asia not elsewhere specified,” as a documented proxy. The European Union node aggregates EU-27 members while excluding the separately mapped Netherlands from the map node to avoid duplicate flows.</p>
       <p>Product filters recalculate displayed link values and country product totals. Partner rankings and HHI remain based on the full four-product basket and are labeled accordingly. The trade layer does not observe design licensing, software, services, ownership, investment, export-control authorizations, or production technology.</p>
-      <p>Source: <a href="https://www.cepii.fr/DATA_DOWNLOAD/baci/doc/baci_webpage.html">CEPII BACI</a>. The processing script is <a href="build_trade_data.py">available here</a>.</p>
+      <p>Source: <a href="https://www.cepii.fr/DATA_DOWNLOAD/baci/doc/baci_webpage.html">CEPII BACI</a>.</p>
     </section>
 
     <section class="method-section">
       <h2>5. Published firm-network findings through 2025</h2>
       <p>The research section summarizes Köse et al. (2026), which reconstructs temporal supply/buy, partnership, and ownership relationships from company webpages archived through 2025. The study reports a network of more than 1,300 linked firms, model-validation results, regional collaboration trajectories, and selected firm and regional centrality measures.</p>
-      <p>Release 4.1 identifies the period, measure, finding, and figure or table location in the source paper. It uses Figure 1 and Table 1 for network construction and validation, Figure 3 for regional collaboration trajectories, Figure 4 for centrality results, and Supplementary Figure S3.2 for the country composition of newly observed links.</p>
+      <p>The page identifies the period, measure, finding, and figure or table location in the source paper. It uses Figure 1 and Table 1 for network construction and validation, Figure 3 for regional collaboration trajectories, Figure 4 for centrality results, and Supplementary Figure S3.2 for the country composition of newly observed links.</p>
       <p>The complete derived firm-level edge list is not publicly downloadable. The site therefore does not reconstruct, estimate, or simulate a country-to-country firm network. Source: <a href="https://arxiv.org/abs/2605.15842">Köse et al. (2026)</a>.</p>
     </section>
 
@@ -93,15 +93,8 @@
     </section>
 
     <section class="method-section">
-      <h2>8. Release 4.1 data review</h2>
-      <p>The cooperation records were reviewed individually. Release 4.1 adds date precision, event-date basis, implementation sources, and explanatory notes. It also corrects the India–Netherlands date, the Israel–Chips JU status, the Canada–Germany date, and several implementation statuses.</p>
-      <p>The repository includes a deterministic CSV-to-JavaScript builder and automated checks for identifiers, dates, categories, map pairs, URL syntax, implementation evidence, record counts, generated-file consistency, and JavaScript syntax. See the <a href="cooperation-source-audit.csv">record-level source notes</a> and <a href="RELEASE_4_1.md">release notes</a>.</p>
-      <p>The 2024–2026 literature review reinforces the separation of trade, cooperation, and capability. Trade captures physical cross-border flows but omits design services, domestic absorption, ownership, licensing, and indirect upstream dependence. Cooperation documents an institutional channel, not completed technology transfer. See the <a href="LITERATURE_MEASUREMENT_NOTES.md">literature measurement notes</a> and the <a href="DESCRIPTIVE_MEMO.md">descriptive research memo</a>.</p>
-    </section>
-
-    <section class="method-section">
-      <h2>9. Versioning and citation</h2>
-      <p>Release 4.1 is a fixed, versioned website release. The exact Release 4.0 code state is preserved on the <code>archive-chip-network-v4-0</code> branch. The data files, methods, and citation metadata are stored with the source code. The current release can be cited using <a href="CITATION.cff">CITATION.cff</a>. No DOI has been assigned.</p>
+      <h2>8. Availability</h2>
+      <p>The public page presents an interactive research preview. The compiled dataset, detailed coding materials, research memo, and replication files are being withheld while the related manuscript is under journal review. Public source documents remain linked where they support visible country profiles or published findings.</p>
     </section>
   </main>
 </body>
