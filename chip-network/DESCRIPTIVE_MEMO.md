@@ -12,7 +12,7 @@ How do selected middle powers use cross-border semiconductor cooperation when th
 
 ## Main descriptive finding
 
-The cooperation data do not show a general movement toward full national semiconductor autonomy. They show a denser pattern of selective, stage-specific cooperation. Most agreements connect a focal middle power to an established semiconductor hub or external anchor for research, workforce development, supply-chain coordination, investment, equipment, or packaging. This pattern is more consistent with attempts to obtain access to missing capabilities than with replication of the full value chain.
+The cooperation data do not show a general movement toward full national semiconductor autonomy. They show a denser pattern of selective, stage-specific cooperation. Most agreements connect a selected middle power to an established semiconductor hub or external anchor for research, workforce development, supply-chain coordination, investment, equipment, or packaging. This pattern is more consistent with attempts to obtain access to missing capabilities than with replication of the full value chain.
 
 This interpretation follows from the structure of the industry. Hillrichs and Wölfl divide semiconductor production into design, manufacturing, and assembly, testing, and packaging, while emphasizing that each stage depends on its own materials, equipment, services, and highly specialized inputs. Their trade analysis identifies different country leaders across final chips, equipment, and materials rather than one country controlling every stage. Goldberg et al. likewise emphasize that foreign direct investment, research collaboration, licensing, and other cross-border technology transfers have been central to the development of follower industries. Cooperation should therefore be treated as a potential channel of capability access, not as evidence that capability has already been transferred.
 
@@ -50,7 +50,7 @@ The EconPol report shows why an aggregate trade balance is insufficient. Korea, 
 
 ### 2. Agreements should not be coded as capability outcomes
 
-An agreement can create a forum, authorize collaboration, establish a working group, or announce an investment channel without producing a functioning fab, transferred process technology, or trained workforce. The 4.1 audit therefore distinguishes signed, implementation, operational, and open-call statuses. It also corrects the Israel–Chips Joint Undertaking record: an open funded call is not an awarded project.
+An agreement can create a forum, authorize collaboration, establish a working group, or announce an investment channel without producing a functioning fab, transferred process technology, or trained workforce. The Release 4.1 review therefore distinguishes signed, implementation, operational, and open-call statuses. It also corrects the Israel–Chips Joint Undertaking record: an open funded call is not an awarded project.
 
 Goldberg et al. provide the strongest reason for this caution. They find that cross-border learning and technology transfer are important, but neither automatic nor inevitable. Firms can share knowledge through FDI, licensing, and collaboration, or they can restrict access to frontier technology. The website should thus describe cooperation instruments and documented implementation rather than infer technological upgrading from the existence of an agreement.
 
@@ -64,11 +64,11 @@ For this project, trade centrality describes the scale and concentration of reco
 
 Fu and Ding describe Singapore and Israel as bridging hubs and show the growing role of Malaysia and Southeast Asia in the reorganization of chip trade. Gao, Ren, and Guercini theorize third-party actors as bridges across rival-country networks and distinguish dispersed from concentrated brokerage. These arguments are useful for identifying a research question, but the current website does not contain the firm-level or longitudinal data required to estimate geopolitical brokerage directly.
 
-The defensible descriptive claim is narrower: some focal countries combine specialized capabilities, logistics, capital, research, or packaging functions with cooperation ties to multiple hubs. Whether this constitutes durable brokerage, selective alignment, or managed dependence requires additional longitudinal evidence.
+The defensible descriptive claim is narrower: some selected middle powers combine specialized capabilities, logistics, capital, research, or packaging functions with cooperation ties to multiple hubs. Whether this constitutes durable brokerage, selective alignment, or managed dependence requires additional longitudinal evidence.
 
-## Measures added to the validation agenda
+## Measures for a future quantitative extension
 
-The next quantitative research version should calculate measures separately by product layer and year:
+A later quantitative version could calculate measures separately by product layer and year:
 
 1. Weighted in-strength and out-strength.
 2. Import and export HHI.
