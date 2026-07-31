@@ -13,6 +13,7 @@ from __future__ import annotations
 import csv
 import io
 import json
+import math
 import pathlib
 import urllib.request
 import zipfile
@@ -35,9 +36,10 @@ PRODUCT_GROUPS = {
         "description": "HS 8542",
     },
     "semiconductor_devices": {
-        "label": "Semiconductor devices",
+        "label": "Non-photovoltaic semiconductor devices",
         "codes": ("8541",),
-        "description": "HS 8541",
+        "excluded_prefixes": ("854142", "854143"),
+        "description": "HS 8541 excluding photovoltaic cells and modules (854142 and 854143)",
     },
     "manufacturing_equipment": {
         "label": "Manufacturing equipment",
@@ -141,6 +143,9 @@ def group_for(code: str) -> str | None:
     code = code.zfill(6)
     for group, meta in PRODUCT_GROUPS.items():
         if any(code.startswith(prefix) for prefix in meta["codes"]):
+            excluded = meta.get("excluded_prefixes", ())
+            if any(code.startswith(prefix) for prefix in excluded):
+                continue
             return group
     return None
 
@@ -222,26 +227,19 @@ def aggregate_entity(
             partner_codes = ENTITIES[anchor_id]["codes"]
         return sum(values.get(code, 0.0) for code in partner_codes) / total
 
-    import_effective = effective_partners(import_hhi)
-    export_effective = effective_partners(export_hhi)
-    import_top1 = top_share(imports_by_partner, 1)
-    import_top3 = top_share(imports_by_partner, 3)
-    export_top1 = top_share(exports_by_partner, 1)
-    export_top3 = top_share(exports_by_partner, 3)
-
-    return {
+    result = {
         "imports": round(imports, 2),
         "exports": round(exports, 2),
         "balance": round(exports - imports, 2),
         "export_import_ratio": round(exports / imports, 6) if imports > 0 else None,
         "import_hhi": round(import_hhi, 6) if import_hhi is not None else None,
         "export_hhi": round(export_hhi, 6) if export_hhi is not None else None,
-        "effective_import_partners": round(import_effective, 2) if import_effective is not None else None,
-        "effective_export_partners": round(export_effective, 2) if export_effective is not None else None,
-        "import_top1_share": round(import_top1, 6) if import_top1 is not None else None,
-        "import_top3_share": round(import_top3, 6) if import_top3 is not None else None,
-        "export_top1_share": round(export_top1, 6) if export_top1 is not None else None,
-        "export_top3_share": round(export_top3, 6) if export_top3 is not None else None,
+        "effective_import_partners": round(effective_partners(import_hhi), 2) if effective_partners(import_hhi) is not None else None,
+        "effective_export_partners": round(effective_partners(export_hhi), 2) if effective_partners(export_hhi) is not None else None,
+        "import_top1_share": round(top_share(imports_by_partner, 1), 6) if top_share(imports_by_partner, 1) is not None else None,
+        "import_top3_share": round(top_share(imports_by_partner, 3), 6) if top_share(imports_by_partner, 3) is not None else None,
+        "export_top1_share": round(top_share(exports_by_partner, 1), 6) if top_share(exports_by_partner, 1) is not None else None,
+        "export_top3_share": round(top_share(exports_by_partner, 3), 6) if top_share(exports_by_partner, 3) is not None else None,
         "import_partner_count": len(imports_by_partner),
         "export_partner_count": len(exports_by_partner),
         "import_groups": {group: round(imports_by_group.get(group, 0.0), 2) for group in PRODUCT_GROUPS},
@@ -251,6 +249,7 @@ def aggregate_entity(
         "anchor_import_shares": {anchor: round(anchor_share(anchor, "import"), 6) for anchor in ANCHOR_IDS},
         "anchor_export_shares": {anchor: round(anchor_share(anchor, "export"), 6) for anchor in ANCHOR_IDS},
     }
+    return result
 
 
 def build() -> dict:
@@ -294,8 +293,8 @@ def build() -> dict:
         for entity_id, entity in entities.items()
     }
 
-    # Directed bilateral links among mapped nodes. The EU node excludes the separately
-    # mapped Netherlands, while EU exposure measures above use the complete EU-27.
+    # Directed bilateral links among mapped nodes. EU links represent EU-27 aggregate,
+    # excluding the separately mapped Netherlands where necessary to avoid double-counting.
     links: list[dict] = []
     map_ids = list(entities)
     for source_id in map_ids:
@@ -304,9 +303,15 @@ def build() -> dict:
             if source_id == target_id:
                 continue
             target_codes = entities[target_id]["codes"]
+            source_effective = set(source_codes)
+            target_effective = set(target_codes)
+            if source_id == "eun" and target_id in entities:
+                source_effective -= target_effective
+            if target_id == "eun" and source_id in entities:
+                target_effective -= source_effective
             groups = {group: 0.0 for group in PRODUCT_GROUPS}
-            for exporter in source_codes:
-                for importer in target_codes:
+            for exporter in source_effective:
+                for importer in target_effective:
                     pair = flows.get((exporter, importer))
                     if not pair:
                         continue
