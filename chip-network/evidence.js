@@ -4,81 +4,65 @@ const FIRM_EVIDENCE_META = {
   updated: 'May 2026',
   sourceTitle: 'Reconstructing temporal multi-relational firm networks at scale using large language models: The case of the semiconductor industry',
   sourceUrl: 'https://arxiv.org/abs/2605.15842',
-  note: 'Published findings from a web-reconstructed network. The underlying derived data and code are available from the authors on request, not as an open downloadable dataset.'
+  note: 'The site summarizes findings reported in the paper. It does not reproduce the authors’ non-public firm-level edge list.'
 };
 
 const FIRM_COUNTRY_EVIDENCE = {
   usa: {
-    trend: 'mixed', score: 100,
-    brokerage: 'Highest among the reported regions, but gradually declining.',
-    reach: 'Closeness rises markedly after 2021, partly driven by NVIDIA.',
-    finding: 'The United States remains the leading brokerage location while becoming more tightly connected to the wider firm network.',
+    brokerage: 'The United States has the highest average regional betweenness in the reported series, although the measure declines gradually.',
+    reach: 'Average closeness rises after 2021, partly associated with NVIDIA’s increasing centrality.',
+    finding: 'U.S.-based firms remain central to the reported network. Newly observed links between U.S. and Chinese firms decline in 2024–2025.',
     firms: ['NVIDIA', 'Intel', 'IBM', 'AMD']
   },
   eun: {
-    trend: 'rising', score: 76,
-    brokerage: 'Average betweenness rises steadily after 2019.',
-    reach: 'Closeness recovers after the 2020–2021 trough.',
-    finding: 'EU-based firms gain brokerage importance even as several selected firms orient more strongly toward U.S. partners.',
+    brokerage: 'Average EU betweenness increases after 2019.',
+    reach: 'Average closeness recovers after the 2020–2021 decline.',
+    finding: 'EU-based firms gain brokerage importance in the regional results, while several selected firms shift toward U.S. partners.',
     firms: ['Infineon']
   },
   chn: {
-    trend: 'realigning', score: 67,
-    brokerage: 'Average betweenness rises after 2020.',
-    reach: 'Closeness recovers from its 2020–2021 low.',
-    finding: 'Chinese firms become more central domestically and regionally while newly observed U.S.–China firm links contract sharply in 2024–2025.',
+    brokerage: 'Average Chinese betweenness increases after 2020.',
+    reach: 'Average closeness recovers from its 2020–2021 low.',
+    finding: 'Chinese firms become more central in the regional series while newly observed U.S.–China links decline in 2024–2025.',
     firms: []
   },
   twn: {
-    trend: 'rising', score: 64,
-    brokerage: 'Average betweenness recovers after 2020.',
-    reach: 'Closeness increases through 2025.',
-    finding: 'Taiwan’s importance is reinforced by TSMC, whose betweenness rises continuously from 2020 with the AI-compute boom.',
+    brokerage: 'Average Taiwan betweenness recovers after 2020.',
+    reach: 'Average closeness increases through 2025.',
+    finding: 'TSMC’s betweenness increases from 2020 in the firm-level results.',
     firms: ['TSMC']
   },
   kor: {
-    trend: 'mixed', score: 48,
-    brokerage: 'Average betweenness partially recovers after 2020.',
-    reach: 'Average closeness declines in the published regional series.',
-    finding: 'South Korea remains an important firm-network location, but its two centrality dimensions move in different directions.',
+    brokerage: 'Average South Korean betweenness partially recovers after 2020.',
+    reach: 'Average closeness declines in the reported regional series.',
+    finding: 'South Korea remains included among the major regional semiconductor networks, but the two centrality measures move in different directions.',
     firms: ['Samsung']
   },
   jpn: {
-    trend: 'recovering', score: 45,
-    brokerage: 'Average betweenness stabilizes and modestly recovers after 2021.',
-    reach: 'Closeness recovers through 2025.',
-    finding: 'Japan remains a distinct regional pole; Renesas and some U.S. firms show stronger Japan-oriented relationships in the latest period.',
+    brokerage: 'Average Japanese betweenness stabilizes and modestly recovers after 2021.',
+    reach: 'Average closeness recovers through 2025.',
+    finding: 'Japan remains a distinct regional network. Renesas and several selected U.S. firms show stronger Japan-oriented relationships in the latest period.',
     firms: ['Renesas']
   },
   gbr: {
-    trend: 'aligned', score: 31,
-    brokerage: 'A separate country average is not reported.',
-    reach: 'A separate country average is not reported.',
-    finding: 'ARM is consistently more integrated with the U.S. network than with the EU, although its firm-level betweenness declines.',
+    brokerage: 'The paper does not report a separate United Kingdom country average.',
+    reach: 'The paper does not report a separate United Kingdom country average.',
+    finding: 'ARM is more integrated with the U.S. network than with the EU in the reported firm-level comparison.',
     firms: ['ARM']
   },
   nld: {
-    trend: 'specialized', score: 35,
-    brokerage: 'A separate Netherlands average is not reported.',
-    reach: 'ASML’s firm-level closeness rises across the period.',
-    finding: 'The Netherlands remains represented by a highly specialized equipment chokepoint rather than a broad country-level firm network.',
+    brokerage: 'The paper does not report a separate Netherlands country average.',
+    reach: 'ASML’s firm-level closeness increases across the reported period.',
+    finding: 'ASML appears in the paper’s selected firm-level centrality series.',
     firms: ['ASML']
   }
 };
 
-const FIRM_RELATIONS = [
-  { source: 'usa', target: 'chn', type: 'contraction', label: 'New U.S.–China firm links decrease sharply in 2024–2025.' },
-  { source: 'usa', target: 'twn', type: 'ai', label: 'NVIDIA–TSMC intermediation becomes more central with AI demand.' },
-  { source: 'gbr', target: 'usa', type: 'orientation', label: 'ARM remains more U.S.-integrated than EU-integrated.' },
-  { source: 'eun', target: 'usa', type: 'orientation', label: 'Selected firms shift toward U.S. relative to EU links.' },
-  { source: 'jpn', target: 'usa', type: 'mixed', label: 'Renesas, Intel, and IBM show stronger Japan orientation in the latest period.' }
-];
-
 const FIRM_HUBS = [
-  { firm: 'NVIDIA', country: 'usa', stage: 'AI accelerators and design', trend: 'Rising sharply', evidence: 'Betweenness rises from 2022 and closeness also increases.' },
-  { firm: 'TSMC', country: 'twn', stage: 'Leading-edge fabrication', trend: 'Rising', evidence: 'Betweenness rises continuously from 2020.' },
-  { firm: 'ASML', country: 'nld', stage: 'Lithography equipment', trend: 'More reachable', evidence: 'Closeness rises, consistent with equipment-system integration.' },
-  { firm: 'ARM', country: 'gbr', stage: 'Processor architecture and IP', trend: 'U.S.-aligned', evidence: 'More integrated with the U.S. network than with the EU.' },
-  { firm: 'Infineon', country: 'eun', stage: 'Power and automotive semiconductors', trend: 'EU-oriented', evidence: 'Maintains a strong EU orientation through 2024.' },
-  { firm: 'Renesas', country: 'jpn', stage: 'Automotive and embedded chips', trend: 'Japan-oriented', evidence: 'Shifts toward Japan in the regional-orientation comparison.' }
+  { firm: 'NVIDIA', country: 'United States', stage: 'AI accelerators and design', finding: 'Betweenness increases after 2022 and closeness also rises.' },
+  { firm: 'TSMC', country: 'Taiwan', stage: 'Leading-edge fabrication', finding: 'Betweenness increases from 2020.' },
+  { firm: 'ASML', country: 'Netherlands', stage: 'Lithography equipment', finding: 'Closeness increases across the reported period.' },
+  { firm: 'ARM', country: 'United Kingdom', stage: 'Processor architecture and IP', finding: 'More integrated with the U.S. network than with the EU.' },
+  { firm: 'Infineon', country: 'European Union', stage: 'Power and automotive semiconductors', finding: 'Maintains a strong EU orientation through 2024.' },
+  { firm: 'Renesas', country: 'Japan', stage: 'Automotive and embedded chips', finding: 'Shows stronger Japan orientation in the reported comparison.' }
 ];

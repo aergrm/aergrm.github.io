@@ -3,45 +3,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Interactive evidence map of middle powers in semiconductor firm networks, cooperation, and trade.">
+  <meta name="description" content="Interactive map of semiconductor cooperation, trade, and published firm-network findings for selected middle powers.">
   <title>Middle Powers in the Global Semiconductor Network</title>
-  <link rel="stylesheet" href="styles.css?v=2.0">
-  <link rel="stylesheet" href="v2.css?v=2.0">
+  <link rel="stylesheet" href="styles.css?v=3.0">
+  <link rel="stylesheet" href="v3.css?v=3.0">
 </head>
 <body>
   <header class="topbar">
     <div class="title-wrap">
-      <div class="kicker">Interactive research map · Evidence release 2.0 · July 2026</div>
+      <div class="kicker">Interactive research map · Release 3.0 · July 2026</div>
       <h1>Middle Powers in the Global Semiconductor Network</h1>
-      <p class="subtitle">A layered map of <strong>firm relationships through 2025</strong>, <strong>government and institutional cooperation through July 2026</strong>, and a <strong>2024 customs-trade baseline</strong>. Each layer has its own date and evidentiary meaning.</p>
+      <p class="subtitle">This project maps official semiconductor cooperation through July 2026, bilateral semiconductor trade in 2024, and published firm-network findings through 2025.</p>
     </div>
     <a class="site-link" href="/research/">← Research page</a>
   </header>
 
-  <section class="evidence-strip" aria-label="Evidence dates">
-    <button class="evidence-card active" data-mode-shortcut="firm">
-      <span class="date">2025</span><strong>Firm network</strong><small>Published relationship and centrality findings</small>
+  <nav class="evidence-strip" aria-label="Select data layer">
+    <button class="evidence-card active" data-mode="cooperation">
+      <span class="date">Jul 2026</span><strong>Cooperation</strong><small>Official agreements and institutions</small>
     </button>
-    <button class="evidence-card" data-mode-shortcut="cooperation">
-      <span class="date">Jul 2026</span><strong>Strategic cooperation</strong><small>Official agreements and institutions</small>
+    <button class="evidence-card" data-mode="trade">
+      <span class="date">2024</span><strong>Trade</strong><small>BACI bilateral customs flows</small>
     </button>
-    <button class="evidence-card" data-mode-shortcut="trade">
-      <span class="date">2024</span><strong>Trade baseline</strong><small>Latest harmonized BACI bilateral customs data</small>
+    <button class="evidence-card" data-mode="research">
+      <span class="date">2025</span><strong>Research findings</strong><small>Published firm-network results</small>
     </button>
-  </section>
+  </nav>
 
   <section class="controls" aria-label="Map controls">
     <div class="control-card">
       <label for="countrySelect">Country</label>
       <select id="countrySelect" aria-label="Select country"></select>
-    </div>
-    <div class="control-card wide-control">
-      <label>Evidence layer</label>
-      <div class="segmented" id="modeControl">
-        <button type="button" data-mode="firm" class="active">2025 Firm network</button>
-        <button type="button" data-mode="cooperation">2026 Cooperation</button>
-        <button type="button" data-mode="trade">2024 Trade baseline</button>
-      </div>
     </div>
     <div class="control-card" id="yearControl">
       <label for="yearSelect">Cooperation through</label>
@@ -52,31 +44,33 @@
         <option value="2026" selected>July 2026</option>
       </select>
     </div>
+    <button type="button" class="clear-button" id="clearSelection">Clear country</button>
   </section>
 
   <main class="layout">
     <section class="map-card">
       <div class="map-head">
-        <div><strong id="mapTitle">Published 2025 firm-network evidence</strong></div>
-        <div class="note" id="mapNote">This layer summarizes reported trends; it does not reproduce the authors’ non-public edge list.</div>
+        <div><strong id="mapTitle">Cooperation through July 2026</strong></div>
+        <div class="note" id="mapNote">Dashed lines show coded bilateral agreements. Multilateral frameworks appear in country profiles.</div>
       </div>
       <div class="legend" id="legend" aria-label="Map legend"></div>
-      <svg id="map" role="img" aria-label="World map of semiconductor firm networks, cooperation, and trade"></svg>
-      <div class="tooltip" id="tooltip"></div>
+      <svg id="map" role="img" aria-label="World map of semiconductor cooperation and trade"></svg>
+      <section class="research-view" id="researchView" hidden aria-label="Published firm-network findings"></section>
     </section>
+
     <aside class="panel" id="panel" aria-live="polite"></aside>
   </main>
 
   <footer>
     <div class="foot-card">
-      <strong>Read dates separately.</strong> The current layer uses firm-network evidence observed through 2025 and published in 2026. Cooperation records are updated through July 2026. The trade layer remains a lagged 2024 baseline because BACI is the latest globally reconciled bilateral release. See <a href="methods.html">methods, sources, and limitations</a>.
+      <strong>Data:</strong> cooperation records through July 2026; firm-network findings through 2025; bilateral trade for 2024. See <a href="methods.html">methods and sources</a>, <a href="trade-country-indicators.csv">country indicators</a>, and <a href="trade-bilateral-links.csv">bilateral trade data</a>.
     </div>
   </footer>
 
-  <script src="data.js?v=2.0"></script>
-  <script src="world-map.js?v=2.0"></script>
-  <script src="trade-data.js?v=2.0"></script>
-  <script src="evidence.js?v=2.0"></script>
-  <script src="app-v2.js?v=2.0"></script>
+  <script src="data.js?v=3.0"></script>
+  <script src="world-map.js?v=3.0"></script>
+  <script src="trade-data.js?v=3.0"></script>
+  <script src="evidence.js?v=3.0"></script>
+  <script src="app-v3.js?v=3.0"></script>
 </body>
 </html>
