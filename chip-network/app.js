@@ -3,10 +3,20 @@
 
   const NS = 'http://www.w3.org/2000/svg';
   const MAP = { left: 25, right: 975, top: 25, bottom: 575, minLat: -60, maxLat: 85 };
+  const GROUP_META = {
+    integrated_circuits: { label: 'Integrated circuits', color: '#c62828', role: 'fabrication' },
+    semiconductor_devices: { label: 'Non-PV semiconductor devices', color: '#7b1fa2', role: 'materials' },
+    manufacturing_equipment: { label: 'Manufacturing equipment', color: '#2e7d32', role: 'equipment' },
+    wafers_materials: { label: 'Wafers & doped materials', color: '#00897b', role: 'materials' }
+  };
+  const ANCHORS = [
+    ['usa', 'United States'], ['chn', 'China'], ['twn', 'Taiwan proxy'],
+    ['kor', 'South Korea'], ['jpn', 'Japan'], ['eun', 'EU-27']
+  ];
   const byId = new Map(COUNTRIES.map((d) => [d.id, d]));
   const state = {
     selected: 'ind',
-    mode: 'cooperation',
+    mode: 'trade',
     year: 2026,
     activeRoles: new Set(Object.keys(ROLE_META))
   };
@@ -37,24 +47,43 @@
     const dx = p2[0] - p1[0];
     const dy = p2[1] - p1[1];
     const length = Math.hypot(dx, dy) || 1;
-    const mid = [(p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2];
+    const midpoint = [(p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2];
     const control = [
-      mid[0] - (dy / length) * Math.hypot(dx, dy) * bend,
-      mid[1] + (dx / length) * Math.hypot(dx, dy) * bend
+      midpoint[0] - (dy / length) * Math.hypot(dx, dy) * bend,
+      midpoint[1] + (dx / length) * Math.hypot(dx, dy) * bend
     ];
     return `M${p1[0]},${p1[1]} Q${control[0]},${control[1]} ${p2[0]},${p2[1]}`;
+  }
+
+  function tradeCountry(id) {
+    return TRADE_DATA && TRADE_DATA.countries ? TRADE_DATA.countries[id] : null;
+  }
+
+  function tradeReady() {
+    return Boolean(TRADE_DATA && TRADE_DATA.countries && Object.keys(TRADE_DATA.countries).length);
   }
 
   function visible(d) {
     return d.kind === 'anchor' || d.roles.some((role) => state.activeRoles.has(role));
   }
 
-  function neighbor(id, selected) {
-    return COOPERATION.some((d) => d.source && (
-      (d.source === selected && d.target === id) || (d.target === selected && d.source === id)
-    )) || CORRIDORS.some((d) => (
-      (d.source === selected && d.target === id) || (d.target === selected && d.source === id)
+  function tradeNeighbor(id, selected) {
+    return (TRADE_DATA.links || []).some((link) =>
+      (link.source === selected && link.target === id) || (link.target === selected && link.source === id)
+    );
+  }
+
+  function cooperationNeighbor(id, selected) {
+    return COOPERATION.some((record) => record.source && (
+      (record.source === selected && record.target === id) ||
+      (record.target === selected && record.source === id)
     ));
+  }
+
+  function neighbor(id, selected) {
+    if (state.mode === 'trade') return tradeNeighbor(id, selected);
+    if (state.mode === 'cooperation') return cooperationNeighbor(id, selected);
+    return tradeNeighbor(id, selected) || cooperationNeighbor(id, selected);
   }
 
   function init() {
@@ -97,6 +126,11 @@
       legend.appendChild(item);
     });
 
+    const key = document.createElement('span');
+    key.className = 'legend-key';
+    key.textContent = 'Trade data: 2024';
+    legend.appendChild(key);
+
     updateMapCopy();
     draw();
     renderPanel();
@@ -105,15 +139,15 @@
   function updateMapCopy() {
     const title = document.getElementById('mapTitle');
     const note = document.getElementById('mapNote');
-    if (state.mode === 'cooperation') {
+    if (state.mode === 'trade') {
+      title.textContent = '2024 semiconductor trade network';
+      note.textContent = 'Arrows follow exporter → importer; width reflects bilateral value in the four-product semiconductor basket.';
+    } else if (state.mode === 'cooperation') {
       title.textContent = 'Formal and institutional cooperation';
       note.textContent = 'Dashed links show bilateral agreements; multilateral memberships appear in country profiles.';
-    } else if (state.mode === 'corridors') {
-      title.textContent = 'Structural dependence and complementarity';
-      note.textContent = 'Solid directional corridors are qualitative research codings, not bilateral customs values.';
     } else {
-      title.textContent = 'Cooperation overlaid on structural dependence';
-      note.textContent = 'Dashed links are agreements; solid links are coded supply-chain corridors.';
+      title.textContent = '2024 trade overlaid with formal cooperation';
+      note.textContent = 'Solid arrows are BACI trade flows; dashed lines are official cooperation records.';
     }
   }
 
@@ -135,127 +169,241 @@
     svg.appendChild(grid);
   }
 
-  function draw() {
-    svg.innerHTML = '';
-    svg.setAttribute('viewBox', '0 0 1000 625');
-    drawBasemap();
+  function drawDefinitions() {
+    const defs = node('defs');
+    const marker = node('marker', {
+      id: 'trade-arrow', markerWidth: 7, markerHeight: 7, refX: 5.5, refY: 3.5,
+      orient: 'auto', markerUnits: 'strokeWidth'
+    });
+    marker.appendChild(node('path', { d: 'M0,0 L7,3.5 L0,7 Z', fill: 'context-stroke' }));
+    defs.appendChild(marker);
+    svg.appendChild(defs);
+  }
 
-    const links = [];
-    if (state.mode === 'cooperation' || state.mode === 'both') {
-      COOPERATION.filter((d) => d.source && d.year <= state.year).forEach((d) => links.push({ ...d, mode: 'coop' }));
+  function selectedTradeLinks() {
+    if (!tradeReady()) return [];
+    const eligible = (TRADE_DATA.links || []).filter((link) => {
+      const group = GROUP_META[link.dominant_group];
+      return group && state.activeRoles.has(group.role) && byId.has(link.source) && byId.has(link.target);
+    });
+    const sorted = eligible.sort((a, b) => b.value - a.value);
+    if (state.selected) {
+      return sorted.filter((link) => link.source === state.selected || link.target === state.selected).slice(0, 20);
     }
-    if (state.mode === 'corridors' || state.mode === 'both') {
-      CORRIDORS.filter((d) => state.activeRoles.has(d.layer)).forEach((d) => links.push({ ...d, mode: 'corridor' }));
-    }
+    return sorted.slice(0, 42);
+  }
 
-    const linkGroup = node('g');
-    links.forEach((d, index) => {
-      const source = byId.get(d.source);
-      const target = byId.get(d.target);
+  function drawTradeLinks() {
+    const links = selectedTradeLinks();
+    const group = node('g', { class: 'trade-links' });
+    const values = links.map((link) => link.value).filter((value) => value > 0);
+    const minLog = values.length ? Math.log10(Math.min(...values)) : 0;
+    const maxLog = values.length ? Math.log10(Math.max(...values)) : 1;
+    links.forEach((link, index) => {
+      const source = byId.get(link.source);
+      const target = byId.get(link.target);
+      const meta = GROUP_META[link.dominant_group];
+      const scaled = maxLog === minLog ? 2.5 : 1.2 + ((Math.log10(link.value) - minLog) / (maxLog - minLog)) * 4.3;
       const item = node('path', {
-        d: linkPath(source, target, index % 2 ? -0.11 : 0.11),
-        class: `link ${d.mode === 'coop' ? 'coop' : 'corridor'}`,
-        stroke: d.mode === 'corridor' ? ROLE_META[d.layer].color : '#0f6f8a',
-        'stroke-width': d.mode === 'corridor' ? 1.2 + d.intensity * 0.45 : 2.2,
-        opacity: state.selected ? ((d.source === state.selected || d.target === state.selected) ? 0.95 : 0.08) : 0.65
+        d: linkPath(source, target, index % 2 ? -0.09 : 0.09),
+        class: `link trade-link${state.selected && (link.source === state.selected || link.target === state.selected) ? ' selected' : ''}`,
+        stroke: meta.color,
+        'stroke-width': scaled,
+        opacity: state.selected ? 0.88 : 0.46,
+        'marker-end': 'url(#trade-arrow)'
       });
       const title = node('title');
-      title.textContent = d.mode === 'coop'
-        ? `${d.title} (${d.year})`
-        : `${source.name} → ${target.name}: ${d.label}`;
+      title.textContent = `${source.name} → ${target.name}: ${money(link.value)} (${meta.label}, dominant category)`;
       item.appendChild(title);
-      linkGroup.appendChild(item);
+      group.appendChild(item);
     });
-    svg.appendChild(linkGroup);
+    svg.appendChild(group);
+  }
 
-    const nodeGroup = node('g');
+  function drawCooperationLinks() {
+    const group = node('g', { class: 'cooperation-links' });
+    COOPERATION.filter((record) => record.source && record.year <= state.year).forEach((record, index) => {
+      const source = byId.get(record.source);
+      const target = byId.get(record.target);
+      if (!source || !target) return;
+      const item = node('path', {
+        d: linkPath(source, target, index % 2 ? -0.13 : 0.13),
+        class: 'link coop',
+        stroke: '#0f6f8a',
+        'stroke-width': 2.2,
+        opacity: state.selected ? ((record.source === state.selected || record.target === state.selected) ? 0.95 : 0.08) : 0.65
+      });
+      const title = node('title');
+      title.textContent = `${record.title} (${record.year})`;
+      item.appendChild(title);
+      group.appendChild(item);
+    });
+    svg.appendChild(group);
+  }
+
+  function tradeRadius(d) {
+    const values = tradeCountry(d.id);
+    if (!values) return d.kind === 'anchor' ? 7.5 : 5.5 + Math.sqrt(d.score) * 0.72;
+    const volume = Math.max(1, values.imports + values.exports);
+    const radius = 4.5 + Math.max(0, Math.min(10, (Math.log10(volume) - 6) * 1.5));
+    return d.kind === 'anchor' ? Math.max(8, radius) : radius;
+  }
+
+  function drawNodes() {
+    const group = node('g');
     COUNTRIES.forEach((d) => {
       const [x, y] = project(d);
-      const radius = d.kind === 'anchor' ? 7.5 : 5.5 + Math.sqrt(d.score) * 0.72;
+      const radius = state.mode === 'cooperation' ? (d.kind === 'anchor' ? 7.5 : 5.5 + Math.sqrt(d.score) * 0.72) : tradeRadius(d);
       const dim = !visible(d) || (state.selected && d.id !== state.selected && !neighbor(d.id, state.selected));
-      const group = node('g', {
+      const item = node('g', {
         class: `node ${d.kind}${d.id === state.selected ? ' selected' : ''}${dim ? ' dim' : ''}`,
         transform: `translate(${x},${y})`
       });
-      group.appendChild(node('circle', {
-        class: 'ring',
-        r: radius + 4,
+      item.appendChild(node('circle', {
+        class: 'ring', r: radius + 4,
         stroke: d.id === state.selected ? ROLE_META[d.dominant].color : '#fff'
       }));
-      group.appendChild(node('circle', { class: 'core', r: radius, fill: ROLE_META[d.dominant].color }));
-      const text = node('text', {
+      item.appendChild(node('circle', { class: 'core', r: radius, fill: ROLE_META[d.dominant].color }));
+      const label = node('text', {
         x: x > 760 ? -(radius + 5) : radius + 5,
         y: -radius - 1,
         'text-anchor': x > 760 ? 'end' : 'start'
       });
-      text.textContent = d.name;
-      group.appendChild(text);
+      label.textContent = d.name;
+      item.appendChild(label);
       const title = node('title');
-      title.textContent = d.headline;
-      group.appendChild(title);
-      group.addEventListener('click', () => {
+      const trade = tradeCountry(d.id);
+      title.textContent = trade ? `${d.headline} 2024 basket trade: ${money(trade.imports + trade.exports)}.` : d.headline;
+      item.appendChild(title);
+      item.addEventListener('click', () => {
         state.selected = d.id;
         select.value = d.id;
         draw();
         renderPanel();
       });
-      nodeGroup.appendChild(group);
+      group.appendChild(item);
     });
-    svg.appendChild(nodeGroup);
+    svg.appendChild(group);
   }
 
-  function agreement(a) {
-    const meta = a.members ? `${a.year} · multilateral · ${a.status}` : `${a.year} · ${a.type} · ${a.status}`;
-    return `<div class="agreement"><a href="${a.url}" target="_blank" rel="noopener">${a.title}</a><div class="meta">${meta}</div><div class="detail">${a.detail}</div></div>`;
+  function draw() {
+    svg.innerHTML = '';
+    svg.setAttribute('viewBox', '0 0 1000 625');
+    drawDefinitions();
+    drawBasemap();
+    if (state.mode === 'trade' || state.mode === 'both') drawTradeLinks();
+    if (state.mode === 'cooperation' || state.mode === 'both') drawCooperationLinks();
+    drawNodes();
   }
 
-  function exposure(values) {
-    return [['us', 'United States'], ['china', 'China'], ['eu', 'Europe'], ['asia', 'Asian network']]
-      .map(([key, label]) => `<div class="exposure-row"><span>${label}</span><div class="bar"><span style="width:${values[key] * 20}%"></span></div><strong>${values[key]}</strong></div>`)
-      .join('');
+  function agreement(record) {
+    const meta = record.members ? `${record.year} · multilateral · ${record.status}` : `${record.year} · ${record.type} · ${record.status}`;
+    return `<div class="agreement"><a href="${record.url}" target="_blank" rel="noopener">${record.title}</a><div class="meta">${meta}</div><div class="detail">${record.detail}</div></div>`;
   }
 
-  function cachedTrade(d) {
-    const countryData = (typeof TRADE_CACHE !== 'undefined' && TRADE_CACHE.data && TRADE_CACHE.data[d.id]) || {};
-    const years = Object.keys(countryData)
-      .map(Number)
-      .filter((year) => year <= state.year && countryData[year] && Number.isFinite(countryData[year].exports) && Number.isFinite(countryData[year].imports))
-      .sort((a, b) => b - a);
-    if (!years.length) return null;
-    const year = years[0];
-    return { year, ...countryData[year] };
+  function metric(label, value, meta = '', className = '') {
+    return `<div class="metric"><div class="label">${label}</div><div class="value ${className}">${value}</div><div class="meta">${meta}</div></div>`;
   }
 
-  function tradeHtml(d) {
-    if (!d.code) {
-      return '<div class="method-banner">A single UN Comtrade reporter code is not used for this regional anchor.</div>';
+  function percentage(value, digits = 1) {
+    return Number.isFinite(value) ? `${(value * 100).toFixed(digits)}%` : '—';
+  }
+
+  function number(value, digits = 2) {
+    return Number.isFinite(value) ? value.toFixed(digits) : '—';
+  }
+
+  function partnerList(rows) {
+    if (!rows || !rows.length) return '<div class="empty">No positive bilateral flow in the basket.</div>';
+    return `<div class="partner-list">${rows.map((row) => `<div class="partner-row"><strong>${row.name}</strong><span class="share">${percentage(row.share)}</span><span class="amount">${money(row.value)}</span></div>`).join('')}</div>`;
+  }
+
+  function anchorExposure(values) {
+    if (!values) return '<div class="empty">No exposure measures available.</div>';
+    return ANCHORS.map(([id, label]) => {
+      const share = values[id] || 0;
+      return `<div class="exposure-row wide"><span>${label}</span><div class="bar"><span style="width:${Math.min(100, share * 100)}%"></span></div><strong>${percentage(share)}</strong></div>`;
+    }).join('');
+  }
+
+  function composition(groups, total) {
+    if (!groups || total <= 0) return '<div class="empty">No positive trade in the basket.</div>';
+    return Object.entries(GROUP_META).map(([id, meta]) => {
+      const value = groups[id] || 0;
+      const share = value / total;
+      return `<div class="composition-row"><div class="composition-head"><span>${meta.label}</span><span>${percentage(share)} · ${money(value)}</span></div><div class="composition-bar"><span style="width:${share * 100}%;background:${meta.color}"></span></div></div>`;
+    }).join('');
+  }
+
+  function tradePanel(d) {
+    const values = tradeCountry(d.id);
+    if (!values) {
+      return `<div class="method-banner">The fixed BACI release is being generated. The page no longer queries a live API; reload after the data-build workflow completes.</div>`;
     }
-    const value = cachedTrade(d);
-    if (!value) {
-      return `<div class="method-banner">Cached UN Comtrade totals are not yet available for this reporter. The site refreshes its cache through GitHub Actions rather than querying the UN API from your browser. <a href="https://comtradeplus.un.org/" target="_blank" rel="noopener">Open UN Comtrade</a>.</div>`;
-    }
-    const updated = TRADE_CACHE.updated ? new Date(TRADE_CACHE.updated).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : 'unknown';
-    return `<div class="metric-grid"><div class="metric"><div class="label">Exports</div><div class="value">${money(value.exports)}</div><div class="meta">HS 8542 · ${value.year}</div></div><div class="metric"><div class="label">Imports</div><div class="value">${money(value.imports)}</div><div class="meta">HS 8542 · ${value.year}</div></div></div><div class="method-banner">Latest cached year available through ${state.year}. Cache updated ${updated}. <a href="https://comtradeplus.un.org/" target="_blank" rel="noopener">UN Comtrade</a>.</div>`;
+    const balanceClass = values.balance >= 0 ? 'positive' : 'negative';
+    return `
+      <div class="data-release"><span class="data-chip">2024</span><span class="data-chip">BACI HS22 v202601</span><span class="data-chip">4 product groups</span></div>
+      <div class="metric-grid four">
+        ${metric('Exports', money(values.exports), 'current USD')}
+        ${metric('Imports', money(values.imports), 'current USD')}
+        ${metric('Trade balance', money(values.balance), 'exports − imports', balanceClass)}
+        ${metric('Export/import ratio', number(values.export_import_ratio), 'basket exports ÷ imports', 'small')}
+      </div>
+      <h3>Import concentration</h3>
+      <div class="metric-grid four">
+        ${metric('Partner HHI', number(values.import_hhi, 3), 'Σ partner shares²', 'small')}
+        ${metric('Top-three share', percentage(values.import_top3_share), 'largest three sources', 'small')}
+        ${metric('Effective partners', number(values.effective_import_partners, 1), '1 ÷ HHI', 'small')}
+        ${metric('Positive partners', String(values.import_partner_count), 'reported bilateral flows', 'small')}
+      </div>
+      <h3>Measured import exposure</h3>
+      ${anchorExposure(values.anchor_import_shares)}
+      <h3>Import composition</h3>
+      ${composition(values.import_groups, values.imports)}
+      <h3>Top import sources</h3>
+      ${partnerList(values.top_import_sources)}
+      <h3>Top export destinations</h3>
+      ${partnerList(values.top_export_destinations)}
+      <div class="download-row"><a class="download-link" href="trade-country-indicators.csv">Download indicators</a><a class="download-link" href="trade-bilateral-links.csv">Download bilateral flows</a></div>
+      <div class="source-note">Source: CEPII BACI HS22 version 202601. Taiwan uses code 490 (“Asia, nes”). Latest-year values may be revised in later BACI releases.</div>`;
+  }
+
+  function overviewPanel() {
+    const middle = COUNTRIES.filter((d) => d.kind === 'middle');
+    const hhis = middle.map((d) => tradeCountry(d.id)?.import_hhi).filter(Number.isFinite).sort((a, b) => a - b);
+    const median = hhis.length ? hhis[Math.floor(hhis.length / 2)] : null;
+    const top = middle.map((d) => ({ d, value: (tradeCountry(d.id)?.imports || 0) + (tradeCountry(d.id)?.exports || 0) }))
+      .sort((a, b) => b.value - a.value).slice(0, 3);
+    return `<h2>How to read the map</h2><p>This release treats semiconductor power as a network of specialized capabilities and measurable trade relationships rather than a ranking of national self-sufficiency.</p>
+      <div class="summary-grid"><div class="summary-card"><strong>${middle.length}</strong><span>middle powers</span></div><div class="summary-card"><strong>2024</strong><span>fixed trade year</span></div><div class="summary-card"><strong>4</strong><span>product groups</span></div><div class="summary-card"><strong>${median === null ? '—' : median.toFixed(3)}</strong><span>median import HHI</span></div></div>
+      <h3>Largest mapped trade nodes</h3>${top.length ? partnerList(top.map(({ d, value }) => ({ name: d.name, share: value / Math.max(1, top.reduce((s, x) => s + x.value, 0)), value }))) : '<div class="empty">Trade release is being generated.</div>'}
+      <h3>Trade mode</h3><p>Solid arrows show reconciled 2024 BACI trade. Node size reflects combined imports and exports in the semiconductor basket.</p>
+      <h3>Cooperation mode</h3><p>Dashed links show selected official bilateral frameworks. Multilateral memberships remain in country profiles.</p>
+      <div class="method-banner">Select a country node or use the country menu. The cooperation year control does not alter the fixed 2024 trade data.</div>`;
   }
 
   function renderPanel() {
     if (!state.selected) {
-      panel.innerHTML = `<h2>How to read the map</h2><p>This project treats semiconductor power as a network of specialized capabilities rather than a ranking of national self-sufficiency.</p><div class="summary-grid"><div class="summary-card"><strong>${COUNTRIES.filter((d) => d.kind === 'middle').length}</strong><span>middle powers</span></div><div class="summary-card"><strong>${COOPERATION.filter((d) => d.source && d.year <= state.year).length}</strong><span>bilateral records</span></div><div class="summary-card"><strong>${COOPERATION.filter((d) => d.members && d.year <= state.year).length}</strong><span>frameworks</span></div><div class="summary-card"><strong>${CORRIDORS.length}</strong><span>corridors</span></div></div><h3>Cooperation mode</h3><p>Formal bilateral frameworks and selected multilateral supply-chain initiatives.</p><h3>Dependence mode</h3><p>Directions of complementarity or vulnerability across equipment, materials, fabrication, packaging, design, capital, and critical inputs.</p><div class="method-banner">Select a country node or use the menu. Click role labels above the map to filter the value chain.</div>`;
+      panel.innerHTML = overviewPanel();
       return;
     }
-
     const d = byId.get(state.selected);
-    const agreements = COOPERATION.filter((a) => a.year <= state.year && (a.source ? (a.source === d.id || a.target === d.id) : a.members?.includes(d.id)));
+    const agreements = COOPERATION.filter((record) => record.year <= state.year && (
+      record.source ? (record.source === d.id || record.target === d.id) : record.members?.includes(d.id)
+    ));
     const roles = d.roles.map((role) => `<span class="role-tag" style="background:${ROLE_META[role].color}">${ROLE_META[role].label}</span>`).join('');
-    panel.innerHTML = `<h2>${d.name}</h2><div class="role-row">${roles}</div><p><strong>${d.headline}</strong></p><p>${d.strategy}</p><h3>Integrated-circuit trade</h3>${tradeHtml(d)}<h3>Strategic exposure</h3>${exposure(d.exposure)}<h3>Principal strengths</h3><ul class="clean-list">${d.strengths.map((item) => `<li>${item}</li>`).join('')}</ul><h3>Key dependencies</h3><ul class="clean-list">${d.dependencies.map((item) => `<li>${item}</li>`).join('')}</ul><h3>Cooperation records</h3>${agreements.length ? agreements.map(agreement).join('') : '<div class="empty">No coded agreement in the current release.</div>'}<div class="method-banner">“Middle power” is an analytical project category. Country roles and exposure scores are transparent research codings.</div>`;
+    panel.innerHTML = `<h2>${d.name}</h2><div class="role-row">${roles}</div><p><strong>${d.headline}</strong></p><p>${d.strategy}</p>
+      <h3>2024 semiconductor trade</h3>${tradePanel(d)}
+      <h3>Principal strengths</h3><ul class="clean-list">${d.strengths.map((item) => `<li>${item}</li>`).join('')}</ul>
+      <h3>Key dependencies</h3><ul class="clean-list">${d.dependencies.map((item) => `<li>${item}</li>`).join('')}</ul>
+      <h3>Cooperation records</h3>${agreements.length ? agreements.map(agreement).join('') : '<div class="empty">No coded agreement in the current release.</div>'}
+      <div class="method-banner">“Middle power” is an analytical project category. Value-chain roles remain qualitative; trade concentration and exposure measures are computed from the published bilateral data.</div>`;
   }
 
   function money(value) {
+    if (!Number.isFinite(value)) return '—';
     return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      notation: 'compact',
-      maximumFractionDigits: 1
+      style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 1
     }).format(value);
   }
 
