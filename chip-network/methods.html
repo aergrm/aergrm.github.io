@@ -35,7 +35,7 @@
     <section class="method-section">
       <h2>1. Research scope and country sample</h2>
       <p>The page asks how selected middle powers use specialized capabilities and international cooperation to manage dependence in the semiconductor value chain. Countries are included because they possess a significant semiconductor capability, are pursuing an identifiable semiconductor industrial strategy, or participate in documented international semiconductor cooperation.</p>
-      <p>The interface distinguishes three analytical groups: <strong>focal middle powers</strong>, <strong>major semiconductor hubs</strong>, and <strong>external anchors</strong>. These are project categories rather than official classifications. Japan, South Korea, Taiwan, and the Netherlands are displayed as major hubs because their positions in fabrication, equipment, materials, or design are systemically important and not well represented by a single middle-power label.</p>
+      <p>The interface distinguishes three analytical groups: <strong>selected middle powers</strong>, <strong>major semiconductor hubs</strong>, and <strong>external anchors</strong>. These are project categories rather than official classifications. Japan, South Korea, Taiwan, and the Netherlands are displayed as major hubs because their positions in fabrication, equipment, materials, or design are systemically important and not well represented by a single middle-power label.</p>
     </section>
 
     <section class="method-section">
@@ -50,7 +50,7 @@
     <section class="method-section">
       <h2>3. Country capabilities, dependencies, and sources</h2>
       <p>Country profiles summarize value-chain roles, capabilities, and dependencies. They are descriptive rather than prescriptive: the page does not recommend national strategies. Each profile links to official national, ministry, investment-agency, or public research sources used to document the country’s semiconductor position.</p>
-      <p>The bullets are concise syntheses of the listed profile sources. They are not independent quantitative measures and should not be interpreted as rankings. The legacy <code>strategy</code> field in the original prototype is not displayed. Release 4.1 also documents the remaining limits of the country profiles in <a href="COUNTRY_PROFILE_AUDIT.md">the country-profile audit</a>.</p>
+      <p>The bullets are concise syntheses of the listed profile sources. They are not independent quantitative measures and should not be interpreted as rankings. The legacy <code>strategy</code> field in the original prototype is not displayed. Release 4.1 also documents the remaining limits of the country profiles in <a href="COUNTRY_PROFILE_AUDIT.md">the country-profile source notes</a>.</p>
     </section>
 
     <section class="method-section">
@@ -93,15 +93,15 @@
     </section>
 
     <section class="method-section">
-      <h2>8. Release 4.1 validation</h2>
-      <p>The cooperation data were re-audited at the record level. Release 4.1 adds date precision, event-date basis, implementation sources, and audit notes. It also corrects the India–Netherlands date, the Israel–Chips JU status, the Canada–Germany date, and several implementation statuses.</p>
-      <p>The repository includes a deterministic CSV-to-JavaScript builder and automated checks for identifiers, dates, categories, map pairs, URL syntax, implementation evidence, record counts, generated-file consistency, and JavaScript syntax. See the <a href="cooperation-source-audit.csv">source audit</a>, <a href="TESTING_CHECKLIST.md">testing checklist</a>, and <a href="RELEASE_4_1.md">release notes</a>.</p>
+      <h2>8. Release 4.1 data review</h2>
+      <p>The cooperation records were reviewed individually. Release 4.1 adds date precision, event-date basis, implementation sources, and explanatory notes. It also corrects the India–Netherlands date, the Israel–Chips JU status, the Canada–Germany date, and several implementation statuses.</p>
+      <p>The repository includes a deterministic CSV-to-JavaScript builder and automated checks for identifiers, dates, categories, map pairs, URL syntax, implementation evidence, record counts, generated-file consistency, and JavaScript syntax. See the <a href="cooperation-source-audit.csv">record-level source notes</a> and <a href="RELEASE_4_1.md">release notes</a>.</p>
       <p>The 2024–2026 literature review reinforces the separation of trade, cooperation, and capability. Trade captures physical cross-border flows but omits design services, domestic absorption, ownership, licensing, and indirect upstream dependence. Cooperation documents an institutional channel, not completed technology transfer. See the <a href="LITERATURE_MEASUREMENT_NOTES.md">literature measurement notes</a> and the <a href="DESCRIPTIVE_MEMO.md">descriptive research memo</a>.</p>
     </section>
 
     <section class="method-section">
       <h2>9. Versioning and citation</h2>
-      <p>Release 4.1 is a fixed, versioned website release. The exact Release 4.0 code state is preserved on the <code>archive-chip-network-v4-0</code> branch. The data files, methods, and citation metadata are stored with the source code. The current release can be cited using <a href="CITATION.cff">CITATION.cff</a>. No DOI has been assigned. An external deposit to Zenodo or OSF is still required for a permanent DOI.</p>
+      <p>Release 4.1 is a fixed, versioned website release. The exact Release 4.0 code state is preserved on the <code>archive-chip-network-v4-0</code> branch. The data files, methods, and citation metadata are stored with the source code. The current release can be cited using <a href="CITATION.cff">CITATION.cff</a>. No DOI has been assigned.</p>
     </section>
   </main>
 </body>
