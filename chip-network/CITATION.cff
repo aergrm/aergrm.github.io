@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this interactive research resource or its data, please cite it as below."
+title: "Middle Powers in the Global Semiconductor Network"
+type: dataset
+authors:
+  - family-names: "Ergurum"
+    given-names: "Ahmet"
+version: "4.0.0"
+date-released: "2026-07-31"
+url: "https://aergrm.github.io/chip-network/"
+repository-code: "https://github.com/aergrm/aergrm.github.io"
+abstract: "An interactive research resource presenting official semiconductor cooperation through July 2026, bilateral semiconductor trade in 2024, and published firm-network findings through 2025."
+keywords:
+  - semiconductors
+  - middle powers
+  - supply chains
+  - international cooperation
+  - trade networks
+license: "CC-BY-4.0"
