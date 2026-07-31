@@ -11,6 +11,12 @@ My research sits at the intersection of international security, foreign policy a
 
 If you are interested in these themes or would like to read a working paper, please [get in touch](mailto:aergurum@uwm.edu).
 
+### Interactive Research
+
+**[Middle Powers in the Global Semiconductor Network](/chip-network/).** An interactive map of semiconductor value-chain roles, international cooperation, and strategic dependence. The project combines official cooperation records, transparent structural codings, and live UN Comtrade queries.
+
+&nbsp;
+
 ### Dissertation
 
 <details open style="margin-bottom: 8px;">
