@@ -1,0 +1,36 @@
+name: Build fixed chip trade release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/build-chip-trade-data.yml"
+      - "chip-network/build_trade_data.py"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build 2024 BACI semiconductor indicators
+        run: python chip-network/build_trade_data.py
+      - name: Commit fixed release files
+        run: |
+          rm -f chip-network/BACI_HS22_V202601.zip
+          if git diff --quiet -- chip-network/trade-data.js chip-network/trade-country-indicators.csv chip-network/trade-bilateral-links.csv; then
+            echo "No generated data change"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add chip-network/trade-data.js chip-network/trade-country-indicators.csv chip-network/trade-bilateral-links.csv
+          git commit -m "Publish fixed 2024 chip trade indicators [skip ci]"
+          git push
