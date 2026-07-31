@@ -16,6 +16,7 @@
   const STATUS_META = {
     signed: { label: 'Signed', dash: '8 5' },
     funded: { label: 'Funded', dash: '14 4 3 4' },
+    open_call: { label: 'Open call', dash: '2 5' },
     implementation: { label: 'Under implementation', dash: '' },
     operational: { label: 'Operational', dash: '' },
     announced: { label: 'Announced', dash: '2 5' }
@@ -527,6 +528,7 @@
       [
         ['operational', 'Operational / implementation'],
         ['signed', 'Signed'],
+        ['open_call', 'Open call'],
         ['announced', 'Announced']
       ].forEach(([status, label]) => {
         const item = document.createElement('span');
