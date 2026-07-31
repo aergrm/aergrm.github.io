@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Interactive map of middle-power semiconductor cooperation, value-chain roles, and strategic dependence.">
+  <meta name="description" content="Interactive map of middle-power semiconductor cooperation, 2024 bilateral trade, concentration, and strategic dependence.">
   <title>Middle Powers in the Global Semiconductor Network</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="trade-upgrade.css">
 </head>
 <body>
   <header class="topbar">
     <div class="title-wrap">
-      <div class="kicker">Interactive research map</div>
+      <div class="kicker">Interactive research map · Data release 1.1</div>
       <h1>Middle Powers in the Global Semiconductor Network</h1>
-      <p class="subtitle">Explore how specialized production roles, international partnerships, and exposure to technological great powers shape the semiconductor strategies of middle powers. The map distinguishes formal cooperation from analytically coded supply-chain dependence.</p>
+      <p class="subtitle">Explore how specialized production roles, bilateral trade, partner concentration, and international cooperation shape middle-power semiconductor strategies. Trade measures use a fixed, reproducible 2024 CEPII BACI release rather than live browser queries.</p>
     </div>
     <a class="site-link" href="/research/">← Research page</a>
   </header>
@@ -25,14 +26,14 @@
     <div class="control-card">
       <label>Network</label>
       <div class="segmented" id="modeControl">
-        <button type="button" data-mode="cooperation" class="active">Cooperation</button>
-        <button type="button" data-mode="corridors">Dependence</button>
+        <button type="button" data-mode="trade" class="active">Trade</button>
+        <button type="button" data-mode="cooperation">Cooperation</button>
         <button type="button" data-mode="both">Both</button>
       </div>
     </div>
     <div class="control-card">
-      <label for="yearSelect">Through year</label>
-      <select id="yearSelect" aria-label="Select end year">
+      <label for="yearSelect">Cooperation through</label>
+      <select id="yearSelect" aria-label="Select cooperation end year">
         <option value="2023">2023</option>
         <option value="2024">2024</option>
         <option value="2025">2025</option>
@@ -44,11 +45,12 @@
   <main class="layout">
     <section class="map-card">
       <div class="map-head">
-        <div><strong id="mapTitle">Formal and institutional cooperation</strong></div>
-        <div class="note" id="mapNote">Dashed links show bilateral agreements; multilateral memberships appear in country profiles.</div>
+        <div><strong id="mapTitle">2024 semiconductor trade network</strong></div>
+        <div class="note" id="mapNote">Arrows follow exporter → importer; width reflects bilateral value in the four-product semiconductor basket.</div>
       </div>
       <div class="legend" id="legend" aria-label="Value chain role filters"></div>
-      <svg id="map" role="img" aria-label="World map of semiconductor cooperation and dependence"></svg>
+      <svg id="map" role="img" aria-label="World map of semiconductor trade and cooperation"></svg>
+      <div class="tooltip" id="tooltip"></div>
     </section>
 
     <aside class="panel" id="panel" aria-live="polite"></aside>
@@ -56,13 +58,13 @@
 
   <footer>
     <div class="foot-card">
-      <strong>Research prototype, compiled July 2026.</strong> Country roles and structural corridors are transparent analytical codings, not a claim that the complete semiconductor value chain can be inferred from customs data alone. UN Comtrade HS 8542 totals are cached by a scheduled GitHub Action so the static page does not make fragile browser-side API requests. See the <a href="methods.html">methods and sources</a> and <a href="data.js">coded data</a>.
+      <strong>Fixed 2024 data release.</strong> Trade indicators are computed from CEPII BACI HS22 version 202601 for HS 8542, 8486, 381800, and non-photovoltaic HS 8541. They capture customs flows, not design IP, licensing, ownership, or services. Taiwan is represented by BACI code 490, “Asia, not elsewhere specified.” See the <a href="methods.html">methods and sources</a>, <a href="trade-country-indicators.csv">country indicators</a>, and <a href="trade-bilateral-links.csv">bilateral data</a>.
     </div>
   </footer>
 
   <script src="data.js"></script>
   <script src="world-map.js"></script>
-  <script src="trade-cache.js"></script>
+  <script src="trade-data.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

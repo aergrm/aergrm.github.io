@@ -1,0 +1,65 @@
+.data-release {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 2px;
+}
+.data-chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  background: #f7f9fc;
+  border-radius: 999px;
+  padding: 4px 8px;
+  color: #536176;
+  font-size: 10px;
+  font-weight: 800;
+}
+.metric-grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.metric .value.small { font-size: 15px; }
+.metric .value.positive { color: #217346; }
+.metric .value.negative { color: #a33b36; }
+.partner-list { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.partner-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 9px;
+  border-bottom: 1px solid var(--line);
+  font-size: 11.5px;
+}
+.partner-row:last-child { border-bottom: 0; }
+.partner-row strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.partner-row .share { color: #315f84; font-weight: 850; }
+.partner-row .amount { color: var(--muted); font-variant-numeric: tabular-nums; }
+.composition-row { margin-bottom: 9px; }
+.composition-head { display: flex; justify-content: space-between; gap: 10px; font-size: 11px; margin-bottom: 4px; }
+.composition-head span:first-child { color: #4d586a; font-weight: 750; }
+.composition-head span:last-child { color: var(--muted); font-variant-numeric: tabular-nums; }
+.composition-bar { height: 8px; background: #edf0f4; border-radius: 999px; overflow: hidden; }
+.composition-bar span { display: block; height: 100%; border-radius: inherit; }
+.exposure-row.wide { grid-template-columns: 112px 1fr 42px; }
+.exposure-row.wide strong { text-align: right; font-variant-numeric: tabular-nums; }
+.download-row { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 10px; }
+.download-link {
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  background: #f8fafc;
+  color: #315f84;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 10.5px;
+  font-weight: 850;
+}
+.source-note { color: var(--muted); font-size: 10.5px; line-height: 1.45; margin-top: 8px; }
+.trade-link { stroke-linecap: round; }
+.trade-link.selected { opacity: 1 !important; }
+.trade-link-faint { opacity: .06 !important; }
+.legend-key { margin-left: auto; color: var(--muted); font-size: 10px; }
+@media (max-width: 680px) {
+  .download-row { grid-template-columns: 1fr; }
+  .partner-row { grid-template-columns: minmax(0, 1fr) auto; }
+  .partner-row .amount { display: none; }
+}
