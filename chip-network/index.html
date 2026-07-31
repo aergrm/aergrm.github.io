@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive map of middle-power semiconductor cooperation, value-chain roles, and strategic dependence.">
+  <title>Middle Powers in the Global Semiconductor Network</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="title-wrap">
+      <div class="kicker">Interactive research map</div>
+      <h1>Middle Powers in the Global Semiconductor Network</h1>
+      <p class="subtitle">Explore how specialized production roles, international partnerships, and exposure to technological great powers shape the semiconductor strategies of middle powers. The map distinguishes formal cooperation from analytically coded supply-chain dependence.</p>
+    </div>
+    <a class="site-link" href="/research/">← Research page</a>
+  </header>
+
+  <section class="controls" aria-label="Map controls">
+    <div class="control-card">
+      <label for="countrySelect">Country</label>
+      <select id="countrySelect" aria-label="Select country"></select>
+    </div>
+    <div class="control-card">
+      <label>Network</label>
+      <div class="segmented" id="modeControl">
+        <button type="button" data-mode="cooperation" class="active">Cooperation</button>
+        <button type="button" data-mode="corridors">Dependence</button>
+        <button type="button" data-mode="both">Both</button>
+      </div>
+    </div>
+    <div class="control-card">
+      <label for="yearSelect">Through year</label>
+      <select id="yearSelect" aria-label="Select end year">
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+        <option value="2025">2025</option>
+        <option value="2026" selected>2026</option>
+      </select>
+    </div>
+  </section>
+
+  <main class="layout">
+    <section class="map-card">
+      <div class="map-head">
+        <div><strong id="mapTitle">Formal and institutional cooperation</strong></div>
+        <div class="note" id="mapNote">Dashed links show bilateral agreements; multilateral memberships appear in country profiles.</div>
+      </div>
+      <div class="legend" id="legend" aria-label="Value chain role filters"></div>
+      <svg id="map" role="img" aria-label="World map of semiconductor cooperation and dependence"></svg>
+      <div class="tooltip" id="tooltip"></div>
+    </section>
+
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </main>
+
+  <footer>
+    <div class="foot-card">
+      <strong>Research prototype, compiled July 2026.</strong> Country roles and structural corridors are transparent analytical codings, not a claim that the complete semiconductor value chain can be inferred from customs data alone. Live trade cards query UN Comtrade for HS 8542 integrated circuits and may be rate-limited. See the <a href="methods.html">methods and sources</a> and <a href="data.js">coded data</a>.
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+  <script src="data.js"></script>
+  <script src="fallback.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
