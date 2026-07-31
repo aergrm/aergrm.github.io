@@ -26,6 +26,12 @@ Committee: <a href="https://ojreuter.com/">John Reuter</a>, Shale Horowitz, and 
 ### Selected Working Papers
 
 <details style="margin-bottom: 8px;">
+<summary><strong>Sovereign Compute without Sovereign Chips: Managed Dependence in Saudi Arabia and the United Arab Emirates</strong></summary>
+<br>
+This paper examines how Saudi Arabia and the United Arab Emirates pursue digital sovereignty while remaining dependent on a U.S.-centered ecosystem for frontier computing power. It develops the concept of managed dependence to explain how technologically dependent states use complementary assets to obtain conditional access while limiting the risks of lock-in.
+</details>
+
+<details style="margin-bottom: 8px;">
 <summary><strong>Middle Power AI Policy Amid Superpower Rivalry: The Case of the UAE</strong> <i>(with Lawrence Rubin and Dana Abu Haltam)</i></summary>
 <br>
 This project examines how a middle power navigates competing technological ecosystems and security partnerships. It focuses on the United Arab Emirates' artificial intelligence and 5G policies amid intensifying competition between the United States and China.
