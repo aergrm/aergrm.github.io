@@ -198,52 +198,16 @@
     <div id="comparisonContent"></div>
   </section>
 
-  <section class="data-section" id="cooperationDataSection" aria-labelledby="cooperationTableTitle">
-    <div class="section-head">
-      <div>
-        <div class="scope-label">Underlying records</div>
-        <h2 id="cooperationTableTitle">Semiconductor cooperation data</h2>
-        <p>Search the records represented on the map. “Broader framework” means that semiconductors are one explicit component of a wider technology or supply-chain agreement.</p>
-      </div>
-      <a class="download-button" href="semiconductor-cooperation.csv" download>Download cooperation CSV</a>
-    </div>
-    <div class="table-toolbar">
-      <label for="cooperationSearch">Search records</label>
-      <input id="cooperationSearch" type="search" placeholder="Country, agreement, type, stage, or status">
-      <span id="cooperationCount"></span>
-    </div>
-    <div class="table-wrap">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Participants</th>
-            <th>Agreement</th>
-            <th>Type</th>
-            <th>Scope</th>
-            <th>Stage</th>
-            <th>Status</th>
-            <th>Source</th>
-          </tr>
-        </thead>
-        <tbody id="cooperationTableBody"></tbody>
-      </table>
-    </div>
+  <section id="cooperationDataSection" hidden aria-hidden="true">
+    <input id="cooperationSearch" type="search" tabindex="-1">
+    <span id="cooperationCount"></span>
+    <table><tbody id="cooperationTableBody"></tbody></table>
   </section>
 
   <footer>
     <div class="foot-card">
       <strong>Data:</strong> semiconductor cooperation through July 2026; published firm-network findings through 2025; bilateral trade for 2024.
-      <span class="footer-links">
-        <a href="methods.html">Methods and sources</a>
-        <a href="DATA_DICTIONARY.md">Data dictionary</a>
-        <a href="cooperation-source-audit.csv">Source notes</a>
-        <a href="DESCRIPTIVE_MEMO.md">Research memo</a>
-        <a href="RELEASE_4_1.md">Release notes</a>
-        <a href="CITATION.cff">Citation file</a>
-        <a href="trade-country-indicators.csv">Country trade indicators</a>
-        <a href="trade-bilateral-links.csv">Bilateral trade data</a>
-      </span>
+      <span class="footer-links"><a href="methods.html">Methods and sources</a></span>
     </div>
   </footer>
 
