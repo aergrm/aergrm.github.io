@@ -124,7 +124,9 @@
       stylesheet.href = 'release-4-2.css?v=4.2';
       document.head.appendChild(stylesheet);
     }
-    loadScript('capability-profiles.js', () => loadScript('release-4-2.js'));
+    loadScript('capability-profiles.js', () => {
+      loadScript('release-4-2.js', () => loadScript('release-4-2-overrides.js'));
+    });
   }
 
   function apply(root = document.body) {
