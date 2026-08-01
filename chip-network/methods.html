@@ -12,7 +12,7 @@
     .method-section{background:#fff;border:1px solid var(--line);border-radius:13px;padding:20px 22px;margin:13px 0;box-shadow:var(--shadow)}
     .method-section h2{margin-top:0}
     .method-section p,.method-section li{color:var(--muted);line-height:1.65}
-    .date-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .date-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
     .date-grid div{border:1px solid var(--line);border-radius:10px;padding:13px;background:#fff}
     .date-grid strong{display:block;font-size:23px;color:var(--blue)}
     code{background:#eef2f6;padding:2px 5px;border-radius:4px}
@@ -22,11 +22,12 @@
 <body>
   <main class="methods-main">
     <a class="site-link" href="index.html">← Back to map</a>
-    <div class="kicker">Release 4.1 · July 2026</div>
+    <div class="kicker">Release 4.2 · August 2026</div>
     <h1>Methods, sources, and limitations</h1>
-    <p class="subtitle">The project separates cooperation, customs trade, and firm-network evidence because they measure different relationships and have different observation dates.</p>
+    <p class="subtitle">The project separates cooperation, customs trade, curated capability profiles, and published firm-network evidence because they measure different relationships and have different observation dates.</p>
 
     <div class="date-grid">
+      <div><strong>Aug 2026</strong>Curated case capability profiles</div>
       <div><strong>July 2026</strong>Semiconductor cooperation records</div>
       <div><strong>2025</strong>Published firm-network findings</div>
       <div><strong>2024</strong>Bilateral customs-trade baseline</div>
@@ -48,16 +49,19 @@
     </section>
 
     <section class="method-section">
-      <h2>3. Country capabilities, dependencies, and sources</h2>
-      <p>Country profiles summarize value-chain roles, capabilities, and dependencies. They are descriptive rather than prescriptive: the page does not recommend national strategies. Each profile links to official national, ministry, investment-agency, or public research sources used to document the country’s semiconductor position.</p>
-      <p>The bullets are concise syntheses of the listed profile sources. They are not independent quantitative measures and should not be interpreted as rankings. The legacy <code>strategy</code> field in the original prototype is not displayed.</p>
+      <h2>3. Country capabilities, representative firms, and institutions</h2>
+      <p>Release 4.2 adds curated profiles for India, Malaysia, and Canada. These profiles connect three questions: what capabilities are present in the country, what external inputs or relationships remain necessary, and what international cooperation is intended to provide.</p>
+      <p>The firm and institution lists are <strong>representative and non-exhaustive</strong>. They are not a complete firm census and are not used to calculate national scores. An entity is included when an official government, investment-agency, public-institution, or company source documents a semiconductor-related facility, research function, design activity, fabrication role, packaging or testing capability, or commercialization service relevant to the case.</p>
+      <p>Each visible record separates the entity’s headquarters country from the location of the facility or activity. It also distinguishes domestic firms, foreign-owned operating facilities, joint ventures, public research institutions, and shared-access infrastructure. Status labels distinguish operational activity from pilot operation, announced expansion, and implementation still in progress.</p>
+      <p>Ownership and territorial production are not treated as equivalent. A foreign-owned plant can expand production and employment inside a country without transferring control over intellectual property, equipment, strategic investment decisions, or customers. Likewise, a research centre or pilot line documents access and learning infrastructure, not high-volume commercial capacity.</p>
+      <p>The case profiles were last checked on 1 August 2026. The underlying curated records are displayed on the page but are not offered as a downloadable firm-level dataset.</p>
     </section>
 
     <section class="method-section">
       <h2>4. Bilateral semiconductor trade in 2024</h2>
       <p>The trade layer uses CEPII BACI HS22 version 202601. BACI reconciles exporter and importer reports from UN Comtrade and provides globally comparable bilateral product-level flows. Values are converted from thousands of current U.S. dollars to current U.S. dollars.</p>
       <p>The product basket contains HS 8542 integrated circuits, HS 8486 semiconductor manufacturing equipment, HS 381800 doped electronic-grade materials, and HS 8541 semiconductor devices excluding photovoltaic cells and modules classified under 854142 and 854143. The exclusions prevent solar-panel trade from being interpreted as semiconductor-network dependence.</p>
-      <p>The page reports imports, exports, balance, partner concentration using the Herfindahl–Hirschman Index, top-partner shares, effective partner counts, partner rankings, and product composition. The Taiwan node uses BACI/UN code 490, “Asia not elsewhere specified,” as a documented proxy. The European Union node aggregates EU-27 members while excluding the separately mapped Netherlands from the map node to avoid duplicate flows.</p>
+      <p>The page reports imports, exports, balance, partner concentration using the Herfindahl–Hirschman Index, top-partner shares, effective partner counts, partner rankings, and separate import and export product composition. The Taiwan node uses BACI/UN code 490, “Asia not elsewhere specified,” as a documented proxy. The European Union node aggregates EU-27 members while excluding the separately mapped Netherlands from the map node to avoid duplicate flows.</p>
       <p>Product filters recalculate displayed link values and country product totals. Partner rankings and HHI remain based on the full four-product basket and are labeled accordingly. The trade layer does not observe design licensing, software, services, ownership, investment, export-control authorizations, or production technology.</p>
       <p>Source: <a href="https://www.cepii.fr/DATA_DOWNLOAD/baci/doc/baci_webpage.html">CEPII BACI</a>.</p>
     </section>
@@ -77,6 +81,7 @@
         <li><strong>Import HHI:</strong> the sum of squared import-partner shares in the full four-product basket.</li>
         <li><strong>Effective partners:</strong> the reciprocal of HHI.</li>
         <li><strong>Country comparison:</strong> reports cooperation counts through the selected year and 2024 trade measures; it does not create a composite score.</li>
+        <li><strong>Capability–trade–cooperation matrix:</strong> places a qualitative capability profile beside the 2024 trade baseline and the documented cooperation response. It illustrates different starting positions rather than estimating causal effects.</li>
       </ul>
     </section>
 
@@ -85,16 +90,18 @@
       <ul>
         <li>The cooperation dataset is a documented release, not a claim that every relevant agreement worldwide has been captured.</li>
         <li>Official agreements identify commitments and institutions, not necessarily realized investment, implementation quality, or production output.</li>
-        <li>Country-profile capabilities and dependencies are qualitative syntheses of official sources.</li>
+        <li>The representative entity lists do not capture every firm, facility, university, supplier relationship, or private investment.</li>
+        <li>Company and government statements may emphasize planned capacity; the page therefore separates operational activity from projects under implementation.</li>
+        <li>Country-profile capabilities and dependencies are qualitative syntheses of cited sources.</li>
         <li>Customs trade is lagged and cannot measure intellectual property, services, ownership, technical sophistication, or supply-chain substitutability.</li>
         <li>The web-reconstructed firm network may underrepresent smaller firms and relationships not disclosed on company webpages.</li>
-        <li>Map position and line width should not be read as causal evidence or an overall measure of national semiconductor power.</li>
+        <li>Map position, firm count, and line width should not be read as causal evidence or an overall measure of national semiconductor power.</li>
       </ul>
     </section>
 
     <section class="method-section">
       <h2>8. Availability</h2>
-      <p>The public page presents an interactive research preview. The compiled dataset, detailed coding materials, research memo, and replication files are being withheld while the related manuscript is under journal review. Public source documents remain linked where they support visible country profiles or published findings.</p>
+      <p>The public page presents an interactive research preview. The compiled cooperation dataset, detailed coding materials, research memo, and replication files are being withheld while the related manuscript is under journal review. Public source documents remain linked where they support visible cooperation records, country profiles, representative entity records, or published findings.</p>
     </section>
   </main>
 </body>
