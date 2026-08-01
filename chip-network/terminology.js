@@ -105,6 +105,28 @@
     root.querySelectorAll?.('.download-button').forEach((button) => button.remove());
   }
 
+  function loadScript(src, onload) {
+    if (document.querySelector(`script[src^="${src}"]`)) {
+      onload?.();
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = `${src}?v=4.2`;
+    script.defer = true;
+    if (onload) script.addEventListener('load', onload, { once: true });
+    document.body.appendChild(script);
+  }
+
+  function loadRelease42() {
+    if (!document.querySelector('link[href^="release-4-2.css"]')) {
+      const stylesheet = document.createElement('link');
+      stylesheet.rel = 'stylesheet';
+      stylesheet.href = 'release-4-2.css?v=4.2';
+      document.head.appendChild(stylesheet);
+    }
+    loadScript('capability-profiles.js', () => loadScript('release-4-2.js'));
+  }
+
   function apply(root = document.body) {
     replaceText(root);
     prepareRecordTable(root.ownerDocument || document);
@@ -112,6 +134,7 @@
   }
 
   apply();
+  loadRelease42();
   new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       mutation.addedNodes.forEach((node) => {
