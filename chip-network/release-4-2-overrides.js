@@ -5,6 +5,7 @@
 
   function cleanSourceDates(root = document) {
     root.querySelectorAll?.('.entity-source span').forEach((label) => {
+      if (!/^Source dated\s+/i.test(label.textContent)) return;
       const match = label.textContent.match(/verified\s+(.+)$/i);
       if (match) label.textContent = `Verified ${match[1]}`;
     });
