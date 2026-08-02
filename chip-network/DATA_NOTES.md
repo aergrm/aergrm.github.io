@@ -2,10 +2,12 @@
 
 ## Canonical cooperation data
 
-`cooperation-data.js`, together with the release-specific additions in `cooperation-data-extensions.js`, is the data source used by the current interactive application.
+`cooperation-data.js`, together with the release-specific additions in `cooperation-data-extensions.js` and `cooperation-data-release-4-3-2.js`, is the data source used by the current interactive application.
 
 The older `COOPERATION` array in `data.js` is **deprecated**. It is retained only for backward compatibility with earlier prototypes and must not be updated, cited, or used for current agreement counts. New cooperation records must follow the schema used by `COOPERATION_DATA`: date, participants, map pairs, type, scope, value-chain stages, status, implementation evidence, funding, official source URL, and verification date.
 
-Release 4.3.1 expands the displayed cooperation data from 21 to 31 records, corrects the start of the Japan–U.S. JUCIP semiconductor record to May 4, 2022, and adds official records involving the Quad, Taiwan, South Korea, Singapore, the United Kingdom, Vietnam, Canada, and India.
+Release 4.3.1 expanded the displayed cooperation data from 21 to 31 records, corrected the start of the Japan–U.S. JUCIP semiconductor record to May 4, 2022, and added official records involving the Quad, Taiwan, South Korea, Singapore, the United Kingdom, Vietnam, Canada, and India.
 
-The extension file is idempotent: it replaces the older 2024 JUCIP entry, adds only records whose identifiers are not already present, sorts the combined dataset, and then asks the interface to rerender.
+Release 4.3.2 expands the displayed cooperation data from 31 to 39 records. It adds official records for the U.S.–Singapore Partnership for Growth and Innovation, Japan–Canada industrial science and technology cooperation, Vietnam–Japan semiconductor research, the U.S.–UAE AI Acceleration Partnership, Malaysia–Netherlands semiconductor cooperation, Korea–UAE AI and semiconductor cooperation, the U.S.–Saudi Strategic AI Partnership, and India–Vietnam digital technology cooperation.
+
+Both extension files are idempotent: they add only records whose identifiers are not already present, sort the combined dataset, and ask the interface to rerender. The Release 4.3.2 layer is kept separate so the provenance of each public expansion remains auditable.
