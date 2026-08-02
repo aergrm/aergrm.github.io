@@ -101,15 +101,14 @@
   }
 
   function bindCopyTools() {
-    const copyView = document.getElementById('copyView');
-    if (copyView) {
-      copyView.addEventListener('click', () => copyText(window.location.href, copyView, 'View copied'));
-    }
+    const viewButtons = [...document.querySelectorAll('#copyView')];
+    viewButtons.forEach((button, index) => {
+      if (index > 0) button.id = `copyView-${index + 1}`;
+      button.addEventListener('click', () => copyText(window.location.href, button, 'View copied'));
+    });
     const citation = 'Ergurum, Ahmet. 2026. “Middle Powers in the Global Semiconductor Network.” Release 4.3. https://aergrm.github.io/chip-network/';
     const copyCitation = document.getElementById('copyCitation');
-    if (copyCitation) {
-      copyCitation.addEventListener('click', () => copyText(citation, copyCitation, 'Citation copied'));
-    }
+    if (copyCitation) copyCitation.addEventListener('click', () => copyText(citation, copyCitation, 'Citation copied'));
   }
 
   function bindSuggestedComparisons() {
