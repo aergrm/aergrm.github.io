@@ -124,6 +124,25 @@
 (() => {
   'use strict';
 
+  function loadCooperationDataSync() {
+    if (document.querySelector('script[data-cooperation-data-sync]')) return;
+    const script = document.createElement('script');
+    script.src = 'cooperation-data-sync.js?v=4.3.3';
+    script.async = false;
+    script.dataset.cooperationDataSync = 'true';
+    document.body.appendChild(script);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadCooperationDataSync, { once: true });
+  } else {
+    loadCooperationDataSync();
+  }
+})();
+
+(() => {
+  'use strict';
+
   function loadRelease432Data() {
     if (document.querySelector('script[data-release-432-data]')) return;
     const script = document.createElement('script');
