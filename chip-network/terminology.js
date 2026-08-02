@@ -139,3 +139,30 @@
     loadRelease432Data();
   }
 })();
+
+(() => {
+  'use strict';
+
+  let loaded = false;
+
+  function loadRelease433Data() {
+    if (loaded || document.querySelector('script[data-release-433-data]')) return;
+    loaded = true;
+    const script = document.createElement('script');
+    script.src = 'cooperation-data-release-4-3-3.js?v=4.3.3';
+    script.async = false;
+    script.dataset.release433Data = 'true';
+    document.body.appendChild(script);
+  }
+
+  function queueRelease433Data() {
+    window.addEventListener('chip:cooperationdatachange', loadRelease433Data, { once: true });
+    window.setTimeout(loadRelease433Data, 1600);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', queueRelease433Data, { once: true });
+  } else {
+    queueRelease433Data();
+  }
+})();
