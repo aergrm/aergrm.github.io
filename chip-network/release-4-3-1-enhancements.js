@@ -78,7 +78,7 @@
 
   function applyReleaseLabels() {
     const kicker = document.querySelector('.kicker');
-    if (kicker) kicker.textContent = kicker.textContent.replace('Release 4.3', 'Release 4.3.1');
+    if (kicker) kicker.textContent = kicker.textContent.replace(/Release 4\.3(?:\.1)*/, 'Release 4.3.1');
     const citation = document.querySelector('.citation-text');
     if (citation) citation.textContent = 'Ergurum, Ahmet. 2026. “Middle Powers in the Global Semiconductor Network.” Release 4.3.1.';
   }
@@ -131,6 +131,9 @@
     section.insertAdjacentElement('beforebegin', details);
     details.append(summary, shell);
     shell.appendChild(section);
+
+    const implementation = document.getElementById('implementationSection');
+    if (implementation) implementation.insertAdjacentElement('afterend', details);
 
     section.classList.add('cooperation-data-visible');
     section.removeAttribute('aria-hidden');
@@ -240,6 +243,7 @@
 
   function decorateMultilateralMap() {
     if (typeof COUNTRIES === 'undefined') return;
+    if (document.getElementById('cooperationControls')?.hidden) return;
     const map = document.getElementById('map');
     const viewport = map?.querySelector('#mapViewport');
     if (!viewport || map.hidden) return;
