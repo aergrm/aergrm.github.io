@@ -120,3 +120,22 @@
     hideUnpublishedMaterials();
   }).observe(document.body, { childList: true, subtree: true });
 })();
+
+(() => {
+  'use strict';
+
+  function loadRelease432Data() {
+    if (document.querySelector('script[data-release-432-data]')) return;
+    const script = document.createElement('script');
+    script.src = 'cooperation-data-release-4-3-2.js?v=4.3.2';
+    script.async = false;
+    script.dataset.release432Data = 'true';
+    document.body.appendChild(script);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadRelease432Data, { once: true });
+  } else {
+    loadRelease432Data();
+  }
+})();
