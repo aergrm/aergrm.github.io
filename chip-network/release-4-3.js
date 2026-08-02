@@ -219,3 +219,31 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
   else init();
 })();
+
+(() => {
+  'use strict';
+
+  function loadRelease431Enhancements() {
+    if (!document.querySelector('link[data-release-431-enhancements]')) {
+      const stylesheet = document.createElement('link');
+      stylesheet.rel = 'stylesheet';
+      stylesheet.href = 'release-4-3-1-enhancements.css?v=4.3.1';
+      stylesheet.dataset.release431Enhancements = 'true';
+      document.head.appendChild(stylesheet);
+    }
+
+    if (!document.querySelector('script[data-release-431-enhancements]')) {
+      const script = document.createElement('script');
+      script.src = 'release-4-3-1-enhancements.js?v=4.3.1';
+      script.async = false;
+      script.dataset.release431Enhancements = 'true';
+      document.body.appendChild(script);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadRelease431Enhancements, { once: true });
+  } else {
+    loadRelease431Enhancements();
+  }
+})();
