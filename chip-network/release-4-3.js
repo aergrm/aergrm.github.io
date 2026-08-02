@@ -8,10 +8,65 @@
     { id: 'operational', label: 'Operational', statuses: ['operational'] }
   ];
 
+  const COOPERATION_FILTER_OPTIONS = {
+    coopStatus: [
+      { value: 'announced', label: 'Announced' }
+    ],
+    coopStage: [
+      { value: 'advanced_manufacturing', label: 'Advanced manufacturing' },
+      { value: 'infrastructure', label: 'Infrastructure' },
+      { value: 'semiconductors', label: 'Semiconductors' },
+      { value: 'trusted_network', label: 'Trusted network' }
+    ]
+  };
+
   function escapeHtml(value) {
     return String(value ?? '').replace(/[&<>"']/g, (character) => ({
       '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
     }[character]));
+  }
+
+  function ensureCooperationFilterOptions() {
+    Object.entries(COOPERATION_FILTER_OPTIONS).forEach(([selectId, options]) => {
+      const select = document.getElementById(selectId);
+      if (!select) return;
+      options.forEach(({ value, label }) => {
+        if ([...select.options].some((option) => option.value === value)) return;
+        const option = document.createElement('option');
+        option.value = value;
+        option.textContent = label;
+        select.appendChild(option);
+      });
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    const requestedStatus = params.get('status');
+    const requestedStage = params.get('stage');
+    const statusSelect = document.getElementById('coopStatus');
+    const stageSelect = document.getElementById('coopStage');
+
+    if (statusSelect && requestedStatus && [...statusSelect.options].some((option) => option.value === requestedStatus)) {
+      statusSelect.value = requestedStatus;
+    }
+    if (stageSelect && requestedStage && [...stageSelect.options].some((option) => option.value === requestedStage)) {
+      stageSelect.value = requestedStage;
+    }
+  }
+
+  function loadCooperationDataExtensions() {
+    if (document.querySelector('script[data-chip-cooperation-extensions]')) return;
+
+    window.addEventListener('chip:cooperationdatachange', () => {
+      const yearSelect = document.getElementById('yearSelect');
+      if (yearSelect) yearSelect.dispatchEvent(new Event('change', { bubbles: true }));
+      renderImplementationChart();
+    }, { once: true });
+
+    const script = document.createElement('script');
+    script.src = 'cooperation-data-extensions.js?v=4.3.1';
+    script.dataset.chipCooperationExtensions = 'true';
+    script.async = false;
+    document.body.appendChild(script);
   }
 
   function recordTouchesCountry(record, countryId) {
@@ -145,12 +200,15 @@
     if (panel) new MutationObserver(() => renderImplementationChart()).observe(panel, { childList: true });
     document.addEventListener('chip:casechange', () => renderImplementationChart());
     window.addEventListener('popstate', () => window.setTimeout(() => {
+      ensureCooperationFilterOptions();
       syncImplementationVisibility();
       renderImplementationChart();
     }, 0));
   }
 
   function init() {
+    ensureCooperationFilterOptions();
+    loadCooperationDataExtensions();
     syncImplementationVisibility();
     renderImplementationChart();
     bindImplementationUpdates();
