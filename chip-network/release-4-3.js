@@ -80,6 +80,12 @@
     summary.innerHTML = `<strong>${beyondSignature} of ${records.length}</strong> displayed records show funding, an open call, implementation, or recurring operation. <strong>${operational}</strong> are coded as operational. The categories describe documented evidence, not effectiveness or production output.`;
   }
 
+  function syncImplementationVisibility() {
+    const section = document.getElementById('implementationSection');
+    const cooperationControls = document.getElementById('cooperationControls');
+    if (section && cooperationControls) section.hidden = cooperationControls.hidden;
+  }
+
   async function copyText(text, button, successLabel) {
     const original = button.textContent;
     try {
@@ -101,10 +107,9 @@
   }
 
   function bindCopyTools() {
-    const viewButtons = [...document.querySelectorAll('#copyView')];
-    viewButtons.forEach((button, index) => {
-      if (index > 0) button.id = `copyView-${index + 1}`;
-      button.addEventListener('click', () => copyText(window.location.href, button, 'View copied'));
+    ['copyView', 'copyViewBottom'].forEach((id) => {
+      const button = document.getElementById(id);
+      if (button) button.addEventListener('click', () => copyText(window.location.href, button, 'View copied'));
     });
     const citation = 'Ergurum, Ahmet. 2026. “Middle Powers in the Global Semiconductor Network.” Release 4.3. https://aergrm.github.io/chip-network/';
     const copyCitation = document.getElementById('copyCitation');
@@ -130,13 +135,23 @@
     ['countrySelect', 'yearSelect', 'coopType', 'coopScope', 'coopStatus', 'coopStage'].forEach((id) => {
       document.getElementById(id)?.addEventListener('change', () => window.setTimeout(renderImplementationChart, 0));
     });
+    document.querySelectorAll('.evidence-card[data-mode]').forEach((button) => {
+      button.addEventListener('click', () => window.setTimeout(() => {
+        syncImplementationVisibility();
+        renderImplementationChart();
+      }, 0));
+    });
     const panel = document.getElementById('panel');
     if (panel) new MutationObserver(() => renderImplementationChart()).observe(panel, { childList: true });
     document.addEventListener('chip:casechange', () => renderImplementationChart());
-    window.addEventListener('popstate', () => window.setTimeout(renderImplementationChart, 0));
+    window.addEventListener('popstate', () => window.setTimeout(() => {
+      syncImplementationVisibility();
+      renderImplementationChart();
+    }, 0));
   }
 
   function init() {
+    syncImplementationVisibility();
     renderImplementationChart();
     bindImplementationUpdates();
     bindCopyTools();
