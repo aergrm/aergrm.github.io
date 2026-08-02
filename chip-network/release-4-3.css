@@ -154,6 +154,10 @@
   border-left: 4px solid var(--blue);
 }
 .why-matters strong { display: block; margin-bottom: 5px; }
+#copyView,
+#copyViewBottom {
+  display: none !important;
+}
 @media (max-width: 1000px) {
   .findings-section,
   .reading-guide,
