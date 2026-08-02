@@ -3,16 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Interactive research resource on semiconductor cooperation, trade, and published firm-network findings for selected middle powers and major semiconductor hubs.">
+  <meta name="description" content="Interactive research resource on semiconductor cooperation, implementation, trade, and representative firm capabilities for selected middle powers and major semiconductor hubs.">
   <title>Middle Powers in the Global Semiconductor Network</title>
-  <link rel="stylesheet" href="v4.css?v=4.1">
+  <link rel="stylesheet" href="v4.css?v=4.3">
+  <link rel="stylesheet" href="case-profiles-v4-3.css?v=4.3">
+  <link rel="stylesheet" href="release-4-3.css?v=4.3">
 </head>
 <body>
   <header class="topbar">
     <div class="title-wrap">
-      <div class="kicker">Interactive research resource · Release 4.1 · July 2026</div>
+      <div class="kicker">Interactive research resource · Release 4.3 · August 2026</div>
       <h1>Middle Powers in the Global Semiconductor Network</h1>
-      <p class="subtitle">Official semiconductor cooperation through July 2026, published firm-network findings through 2025, and bilateral semiconductor trade in 2024.</p>
+      <p class="subtitle">Official semiconductor cooperation through July 2026, representative capability and firm profiles verified through August 2026, published firm-network findings through 2025, and bilateral semiconductor trade in 2024.</p>
     </div>
     <a class="site-link" href="/research/">← Research page</a>
   </header>
@@ -23,10 +25,26 @@
       <h2 id="scopeTitle">How do selected middle powers use specialized capabilities and international cooperation to manage dependence in the semiconductor value chain?</h2>
     </div>
     <div class="scope-columns">
-      <div><strong>The page shows</strong><span>Official cooperation records, bilateral customs trade, country profiles, and published firm-network findings.</span></div>
-      <div><strong>The page does not show</strong><span>A complete firm census, technological sophistication, production capacity, or implementation beyond documented evidence.</span></div>
+      <div><strong>The page shows</strong><span>Official cooperation records, implementation status, bilateral customs trade, country profiles, published firm-network findings, and curated firm and institution profiles for India, Malaysia, and Canada.</span></div>
+      <div><strong>The page does not show</strong><span>A complete firm census, private supplier relationships, technological sophistication, full production capacity, causal effects, or implementation not supported by documented evidence.</span></div>
     </div>
   </section>
+
+  <section class="findings-section" aria-label="Three central findings">
+    <article class="finding-card"><span>1</span><h3>No selected case reproduces the full chain</h3><p>Domestic strengths remain concentrated in particular stages, while equipment, intellectual property, fabrication scale, materials, or markets remain externally controlled.</p></article>
+    <article class="finding-card"><span>2</span><h3>Inherited capabilities shape cooperation</h3><p>India seeks broad capability access, Malaysia protects and upgrades an embedded manufacturing role, and Canada builds specialized research, sensor, photonics, and packaging niches.</p></article>
+    <article class="finding-card"><span>3</span><h3>Implementation matters more than signatures</h3><p>Agreements are coded separately as announced, signed, funded, open call, under implementation, or operational rather than treated as equivalent outcomes.</p></article>
+  </section>
+
+  <details class="reading-guide">
+    <summary>How to read the evidence layers</summary>
+    <div class="reading-guide-content">
+      <article><h3>Cooperation</h3><p>Documents governmental arrangements and their stated scope, stage, and implementation status. A record is not evidence that a capability was successfully created.</p></article>
+      <article><h3>Trade</h3><p>Measures 2024 bilateral customs flows in four product groups. It does not observe ownership, licensing, design software, services, or process sophistication.</p></article>
+      <article><h3>Capability profiles</h3><p>Describe representative firms, facilities, research institutions, territorial production, and external dependencies in India, Malaysia, and Canada.</p></article>
+      <article><h3>Published network research</h3><p>Summarizes findings from a separate study of firm relationships through 2025. The underlying firm-level edge list is not reconstructed here.</p></article>
+    </div>
+  </details>
 
   <nav class="evidence-strip" aria-label="Select evidence layer">
     <button class="evidence-card active" type="button" data-mode="cooperation">
@@ -67,6 +85,7 @@
       </select>
     </div>
     <button type="button" class="secondary-button" id="clearSelection">Clear countries</button>
+    <button type="button" class="secondary-button" id="copyView">Copy this view</button>
   </section>
 
   <section class="controls layer-controls" id="cooperationControls" aria-label="Semiconductor cooperation filters">
@@ -164,6 +183,18 @@
     <label class="toggle-control"><input type="checkbox" id="selectedOnly"> Selected country only</label>
   </section>
 
+  <section class="implementation-section" id="implementationSection" aria-labelledby="implementationTitle">
+    <div class="implementation-head">
+      <div>
+        <div class="scope-label">Signature versus implementation</div>
+        <h2 id="implementationTitle">Observed cooperation records by implementation status</h2>
+      </div>
+      <div class="implementation-context" id="implementationContext">All displayed countries</div>
+    </div>
+    <div class="implementation-chart" id="implementationChart"></div>
+    <p class="implementation-summary" id="implementationSummary"></p>
+  </section>
+
   <main class="layout">
     <section class="map-card">
       <div class="map-head">
@@ -198,26 +229,69 @@
     <div id="comparisonContent"></div>
   </section>
 
+  <section class="case-profile-section" id="caseProfilesSection" aria-labelledby="caseProfilesTitle">
+    <div class="case-section-head">
+      <div>
+        <span class="case-eyebrow">Representative case profiles · verified August 2026</span>
+        <h2 id="caseProfilesTitle">Capabilities, firms, and trade in three selected cases</h2>
+        <p>Explore how domestic assets, external dependencies, and international cooperation fit together in India, Malaysia, and Canada.</p>
+      </div>
+      <div class="case-tabs" role="tablist" aria-label="Select a country profile">
+        <button id="case-tab-ind" class="case-tab active" type="button" role="tab" data-case-id="ind" aria-controls="caseProfileContent" aria-selected="true">India</button>
+        <button id="case-tab-mys" class="case-tab" type="button" role="tab" data-case-id="mys" aria-controls="caseProfileContent" aria-selected="false" tabindex="-1">Malaysia</button>
+        <button id="case-tab-can" class="case-tab" type="button" role="tab" data-case-id="can" aria-controls="caseProfileContent" aria-selected="false" tabindex="-1">Canada</button>
+      </div>
+    </div>
+    <div id="caseProfileContent" role="tabpanel" aria-labelledby="case-tab-ind"></div>
+  </section>
+
   <section id="cooperationDataSection" hidden aria-hidden="true">
     <input id="cooperationSearch" type="search" tabindex="-1">
     <span id="cooperationCount"></span>
     <table><tbody id="cooperationTableBody"></tbody></table>
   </section>
 
+  <section class="share-section" aria-label="Share, compare, and cite the project">
+    <article class="share-card why-matters">
+      <div class="scope-label">Why this matters</div>
+      <h2>Dependence is also a resilience and security problem</h2>
+      <p>Semiconductor partnerships affect commercial continuity, trusted access, critical infrastructure, and the ability to sustain defense-relevant production during disruption. The site distinguishes visible access arrangements from demonstrated capability.</p>
+      <button type="button" class="share-button" id="copyViewBottom">Copy this view</button>
+    </article>
+    <article class="share-card">
+      <div class="scope-label">Suggested comparisons</div>
+      <h3>Start with contrasting inherited positions</h3>
+      <div class="share-actions">
+        <a href="#comparisonSection" class="comparison-link" data-comparison="ind:mys">India and Malaysia</a>
+        <a href="#comparisonSection" class="comparison-link" data-comparison="ind:can">India and Canada</a>
+        <a href="#comparisonSection" class="comparison-link" data-comparison="mys:can">Malaysia and Canada</a>
+      </div>
+    </article>
+    <article class="share-card">
+      <div class="scope-label">Suggested citation</div>
+      <h3>Cite the current public release</h3>
+      <div class="citation-text">Ergurum, Ahmet. 2026. “Middle Powers in the Global Semiconductor Network.” Release 4.3.</div>
+      <div class="share-actions"><button type="button" class="share-button" id="copyCitation">Copy citation</button></div>
+    </article>
+  </section>
+
   <footer>
     <div class="foot-card">
-      <strong>Data:</strong> semiconductor cooperation through July 2026; published firm-network findings through 2025; bilateral trade for 2024.
+      <strong>Data:</strong> capability profiles verified through August 2026; semiconductor cooperation through July 2026; published firm-network findings through 2025; bilateral trade for 2024.
       <span class="footer-links"><a href="methods.html">Methods and sources</a></span>
     </div>
   </footer>
 
-  <script src="data.js?v=4.1"></script>
-  <script src="world-map.js?v=4.1"></script>
-  <script src="trade-data.js?v=4.1"></script>
-  <script src="evidence.js?v=4.1"></script>
-  <script src="cooperation-data.js?v=4.1"></script>
-  <script src="country-sources.js?v=4.1"></script>
-  <script src="app-v4.js?v=4.1"></script>
-  <script src="terminology.js?v=4.1"></script>
+  <script src="data.js?v=4.3"></script>
+  <script src="world-map.js?v=4.3"></script>
+  <script src="trade-data.js?v=4.3"></script>
+  <script src="evidence.js?v=4.3"></script>
+  <script src="cooperation-data.js?v=4.3"></script>
+  <script src="country-sources.js?v=4.3"></script>
+  <script src="capability-profiles.js?v=4.3"></script>
+  <script src="app-v4.js?v=4.3"></script>
+  <script src="terminology.js?v=4.3"></script>
+  <script src="case-profiles-v4-3.js?v=4.3"></script>
+  <script src="release-4-3.js?v=4.3"></script>
 </body>
 </html>
