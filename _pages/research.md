@@ -20,9 +20,9 @@ If you are interested in these themes or would like to read a working paper, ple
 ### Dissertation
 
 <details open style="margin-bottom: 8px;">
-<summary><strong>Why Coercion Fails?</strong></summary>
+<summary><strong>Why Coercion Fails: Institutions, Signals, and Interpretation</strong></summary>
 <br>
-My dissertation examines strategic decision-making in American foreign policy and coercive diplomacy. Broadly, it considers how domestic political and institutional forces shape international behavior. The project uses quantitative and computational methods.
+My dissertation explains why coercive threats fail even when states appear capable and resolved. It argues that outcomes depend not only on credibility, but also on how threats and possible off-ramps are produced, transmitted, and interpreted. Across three essays, I examine bureaucratic coordination, official communication, and target responses to coercive bargains. The project combines a survey experiment in Russia, computational text analysis, and historical evidence.
 
 Committee: <a href="https://ojreuter.com/">John Reuter</a>, Shale Horowitz, and Natasha Sugiyama.
 </details>
