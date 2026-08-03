@@ -15,8 +15,6 @@ If you are interested in these themes or would like to read a working paper, ple
 
 **[Middle Powers in the Global Semiconductor Network](/chip-network/).** An interactive map of semiconductor value-chain roles, international cooperation, and strategic dependence. The project combines official cooperation records, transparent structural codings, and live UN Comtrade queries.
 
-&nbsp;
-
 ### Dissertation
 
 <details open style="margin-bottom: 8px;">
@@ -26,8 +24,6 @@ My dissertation explains why coercive threats fail even when states appear capab
 
 Committee: <a href="https://ojreuter.com/">John Reuter</a>, Shale Horowitz, and Natasha Sugiyama.
 </details>
-
-&nbsp;
 
 ### Selected Working Papers
 
@@ -61,13 +57,9 @@ Using computational text analysis of speeches delivered at the United Nations Se
 This paper connects leader-level belief systems to broader theories of strategic culture through operational code analysis.
 </details>
 
-&nbsp;
-
 ### Revise and Resubmit
 
 **“Japan’s Semiconductor Strategy.”** With Eliza Gheorghe and Mürsel Doğrul. *Revise and resubmit at Contemporary Security Policy.*
-
-&nbsp;
 
 ### Research in Progress
 
