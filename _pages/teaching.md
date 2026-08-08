@@ -14,6 +14,19 @@ I teach courses in comparative politics and have supported instruction across in
 ---
 
 <details open>
+<summary><strong>Introduction to International Relations</strong> <i>(Spring 2027)</i></summary>
+<br>
+University of Wisconsin–Milwaukee. This course introduces students to the study of international relations, including conflict, cooperation, international institutions, and the political foundations of the contemporary international system.
+
+<br><br>
+<div class="portfolio-actions">
+  <a class="portfolio-button" href="https://polsci102.vercel.app/" target="_blank" rel="noopener">Course Website</a>
+</div>
+</details>
+
+---
+
+<details>
 <summary><strong>Comparative Political Systems</strong> <i>(Spring 2026)</i></summary>
 <br>
 University of Wisconsin–Milwaukee. This course introduces students to the comparative study of political systems, institutions, regime types, and political behavior across countries.
