@@ -26,7 +26,7 @@ University of Wisconsin–Milwaukee. This course introduces students to the stud
 
 ---
 
-<details>
+<details open>
 <summary><strong>Comparative Political Systems</strong> <i>(Spring 2026)</i></summary>
 <br>
 University of Wisconsin–Milwaukee. This course introduces students to the comparative study of political systems, institutions, regime types, and political behavior across countries.
