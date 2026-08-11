@@ -127,7 +127,7 @@
   function loadCooperationDataSync() {
     if (document.querySelector('script[data-cooperation-data-sync]')) return;
     const script = document.createElement('script');
-    script.src = 'cooperation-data-sync.js?v=4.3.3';
+    script.src = 'cooperation-data-sync.js?v=4.3.4';
     script.async = false;
     script.dataset.cooperationDataSync = 'true';
     document.body.appendChild(script);
@@ -183,5 +183,36 @@
     document.addEventListener('DOMContentLoaded', queueRelease433Data, { once: true });
   } else {
     queueRelease433Data();
+  }
+})();
+
+(() => {
+  'use strict';
+
+  let loaded = false;
+
+  function loadRelease434Data() {
+    if (loaded || document.querySelector('script[data-release-434-data]')) return;
+    loaded = true;
+    const script = document.createElement('script');
+    script.src = 'cooperation-data-release-4-3-4.js?v=4.3.4';
+    script.async = false;
+    script.dataset.release434Data = 'true';
+    document.body.appendChild(script);
+  }
+
+  function handleDataChange(event) {
+    if (event?.detail?.release === '4.3.3') loadRelease434Data();
+  }
+
+  function queueRelease434Data() {
+    window.addEventListener('chip:cooperationdatachange', handleDataChange);
+    window.setTimeout(loadRelease434Data, 3200);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', queueRelease434Data, { once: true });
+  } else {
+    queueRelease434Data();
   }
 })();
