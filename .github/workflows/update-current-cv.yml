@@ -1,0 +1,42 @@
+name: Update current CV PDF
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".cv-upload/**"
+      - ".github/workflows/update-current-cv.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  update-cv:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reconstruct and verify CV PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .cv-upload/chunk*.b64 | base64 --decode > assets/pdf/Ahmet_Ergurum_CV.pdf
+          test "$(head -c 4 assets/pdf/Ahmet_Ergurum_CV.pdf)" = "%PDF"
+          grep -a -q '%%EOF' assets/pdf/Ahmet_Ergurum_CV.pdf
+          test "$(wc -c < assets/pdf/Ahmet_Ergurum_CV.pdf | tr -d ' ')" = "82338"
+          echo "7d38dea47d9aeadfd2b2d8d42d84253a3faef376a0681e19b8920fe92777ef58  assets/pdf/Ahmet_Ergurum_CV.pdf" | sha256sum -c -
+
+      - name: Commit current CV
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/pdf/Ahmet_Ergurum_CV.pdf
+          git rm -r .cv-upload
+          git commit -m "Update current CV PDF"
+          git push
