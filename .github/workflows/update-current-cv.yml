@@ -25,6 +25,13 @@ jobs:
         run: |
           set -euo pipefail
           cat .cv-upload/chunk*.b64 | base64 --decode > assets/pdf/Ahmet_Ergurum_CV.pdf
+          echo "Reconstructed bytes: $(wc -c < assets/pdf/Ahmet_Ergurum_CV.pdf | tr -d ' ')"
+          sha256sum assets/pdf/Ahmet_Ergurum_CV.pdf
+          echo -n "Header: "
+          head -c 4 assets/pdf/Ahmet_Ergurum_CV.pdf
+          echo
+          echo -n "EOF markers: "
+          grep -a -c '%%EOF' assets/pdf/Ahmet_Ergurum_CV.pdf || true
           test "$(head -c 4 assets/pdf/Ahmet_Ergurum_CV.pdf)" = "%PDF"
           grep -a -q '%%EOF' assets/pdf/Ahmet_Ergurum_CV.pdf
           test "$(wc -c < assets/pdf/Ahmet_Ergurum_CV.pdf | tr -d ' ')" = "82338"
