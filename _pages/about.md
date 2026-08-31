@@ -13,6 +13,7 @@ profile:
     <p>University of Wisconsin–Milwaukee</p>
     <p>Political Science</p>
     <p><a href="mailto:aergurum@uwm.edu">aergurum@uwm.edu</a></p>
+    <p><a href="/assets/pdf/Ahmet_Ergurum_CV.pdf"><strong>Curriculum Vitae (PDF)</strong></a></p>
     <p><a href="https://polsci335.vercel.app/">POL SCI 335 course website</a></p>
 
 selected_papers: false
@@ -28,6 +29,8 @@ latest_posts:
   scrollable: true
   limit: 3
 ---
+
+<p><a class="btn btn-primary" href="/assets/pdf/Ahmet_Ergurum_CV.pdf" target="_blank" rel="noopener"><strong>Curriculum Vitae (PDF)</strong></a></p>
 
 My research focuses on **strategic decision-making and interactions in international security**, with two primary strands. First, I examine how domestic political forces—particularly public opinion, bureaucracy, and political leaders—shape foreign policy behavior. My dissertation analyzes these dynamics in the context of American foreign policy and coercive diplomacy using survey experiments and computational methods.
 
