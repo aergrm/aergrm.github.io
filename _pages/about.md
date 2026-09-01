@@ -13,7 +13,7 @@ profile:
     <p>University of Wisconsin–Milwaukee</p>
     <p>Political Science</p>
     <p><a href="mailto:aergurum@uwm.edu">aergurum@uwm.edu</a></p>
-    <p><a href="/assets/pdf/Ahmet-Ergurum-CV.pdf" target="_blank" rel="noopener noreferrer"><strong>CV (PDF)</strong></a></p>
+    <p class="cv-link"><a href="/assets/pdf/Ahmet-Ergurum-CV.pdf" target="_blank" rel="noopener noreferrer"><strong>CV (PDF)</strong></a></p>
     <p><a href="https://polsci335.vercel.app/">POL SCI 335 course website</a></p>
 
 selected_papers: false
