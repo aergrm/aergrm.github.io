@@ -18,7 +18,7 @@ If you are interested in these themes or would like to read a working paper, ple
 ### Dissertation
 
 <details open style="margin-bottom: 8px;">
-<summary><strong>Why Coercion Fails: Institutions, Signals, and Target Perception</strong></summary>
+<summary><strong>When U.S. Coercive Signals Fail: Essays on Coercive Statecraft in International Security</strong></summary>
 <br>
 My dissertation explains why coercive threats fail even when states appear capable and resolved. It argues that outcomes depend not only on credibility, but also on how threats and possible off-ramps are produced, transmitted, and interpreted. Across three essays, I examine bureaucratic coordination, official communication, and target responses to coercive bargains. The project combines a survey experiment in Russia, computational text analysis, and historical evidence.
 
