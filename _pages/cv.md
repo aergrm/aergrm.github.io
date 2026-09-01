@@ -4,7 +4,7 @@ permalink: /cv/
 title: CV
 nav: true
 nav_order: 1
-cv_pdf: Ahmet_Ergurum_CV.pdf
+cv_pdf: ahmet-ergurum-cv.pdf
 description: View or download my current curriculum vitae (PDF).
 
 ---
