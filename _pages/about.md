@@ -30,7 +30,7 @@ latest_posts:
   limit: 3
 ---
 
-<p><a class="btn btn-primary" href="/assets/pdf/ahmet-ergurum-cv.pdf" target="_blank" rel="noopener"><strong>CV (PDF)</strong></a></p>
+<p><a class="btn btn-primary" href="/assets/pdf/Ahmet-Ergurum-CV.pdf" target="_blank" rel="noopener"><strong>CV (PDF)</strong></a></p>
 
 My research focuses on **strategic decision-making and interactions in international security**, with two primary strands. First, I examine how domestic political forces—particularly public opinion, bureaucracy, and political leaders—shape foreign policy behavior. My dissertation analyzes these dynamics in the context of American foreign policy and coercive diplomacy using survey experiments and computational methods.
 
