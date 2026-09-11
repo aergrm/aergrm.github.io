@@ -11,10 +11,6 @@ My research sits at the intersection of international security, foreign policy a
 
 If you are interested in these themes or would like to read a working paper, please [get in touch](mailto:aergurum@uwm.edu).
 
-### Interactive Research
-
-**[Middle Powers in the Global Semiconductor Network](/chip-network/).** An interactive map of semiconductor value-chain roles, international cooperation, and strategic dependence. The project combines official cooperation records, transparent structural codings, and live UN Comtrade queries.
-
 ### Dissertation
 
 <details open markdown="1" style="margin-bottom: 8px;">
@@ -72,3 +68,7 @@ This paper connects leader-level belief systems to broader theories of strategic
 - “Semi-Supervised Machine Learning Analysis of Congressional Nuclear Rhetoric, 2021–2025.”
 - “Leader Hawkishness and Military Spending: A Panel Data Analysis.”
 - “Globalization and Networked Nuclear Proliferation.” With Eliza Gheorghe, Mürsel Doğrul, and Haydar Yalçın.
+
+### Interactive Research
+
+**[Middle Powers in the Global Semiconductor Network](/chip-network/).** An interactive map of semiconductor value-chain roles, international cooperation, and strategic dependence. The project combines official cooperation records, transparent structural codings, and live UN Comtrade queries.
