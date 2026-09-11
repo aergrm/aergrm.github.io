@@ -17,10 +17,16 @@ If you are interested in these themes or would like to read a working paper, ple
 
 ### Dissertation
 
-<details open style="margin-bottom: 8px;">
+<details open markdown="1" style="margin-bottom: 8px;">
 <summary><strong>When U.S. Coercive Signals Fail: Essays on Coercive Statecraft in International Security</strong></summary>
 <br>
-My dissertation explains why coercive threats fail even when states appear capable and resolved. It argues that outcomes depend not only on credibility, but also on how threats and possible off-ramps are produced, transmitted, and interpreted. Across three essays, I examine bureaucratic coordination, official communication, and target responses to coercive bargains. The project combines a survey experiment in Russia, computational text analysis, and historical evidence.
+Why do coercive threats fail to produce accommodation even when targets expect punishment?
+
+My dissertation examines a central problem in coercive diplomacy. A government can demonstrate both the willingness and capacity to impose costs without obtaining the political change it seeks. I argue that credibility is only one part of a coercive bargain. Targets must also understand what they are being asked to do and believe that compliance will produce the offered settlement.
+
+The dissertation develops this argument across three studies of U.S. coercive statecraft. **“Committed but Not Compelling”** uses international sanctions threats to show that stronger commitment predicts whether punishment follows resistance but does not consistently produce greater accommodation. Clearer demands do. **“Selective Specification”** analyzes leaders’ public statements during international crises and shows that leaders usually specify the target’s required concession more precisely than their own response. **“Coercive Threats, Assurances, and Mediation in International Crises: Experimental Evidence from Russia”** uses a preregistered national survey experiment in Russia to examine whether third-party mediation makes an adversary’s settlement proposal easier to accept. Contrary to the preregistered expectation, direct U.S./EU presentation increased acceptance compared with Turkish presentation of otherwise identical terms.
+
+Together, the chapters show why believing that punishment will occur is not the same as knowing what concession is required or believing that an offered bargain will be implemented.
 
 Committee: <a href="https://ojreuter.com/">John Reuter</a>, Shale Horowitz, and Natasha Sugiyama.
 </details>
