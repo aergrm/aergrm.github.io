@@ -399,7 +399,7 @@
   window.dispatchEvent(new CustomEvent('chip:cooperationdatachange', {detail: {records:COOPERATION_DATA.length,release:RELEASE}}));
   const enforce = () => {
     const kicker = document.querySelector('.kicker');
-    if (kicker) kicker.textContent = kicker.textContent.replace(/Release 4\\.3(?:\\.\\d+)*/g, 'Release '+RELEASE);
+    if (kicker) kicker.textContent = kicker.textContent.replace(/Release 4\.3(?:\.\d+)*/g, 'Release '+RELEASE);
     const citation = document.querySelector('.citation-text');
     if (citation) citation.textContent = 'Ergurum, Ahmet. 2026. “Middle Powers in the Global Semiconductor Network.” Release '+RELEASE+'.';
     const strip = document.getElementById('coverageStrip');
