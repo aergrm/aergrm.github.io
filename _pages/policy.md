@@ -32,6 +32,6 @@ With Ahmet Fidan and Bengisu Açıkgöz. The report analyzes Turkmenistan's natu
 - **Bilkent Energy Policy Research Center** — Research Intern, 2019. Analyzed energy infrastructure and regional foreign policy.
 - **Ministry of Energy and Natural Resources, Turkey** — Intern, 2018. Translated energy news from Africa and authored a research report on Gazprom.
 
-### Blog
+### [Blog]({{ '/blog/' | relative_url }})
 
-I also share resources for political science research, academic writing, data analysis, and teaching on my [Blog]({{ '/blog/' | relative_url }}) page.
+Browse my collection of resources on political science research, academic writing, data analysis, and teaching.
