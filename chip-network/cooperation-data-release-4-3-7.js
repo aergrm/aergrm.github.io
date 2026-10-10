@@ -397,6 +397,34 @@
   }
   COOPERATION_DATA.sort((a, b) => a.date.localeCompare(b.date) || a.id.localeCompare(b.id));
   window.dispatchEvent(new CustomEvent('chip:cooperationdatachange', {detail: {records:COOPERATION_DATA.length,release:RELEASE}}));
+  // Rebind the citation control so copying also uses the updated release number.
+  const oldCitationButton = document.getElementById('copyCitation');
+  if (oldCitationButton) {
+    const button = oldCitationButton.cloneNode(true);
+    oldCitationButton.replaceWith(button);
+    button.addEventListener('click', () => {
+      const text = 'Ergurum, Ahmet. 2026. “Middle Powers in the Global Semiconductor Network.” Release '+RELEASE+'. https://aergrm.github.io/chip-network/';
+      const success = () => {
+        const previous = button.textContent;
+        button.textContent = 'Citation copied';
+        window.setTimeout(() => { button.textContent = previous; }, 1800);
+      };
+      const fallback = () => {
+        const node = document.createElement('textarea');
+        node.value = text;
+        node.setAttribute('readonly', '');
+        node.style.position = 'fixed';
+        node.style.opacity = '0';
+        document.body.appendChild(node);
+        node.select();
+        document.execCommand('copy');
+        node.remove();
+        success();
+      };
+      if (navigator.clipboard?.writeText) navigator.clipboard.writeText(text).then(success).catch(fallback);
+      else fallback();
+    });
+  }
   const enforce = () => {
     const kicker = document.querySelector('.kicker');
     if (kicker) kicker.textContent = kicker.textContent.replace(/Release 4\.3(?:\.\d+)*/g, 'Release '+RELEASE);
