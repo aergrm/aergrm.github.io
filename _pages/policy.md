@@ -31,3 +31,7 @@ With Ahmet Fidan and Bengisu Açıkgöz. The report analyzes Turkmenistan's natu
 - **Middle East Foundation** — Research Fellow, 2024. Conducted interviews and authored a policy report on armed groups in Sudan.
 - **Bilkent Energy Policy Research Center** — Research Intern, 2019. Analyzed energy infrastructure and regional foreign policy.
 - **Ministry of Energy and Natural Resources, Turkey** — Intern, 2018. Translated energy news from Africa and authored a research report on Gazprom.
+
+### Blog
+
+I also share resources for political science research, academic writing, data analysis, and teaching on my [Blog]({{ '/blog/' | relative_url }}) page.
