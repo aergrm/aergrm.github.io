@@ -432,9 +432,17 @@
     if (citation) citation.textContent = 'Ergurum, Ahmet. 2026. “Middle Powers in the Global Semiconductor Network.” Release '+RELEASE+'.';
     const strip = document.getElementById('coverageStrip');
     if (strip) strip.innerHTML = '<strong>'+COOPERATION_DATA.length+'</strong> documented cooperation records <span>·</span> 2021–October 2026 <span>·</span> official sources and institutional releases';
-    const yearSelect = document.getElementById('yearSelect');
-    if (yearSelect) yearSelect.dispatchEvent(new Event('change',{bubbles:true}));
   };
+  // Refresh the charts once. Later metadata refreshes must not dispatch
+  // another change event, or they would cause a timer feedback loop.
+  const yearSelect = document.getElementById('yearSelect');
+  if (yearSelect) yearSelect.dispatchEvent(new Event('change', {bubbles:true}));
   enforce();
-  [50,200,700,1800,4200].forEach(ms => window.setTimeout(enforce, ms));
+  // Legacy release handlers also update these labels on filter changes.
+  // Run our label correction after them, without changing the filter state.
+  ['countrySelect','yearSelect','coopType','coopScope','coopStatus','coopStage'].forEach(id => {
+    document.getElementById(id)?.addEventListener('change', () => window.setTimeout(enforce, 230));
+  });
+  window.addEventListener('popstate', () => window.setTimeout(enforce, 230));
+  [50,200,700,1800,4200,8500].forEach(ms => window.setTimeout(enforce, ms));
 })();
