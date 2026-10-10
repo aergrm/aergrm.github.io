@@ -3,8 +3,7 @@ layout: page
 permalink: /blog/
 title: Blog
 description: Selected resources on political science, research methods, writing, and teaching
-nav: true
-nav_order: 9
+nav: false
 ---
 
 A collection of resources for political science research, quantitative methods, academic writing, and teaching, transferred from my previous website. The dates indicate when I originally shared each resource.
