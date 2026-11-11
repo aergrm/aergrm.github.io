@@ -1,13 +1,17 @@
 # Data Dictionary: Middle Powers in the Global Semiconductor Network
 
-Version: 4.1  
-Release date: 2026-07-31  
-Data cutoff: 2026-07-31
+Current cooperation master: Release 4.3.7  
+Master dataset release: 2026-10-10  
+Cooperation event cutoff: 2026-10 (through September 24 in the present records)  
+Earlier trade baseline and profile components retain their separate dates.
 
 ## Files
 
-- `semiconductor-cooperation.csv`: official cooperation records through July 2026.
-- `cooperation-data.js`: website representation generated from the cooperation CSV.
+- `semiconductor-cooperation-master-4-3-7.csv`: current 81-record cooperation master dataset, spanning 2021–October 2026 as the release coverage window. Latest recorded event: September 24, 2026.
+- `semiconductor-cooperation.csv`: historical 21-record input from release 4.1, not the current master.
+- `cooperation-data.js` and `cooperation-data-extensions.js`: historical base and extensions. `cooperation-data-release-4-3-2.js` through `cooperation-data-release-4-3-7.js` extend and correct these records for the live site.
+- `cooperation-document-evidence-2026-10-10.csv`: official-source review for newly included and excluded candidate records.
+- `COOPERATION_AUDIT_2026_10_10.md`: counting rules and removal of duplicate observations.
 - `cooperation-source-audit.csv`: record-level source notes and corrections.
 - `trade-country-indicators.csv`: country-level 2024 BACI indicators.
 - `trade-bilateral-links.csv`: directed 2024 bilateral trade links among mapped entities.
@@ -22,30 +26,34 @@ Data cutoff: 2026-07-31
 - `release-manifest.json`: checksums for archive-package files.
 - `CITATION.cff`: suggested citation metadata. No DOI is assigned.
 
-## Semiconductor cooperation fields
+## Semiconductor cooperation fields (Release 4.3.7 master)
+
+Each row represents one formally documented cooperation arrangement. A later meeting or implementation announcement is not counted as a new arrangement. The 81 rows include 35 semiconductor-specific agreements and 46 broader frameworks with explicit semiconductor provisions.
 
 | Field | Type | Description |
 |---|---|---|
-| `id` | string | Stable record identifier. |
-| `date` | ISO date | Date signed, adopted, announced, or opened, according to `event_basis`. |
+| `id` | string | Unique record identifier. |
+| `date` | ISO date | Reported date of the underlying agreement, framework, or formal announcement, as supported by the cited source. |
 | `year` | integer | Calendar year derived from `date`. |
-| `title` | string | Official or concise title. |
-| `participants` | semicolon-separated string | Named participants. |
-| `participant_ids` | semicolon-separated string | Website entity identifiers. |
-| `map_pairs` | semicolon-separated string | Bilateral pairs drawn on the map. Multilateral records may use several pairs for visualization. |
+| `title` | string | Agreement or arrangement title. |
+| `participants` | semicolon-separated string | Named participating countries or institutions. |
+| `participant_ids` | semicolon-separated string | Internal three-letter country or website identifiers. |
+| `map_pairs` | semicolon-separated string | Map links for visualization, when a country map anchor exists. They do not add records. |
 | `type` | categorical | `resilience`, `research`, `ecosystem`, `investment`, or `trusted_network`. |
 | `scope` | categorical | `semiconductor-specific` or `broader-framework`. |
-| `stages` | semicolon-separated categorical | Value-chain stages or functions explicitly addressed by the record. |
-| `status` | categorical | `announced`, `signed`, `open_call`, `funded`, `implementation`, `operational`, `suspended`, or `superseded`. |
-| `implementation` | string | Evidence used to code status. |
-| `funding` | string | Officially stated funding or `Not specified`. |
-| `detail` | string | Concise description of the cooperation. |
-| `source_url` | URL | Official source for the underlying event. |
-| `last_verified` | ISO date | Date the record was last reviewed. |
-| `date_precision` | categorical | `day`, `month`, or `year`; records the precision supported by the source. |
-| `event_basis` | categorical string | What the date represents, such as signing, adoption, entry into force, or call opening. |
-| `implementation_url` | URL or blank | Later official source supporting a status stronger than `signed`, when available. |
-| `audit_note` | string | Correction, qualification, or reason for retaining the coding. The field name is retained for file compatibility. |
+| `stages` | semicolon-separated string | Explicit cooperation functions, such as research, fabrication, supply chains, or workforce. |
+| `status` | categorical | Officially documented implementation stage (see definitions below). |
+| `actor_level` | string or blank | Government, agency, or industry category for new entries. Blank on older records does **not** imply government level. |
+| `document_type` | string or blank | Type of instrument for new entries, when recorded. Blank on older records does not establish document type. |
+| `implementation` | string | Officially supported activity or follow-on evidence. |
+| `funding` | string | Officially documented amounts or `Not specified`. |
+| `detail` | string | Concise record description. |
+| `source_url` | URL | Principal government or institutional source supporting the record. |
+| `supplemental_source_urls` | semicolon-separated URLs | Additional evidence where separately available. |
+| `last_verified` | ISO date | Last source verification date recorded for this entry; these dates vary by entry. |
+| `source_release` | string | Incremental source file in which the record first appeared. |
+
+**Historical schema.** The original 4.1 CSV contains additional fields such as `date_precision`, `event_basis`, `implementation_url`, and `audit_note`. Those fields are not part of the 20-column consolidated 4.3.7 master and must not be inferred for records where they were never coded.
 
 ### Cooperation types
 
