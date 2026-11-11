@@ -1,6 +1,6 @@
-# Semiconductor cooperation audit — proposed release 4.3.7
+# Semiconductor cooperation source audit — released version 4.3.7
 
-Prepared 2026-10-10. This review is isolated on a branch and is **not yet merged into the public website**.
+Prepared 2026-10-10. The reviewed Release 4.3.7 was merged into the public website on 2026-10-10. This memo records the changes from Release 4.3.6 and the source inclusion decisions.
 
 ## Counting rule
 
@@ -11,15 +11,15 @@ One documented signed instrument or distinguishable formally announced cooperati
 - Previous website release 4.3.6 — 74 coded records.
 - Remove three confirmed duplicate observations — can-deu-2026 -> can-deu-semiconductor-jdoi-2026; aciti-2026 -> aciti-aus-can-ind-2026; usa-twn-trade-investment-semiconductors-2026 -> usa-twn-investment-2026.
 - Add ten newly corroborated instruments — usa-ury-critical-emerging-technologies-2024; jpn-usa-jetro-nycreates-2024; sgp-nld-edb-bom-2025; jpn-twn-jetro-taitra-kyushu-2025; usa-gbr-technology-prosperity-deal-2025; usa-jpn-technology-prosperity-deal-2025; jpn-usa-jetro-arizona-2026; ind-ita-innovit-semiconductors-2026; fra-kor-ai-semiconductor-quantum-mou-2026; sgp-nld-ssia-bom-semiconductor-2026.
-- Proposed total — **81 distinct records**, including five government-level declarations/MoUs and five agency/institutional agreements among the additions.
+- Published total — **81 distinct records**, including five government-level declarations/MoUs and five agency/institutional agreements among the additions.
 - The 2025 India–Malaysia entry receives supplementary February 2026 evidence. It is not reclassified as a signed state-to-state semiconductor MoU.
 - The July 2026 ACITI agreement remains **signed** pending evidence that the working group has actually met.
 
-## Known limitations
+## Coverage and interpretation
 
 The 81 includes broader-framework records and agency-level agreements; it is not a count of 81 separate downloadable full-text treaty documents. Formal publication of the original instrument is not established in every case; some evidence comes from official press releases. Uruguay lacks an anchor in the current map, so that entry is present in records and the table without inventing a geographic connection. France and Italy use the existing European Union anchor in the website, which is a visualization simplification, not a coding of their agreements as EU agreements.
 
-The `semiconductor-cooperation.csv` file on the existing main branch only contains the original 21 rows. The new `semiconductor-cooperation-master-4-3-7.csv` consolidates all incremental JavaScript releases; continue maintaining the latter as the preferred canonical input after review.
+The `semiconductor-cooperation.csv` file on the existing main branch only contains the original 21 rows. The new `semiconductor-cooperation-master-4-3-7.csv` consolidates all incremental JavaScript releases; the latter is the current public master for the 81-record release.
 
 ## Deferred or excluded
 
