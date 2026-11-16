@@ -32,6 +32,8 @@ latest_posts:
 
 <p><a class="btn btn-primary" href="/assets/pdf/Ahmet-Ergurum-CV.pdf" target="_blank" rel="noopener"><strong>CV (PDF)</strong></a></p>
 
+<p class="scholar-citations" style="margin: 0.5rem 0 1.2rem;"><a href="https://scholar.google.com/citations?user=834weTkAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer"><strong>Google Scholar: 11 citations</strong></a> <span class="text-muted" style="font-size: 0.85rem;">(as of November 16, 2026)</span></p>
+
 My research focuses on **strategic decision-making and interactions in international security**, with two primary strands. First, I examine how domestic political forces—particularly public opinion, bureaucracy, and political leaders—shape foreign policy behavior. My dissertation analyzes these dynamics in the context of American foreign policy and coercive diplomacy using survey experiments and computational methods.
 
 Second, I study the **geopolitical implications of dual-use technologies**, especially artificial intelligence and semiconductors. In this line of research, I analyze how technology competition and dependence reshape state behavior, coercion, and alignment. My work in this area employs computational text analysis, network analysis, and quantitative methods.
