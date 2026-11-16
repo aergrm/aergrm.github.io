@@ -12,6 +12,12 @@ My policy work focuses on international security, emerging technology, energy, a
 ### selected policy writing
 
 <details open style="margin-bottom: 8px;">
+<summary><strong><a href="https://www.cts-oxford.org/insights/can-money-buy-ai-autonomy/">“Can Money Buy AI Autonomy? The Gulf's Computing Ambitions”</a></strong> <i>Oxford CTS Insights, 2026</i></summary>
+<br>
+This article examines how Saudi Arabia and the UAE use investments in AI infrastructure to pursue technological autonomy. It analyzes how U.S. export controls, foreign technology partnerships, and regional security threats shape access to advanced computing and the continuity of computing services.
+</details>
+
+<details open style="margin-bottom: 8px;">
 <summary><strong>“How Do Armed Groups Shape the Sudan Civil War?”</strong> <i>Middle East Foundation, 2024</i></summary>
 <br>
 This policy report examines the role of armed groups in the Sudan civil war. It draws on interviews with Sudanese subject-matter experts and elites conducted during my research fellowship at the Middle East Foundation.
