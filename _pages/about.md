@@ -32,7 +32,7 @@ latest_posts:
 
 <p><a class="btn btn-primary" href="/assets/pdf/Ahmet-Ergurum-CV.pdf" target="_blank" rel="noopener"><strong>CV (PDF)</strong></a></p>
 
-<p class="scholar-citations" style="margin: 0.5rem 0 1.2rem;"><a href="https://scholar.google.com/citations?user=834weTkAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer"><strong>Google Scholar: 11 citations</strong></a> <span class="text-muted" style="font-size: 0.85rem;">(as of November 16, 2026)</span></p>
+
 
 My research focuses on **strategic decision-making and interactions in international security**, with two primary strands. First, I examine how domestic political forces—particularly public opinion, bureaucracy, and political leaders—shape foreign policy behavior. My dissertation analyzes these dynamics in the context of American foreign policy and coercive diplomacy using survey experiments and computational methods.
 
@@ -47,3 +47,5 @@ I have served as a reviewer for [*Political Research Quarterly*](https://journal
 I am a Ph.D. candidate at the University of Wisconsin–Milwaukee and a recipient of the UWM Chancellor's Award and Wilder Crane Memorial Scholarship. I hold M.A. and B.A. degrees in International Relations from [Bilkent University](https://w3.bilkent.edu.tr/bilkent/) in Turkey.
 
 I also designed and built the public course website for [POL SCI 335: Comparative Political Systems](https://polsci335.vercel.app/), which showcases my approach to digital pedagogy through games, simulations, quizzes, interactive graphs, accessible course organization, and student-facing learning materials.
+
+<p class="scholar-citations"><a href="https://scholar.google.com/citations?user=834weTkAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar: 11 citations</a></p>
