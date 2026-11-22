@@ -9,6 +9,12 @@ nav_order: 1
 
 <div class="publications">
 
+<h2>Conditionally Accepted</h2>
+
+<p><strong>“Caught in the Crossfire: Dual Coercion and Selective Compliance in Japan’s Semiconductor Policy”</strong><br>
+Ahmet Ergurum, Eliza Gheorghe, and Mürsel Doğrul<br>
+<em><a href="https://www.tandfonline.com/journals/fcsp20">Contemporary Security Policy</a></em> — conditionally accepted.</p>
+
 <h2>Journal Articles</h2>
 
 {% bibliography --query @article --group_by none %}
