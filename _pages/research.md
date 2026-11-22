@@ -59,9 +59,9 @@ Using computational text analysis of speeches delivered at the United Nations Se
 This paper connects leader-level belief systems to broader theories of strategic culture through operational code analysis.
 </details>
 
-### Revise and Resubmit
+### Conditionally Accepted
 
-**“Japan’s Semiconductor Strategy.”** With Eliza Gheorghe and Mürsel Doğrul. *Revise and resubmit at Contemporary Security Policy.*
+**“Caught in the Crossfire: Dual Coercion and Selective Compliance in Japan’s Semiconductor Policy.”** With Eliza Gheorghe and Mürsel Doğrul. *Conditionally accepted at [Contemporary Security Policy](https://www.tandfonline.com/journals/fcsp20).* The paper examines Japan’s responses to U.S. and Chinese pressure over semiconductor policy and explains patterns of selective compliance.
 
 ### Research in Progress
 
