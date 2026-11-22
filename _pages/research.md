@@ -61,7 +61,7 @@ This paper connects leader-level belief systems to broader theories of strategic
 
 ### Conditionally Accepted
 
-**“Caught in the Crossfire: Dual Coercion and Japan’s Responses in Semiconductors and 5G.”** With Eliza Gheorghe and Mürsel Doğrul. *Conditionally accepted at [Contemporary Security Policy](https://www.tandfonline.com/journals/fcsp20).* The paper examines Japan’s responses to U.S. and Chinese pressure over semiconductor policy and explains patterns of selective compliance.
+**“Caught in the Crossfire: Dual Coercion and Japan’s Responses in Semiconductors and 5G.”** With Eliza Gheorghe and Mürsel Doğrul. *Conditionally accepted at [Contemporary Security Policy](https://www.tandfonline.com/journals/fcsp20).* The paper examines Japan’s responses to U.S. and Chinese coercive pressure in semiconductor and 5G policy.
 
 ### Research in Progress
 
