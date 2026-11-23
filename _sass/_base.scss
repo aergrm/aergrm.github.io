@@ -588,6 +588,24 @@ footer.sticky-bottom {
   }
 }
 
+// Keep the CV button next to the name on the About page.
+.about-heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.75rem;
+
+  .post-title {
+    margin: 0;
+  }
+
+  .about-cv-button {
+    margin: 0;
+    white-space: nowrap;
+  }
+}
+
 .post-list {
   margin: 0;
   margin-bottom: 40px;
